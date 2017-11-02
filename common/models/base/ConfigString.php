@@ -2,6 +2,7 @@
 
 namespace common\models\base;
 
+use common\components\QiNiu;
 use Yii;
 
 class ConfigString
@@ -20,7 +21,7 @@ class ConfigString
      */
     public static function getQiNiu()
     {
-        return Yii::$app->get(static::QI_NIU);
+        return Yii::$app->get(static::COMPONENT_QI_NIU);
     }
 
     /**

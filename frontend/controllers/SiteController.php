@@ -7,19 +7,11 @@ use frontend\models\form\LoginForm;
 use kriss\actions\web\ErrorAction;
 use kriss\actions\web\OfflineAction;
 use Yii;
-use yii\base\InvalidParamException;
-use yii\web\BadRequestHttpException;
-use yii\web\Controller;
 use yii\filters\VerbFilter;
-use yii\filters\AccessControl;
-use frontend\models\PasswordResetRequestForm;
-use frontend\models\ResetPasswordForm;
-use frontend\models\SignupForm;
-use frontend\models\ContactForm;
+use yii\web\Controller;
 
 class SiteController extends Controller
 {
-
     /**
      * @inheritdoc
      */

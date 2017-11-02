@@ -1,4 +1,6 @@
 <?php
+use common\models\base\ConfigString;
+
 return [
     'name' => 'APP',
     'language' => 'zh-CN',
@@ -21,6 +23,15 @@ return [
                     'except' => [
                         'yii\web\HttpException:401'
                     ]
+                ],
+                [
+                    // 记录必须解决的错误的日志
+                    'class' => 'yii\log\FileTarget',
+                    'categories' => [ConfigString::CATEGORY_NEED_SOLVED],
+                    'logVars' => [],
+                    'logFile' => '@common/runtime/logs/needSolved/needSolved.log.' . date('Ymd'),
+                    'maxLogFiles' => 31,
+                    'dirMode' => 0777
                 ],
             ]
         ],

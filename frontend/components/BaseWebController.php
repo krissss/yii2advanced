@@ -2,8 +2,6 @@
 
 namespace frontend\components;
 
-use common\models\base\ConfigString;
-use kriss\behaviors\web\OperateLog;
 use kriss\traits\WebControllerTrait;
 use yii\web\Controller;
 

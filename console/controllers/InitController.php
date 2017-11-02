@@ -10,7 +10,7 @@ class InitController extends Controller
 {
     public function actionInitData()
     {
-        //$this->initAdmin();
+        $this->initAdmin();
         $this->initUser();
     }
 

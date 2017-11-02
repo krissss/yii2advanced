@@ -1,0 +1,52 @@
+/* iframe 菜单的样式 */
+.menu-tabs{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #fff;
+    display: block !important;
+}
+.menu-tabs:after{
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.menu-tabs li{
+    float: left;
+    list-style: none;
+    padding: 0 15px;
+    background-color: #fff;
+    text-align: center;
+}
+.menu-tabs li.active,
+.menu-tabs li:hover{
+    background-color: #ecf0f5;
+}
+
+.menu-tabs li a{
+    display: inline-block;
+    color: #76838f;
+    height: 40px;
+    line-height: 40px;
+}
+
+.close-menu-tab{
+    color: #76838f;
+    cursor: pointer;
+}
+.close-menu-tab:hover{
+    color: #ff0000;
+}
+
+.iframe-content-wrapper{
+    background-color: #ecf0f5;
+    margin-left: 0;
+}
+
+.iframe-layout{
+    width: 100%;
+    min-height: 600px;
+    border: 0;
+}

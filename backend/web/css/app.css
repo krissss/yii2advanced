@@ -1,0 +1,160 @@
+.v-center {
+    vertical-align: middle !important;
+}
+
+.h-center {
+    text-align: center !important;
+}
+
+/* 覆盖adminLte */
+/** a-sort */
+a.asc:after, a.desc:after {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    padding-left: 5px;
+}
+
+a.asc:after {
+    content: "\e155";
+}
+
+a.desc:after {
+    content: "\e156";
+}
+
+.hidden {
+    display: none;
+}
+
+.not-set {
+    display: none;
+}
+
+/** logo */
+.logo img {
+    max-width: 100%;
+    max-height: 40px;
+    vertical-align: middle;
+}
+
+/** 左侧菜单 */
+.user-panel {
+    color: #fff;
+}
+
+/** 顶部菜单 */
+.navbar-nav .header-menu {
+    min-width: 100px;
+    text-align: center;
+}
+
+.navbar-nav .header-menu .dropdown-menu-item {
+    display: block;
+    text-align: center;
+    padding: 5px;
+}
+
+/** breadcrumb */
+.content-header > .breadcrumb {
+    float: none;
+    position: relative;
+    top: 0;
+    right: 0;
+    padding: 4px 2px;
+}
+
+/** header 返回按钮样式 */
+.main-header .return-toggle {
+    float: left;
+    background-color: transparent;
+    background-image: none;
+    padding: 15px 15px;
+    color: #ffffff;
+    font-family: fontAwesome;
+}
+
+.main-header .return-toggle:before {
+    content: "\f104";
+}
+
+.main-header .return-toggle:hover {
+    color: #f6f6f6;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.main-header .return-toggle:focus,
+.main-header .return-toggle:active {
+    background-color: #367fa9;
+}
+
+.main-header .return-toggle .icon-bar {
+    display: none;
+}
+
+/* 覆盖图标的颜色 */
+.fa.text-danger,
+.glyphicon.text-danger {
+    color: #ff0000;
+}
+
+/* 覆盖 table group 的颜色 */
+td.kv-group-odd {
+    background-color: #fff !important;
+}
+
+td.kv-group-even {
+    background-color: #fff !important;
+}
+
+.kv-page-summary {
+    border-top: 0;
+}
+
+.table > tbody,
+.table > tbody + tbody {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+/* 表单间距调小 */
+.form-col-compact .col-md-3 {
+    padding-right: 0;
+    padding-left: 8px;
+}
+
+/* 评论背景 */
+.box-comments{
+    background: transparent;
+}
+.box-comments .image-normal img{
+    width: auto !important;
+    height: auto !important;
+    float: inherit;
+}
+
+/* wangEditor 菜单 */
+.w-e-text-container {
+    z-index: 990 !important;
+}
+
+.w-e-toolbar .w-e-menu {
+    z-index: 991 !important;
+}
+
+/* checkbox 大小 */
+td.kv-row-select {
+    padding: 0;
+    margin: 0;
+}
+
+.kv-row-checkbox, .select-on-check-all {
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    margin: 0;
+}

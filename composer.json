@@ -19,6 +19,7 @@
         "yiisoft/yii2-bootstrap": "~2.0.0",
         "yiisoft/yii2-redis": "^2.0",
         "dmstr/yii2-adminlte-asset": "^2.5",
+        "kriss/yii2-log-reader": "^2.1",
         "kriss/yii2-beary-chat": "^1.0",
         "kriss/yii2-filesystem-qiniu": "^1.0",
         "kartik-v/yii2-dynagrid": "^1.4.7",

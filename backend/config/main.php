@@ -18,6 +18,9 @@ return [
     // 网站维护，打开以下注释
     //'catchAll' => ['site/offline'],
     'modules' => [
+        'gridview' => [
+            'class' => '\kartik\grid\Module',
+        ],
         'dynagrid' => [
             'class' => '\kartik\dynagrid\Module',
             'defaultTheme' => 'panel-primary',

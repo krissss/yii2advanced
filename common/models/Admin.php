@@ -21,6 +21,8 @@ use yii\web\IdentityInterface;
  * @property integer $updated_at
  * @property integer $updated_by
  * @property string $auth_role
+ *
+ * @property string $statusName
  */
 class Admin extends ActiveRecord implements IdentityInterface
 {
@@ -29,12 +31,28 @@ class Admin extends ActiveRecord implements IdentityInterface
     const STATUS_NORMAL = 0; // 正常
     const STATUS_DISABLE = 10; // 不可登录
 
+    public static $statusData = [
+        self::STATUS_NORMAL => '正常',
+        self::STATUS_DISABLE => '不可用',
+    ];
+
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
         return 'admin';
+    }
+
+    public function behaviors()
+    {
+        $behaviors = parent::behaviors();
+
+        $behaviors['time_user'] = [
+            'class' => 'kriss\components\TimeUserBehavior',
+        ];
+
+        return $behaviors;
     }
 
     /**
@@ -68,6 +86,14 @@ class Admin extends ActiveRecord implements IdentityInterface
             'updated_by' => '修改人',
             'auth_role' => 'Auth Role',
         ];
+    }
+
+    /**
+     * @return string
+     */
+    public function getStatusName()
+    {
+        return $this->toName($this->status, self::$statusData);
     }
 
     /**

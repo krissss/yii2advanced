@@ -19,11 +19,18 @@ use yii\web\IdentityInterface;
  * @property integer $status
  * @property integer $created_at
  * @property integer $updated_at
+ *
+ * @property string $statusName
  */
 class User extends ActiveRecord implements IdentityInterface
 {
     const STATUS_NORMAL = 0; // 正常
     const STATUS_DISABLE = 10; // 不可登录
+
+    public static $statusData = [
+        self::STATUS_NORMAL => '正常',
+        self::STATUS_DISABLE => '不可登录',
+    ];
 
     /**
      * @inheritdoc
@@ -31,6 +38,18 @@ class User extends ActiveRecord implements IdentityInterface
     public static function tableName()
     {
         return 'user';
+    }
+
+    public function behaviors()
+    {
+        $behaviors = parent::behaviors();
+
+        $behaviors['time_user'] = [
+            'class' => 'kriss\components\TimeUserBehavior',
+            'useUser' => false
+        ];
+
+        return $behaviors;
     }
 
     /**
@@ -63,6 +82,14 @@ class User extends ActiveRecord implements IdentityInterface
             'created_at' => '创建时间',
             'updated_at' => '修改时间',
         ];
+    }
+
+    /**
+     * @return string
+     */
+    public function getStatusName()
+    {
+        return $this->toName($this->status, self::$statusData);
     }
 
     /**

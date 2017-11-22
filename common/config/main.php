@@ -43,7 +43,9 @@ return [
             // 使用外部静态资源加速的项目
             // 如果 cdn 挂了可以直接全部注释掉
             // 所以请在原 XXXAsset 下写上本项目中存在的资源
-            'bundles' => YII_DEBUG ? [] : require (__DIR__ . '/cdn-staticfile.php'),
+            // 默认关闭使用，为了避免 cdn 挂了导致所有项目挂掉，需要的自行开启
+            //'bundles' => YII_DEBUG ? [] : require (__DIR__ . '/cdn-staticfile.php'),
+            'bundles' => [],
         ],
         'urlManager' => [
             'enablePrettyUrl' => true,

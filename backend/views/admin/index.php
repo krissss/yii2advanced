@@ -27,8 +27,8 @@ $columns = [
     ],
     [
         'class' => '\kartik\grid\ActionColumn',
-        'width' => '250px',
-        'template' => '{update} {reset-password} {change-status}',
+        'width' => '300px',
+        'template' => '{update} {update-role} {reset-password} {change-status}',
         'buttons' => [
             'update' => function ($url, Admin $model) {
                 if ($model->id == Admin::SUPER_ADMIN_ID) {
@@ -38,6 +38,15 @@ $columns = [
                     'class' => 'btn btn-default show_ajax_modal',
                 ];
                 return Html::a('更新', $url, $options);
+            },
+            'update-role' => function ($url, $model) {
+                if ($model->id != Admin::SUPER_ADMIN_ID && $model->id != Yii::$app->user->id) {
+                    $options = [
+                        'class' => 'btn btn-warning show_ajax_modal',
+                    ];
+                    return Html::a('授权', $url, $options);
+                }
+                return '';
             },
             'change-status' => function ($url, Admin $model) {
                 if ($model->id == Admin::SUPER_ADMIN_ID) {

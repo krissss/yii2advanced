@@ -11,15 +11,9 @@ $admin = Yii::$app->user->identity;
 $menuTitle = '总管理后台';
 $baseUrl = '';
 $menu = [
-    [
-        'label' => '首页', 'icon' => 'circle-o', 'url' => [$baseUrl . '/home']
-    ],
-    [
-        'label' => '用户管理', 'icon' => 'circle-o', 'url' => [$baseUrl . '/user']
-    ],
-    [
-        'label' => '管理员管理', 'icon' => 'circle-o', 'url' => [$baseUrl . '/admin']
-    ],
+    ['label' => '首页', 'icon' => 'circle-o', 'url' => [$baseUrl . '/home']],
+    ['label' => '用户管理', 'icon' => 'circle-o', 'url' => [$baseUrl . '/user']],
+    ['label' => '管理员管理', 'icon' => 'circle-o', 'url' => [$baseUrl . '/admin']],
     [
         'label' => '权限管理', 'icon' => 'list', 'url' => '#', 'visible' => AuthValidate::has([Auth::PERMISSION_VIEW, Auth::ROLE_VIEW]),
         'items' => [

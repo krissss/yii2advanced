@@ -7,12 +7,38 @@ use backend\components\MessageAlert;
 use common\components\ActiveDataProvider;
 use common\components\Tools;
 use common\models\Admin;
+use kriss\modules\auth\actions\UserRoleUpdateAction;
 use Yii;
 use yii\web\ForbiddenHttpException;
 use yii\web\NotFoundHttpException;
 
 class AdminController extends AuthWebController
 {
+    public function actions()
+    {
+        $actions = parent::actions();
+
+        $actions['update-role'] = [
+            'class' => UserRoleUpdateAction::className(),
+            //'permissionName' => Auth::ADMIN_UPDATE_ROLE,
+            'isRenderAjax' => true,
+            //'view' => '_update_role',
+            'successCallback' => function ($action, $result) {
+                /** @var $action UserRoleUpdateAction */
+                if ($result['type'] == 'success') {
+                    Yii::$app->session->setFlash('success', '授权成功');
+                } else {
+                    Yii::$app->session->setFlash('error', '授权失败：' . $result['msg']);
+                }
+                /** @var self $controller */
+                $controller = $action->controller;
+                return $controller->actionPreviousRedirect();
+            }
+        ];
+
+        return $actions;
+    }
+
     // 列表
     public function actionIndex()
     {

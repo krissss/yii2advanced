@@ -35,6 +35,10 @@ a.desc:after {
     display: none;
 }
 
+.pagination>li>a {
+    background-color: #fff;
+}
+
 /** logo */
 .logo img {
     max-width: 100%;

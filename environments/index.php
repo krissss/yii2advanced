@@ -36,10 +36,11 @@ return [
             'backend/web/assets',
             'frontend/runtime',
             'frontend/web/assets',
+            'common/runtime',
+            'console/runtime',
         ],
         'setExecutable' => [
             'yii',
-            'yii_test',
         ],
         'setCookieValidationKey' => [
             'backend/config/main-local.php',
@@ -53,6 +54,8 @@ return [
             'backend/web/assets',
             'frontend/runtime',
             'frontend/web/assets',
+            'common/runtime',
+            'console/runtime',
         ],
         'setExecutable' => [
             'yii',

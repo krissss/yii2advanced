@@ -4,6 +4,7 @@ use common\models\base\ConfigString;
 return [
     'name' => 'APP',
     'language' => 'zh-CN',
+    'timeZone' => 'Asia/Shanghai',
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     // 网站维护，打开以下注释
     //'catchAll' => ['site/offline'],

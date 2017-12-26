@@ -34,6 +34,11 @@ $admin = Yii::$app->user->identity;
                         <span class="hidden-xs">&nbsp;<?= $admin->name ?></span>
                     </a>
                     <div class="dropdown-menu">
+                        <?= Html::a((\kriss\iframeLayout\IframeModeChangeAction::isIframeMode() ? '关闭' : '开启') . '标签页模式',
+                            ['/site/iframe-mode-change'], [
+                                'data-method' => 'post',
+                                'class' => 'dropdown-menu-item'
+                            ]) ?>
                         <?= Html::a('修改密码', ['/account/modify-password'], [
                             'class' => 'dropdown-menu-item'
                         ]) ?>

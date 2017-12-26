@@ -20,6 +20,7 @@
         "yiisoft/yii2-redis": "^2.0",
         "kriss/yii2-common-class": "^1.4",
         "dmstr/yii2-adminlte-asset": "^2.5",
+        "kriss/yii2-adminlte-iframe-mode": "^1.0",
         "kriss/yii2-log-reader": "^2.1",
         "kriss/yii2-beary-chat": "^1.0",
         "kriss/yii2-filesystem-qiniu": "^1.0",

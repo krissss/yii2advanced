@@ -6,6 +6,7 @@ use backend\components\BaseWebController;
 use common\models\Admin;
 use kriss\actions\web\ErrorAction;
 use kriss\actions\web\OfflineAction;
+use kriss\iframeLayout\IframeModeChangeAction;
 use Yii;
 use yii\filters\VerbFilter;
 use backend\models\form\LoginForm;
@@ -43,6 +44,9 @@ class SiteController extends BaseWebController
                 //'foreColor' => 0x000000,
                 'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
             ],
+            'iframe-mode-change' => [
+                'class' => IframeModeChangeAction::className(),
+            ]
         ];
     }
 
@@ -61,7 +65,7 @@ class SiteController extends BaseWebController
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             /** @var Admin|false $user */
             $user = $model->login();
-            if($user){
+            if ($user) {
                 return $this->redirect(['index']);
             }
         }

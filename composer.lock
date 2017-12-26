@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "793bcf88bd4313543be556e8fc1203f7",
+    "content-hash": "c9fc6292387d8d75397482b63f6f502a",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -1132,6 +1132,49 @@
                 "yii2"
             ],
             "time": "2017-11-25T06:02:18+00:00"
+        },
+        {
+            "name": "kriss/yii2-adminlte-iframe-mode",
+            "version": "v1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/krissss/yii2-adminlte-iframe-mode.git",
+                "reference": "5dd4649d7ed039d9d872f498568e57cfc177f5ea"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/krissss/yii2-adminlte-iframe-mode/5dd4649d7ed039d9d872f498568e57cfc177f5ea.zip",
+                "reference": "5dd4649d7ed039d9d872f498568e57cfc177f5ea",
+                "shasum": ""
+            },
+            "require": {
+                "dmstr/yii2-adminlte-asset": "^2.5",
+                "php": ">=5.6",
+                "yiisoft/yii2": "^2.0.6"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "kriss\\iframeLayout\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "kriss",
+                    "email": "462679766@qq.com"
+                }
+            ],
+            "description": "Yii2 AdminLte Iframe Mode",
+            "keywords": [
+                "AdminLTE",
+                "extension",
+                "yii2"
+            ],
+            "time": "2017-12-26T09:34:35+00:00"
         },
         {
             "name": "kriss/yii2-beary-chat",

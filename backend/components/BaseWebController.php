@@ -2,6 +2,7 @@
 
 namespace backend\components;
 
+use kriss\iframeLayout\IframeLinkFilter;
 use kriss\traits\WebControllerTrait;
 use yii\web\Controller;
 
@@ -14,7 +15,8 @@ class BaseWebController extends Controller
         $behaviors = parent::behaviors();
 
         $behaviors['iframe_layout'] = [
-            'class' => IframeLayoutAction::className(),
+            'class' => IframeLinkFilter::className(),
+            'layout' => '@app/views/layouts/main-content'
         ];
 
         return $behaviors;

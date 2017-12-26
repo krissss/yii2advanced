@@ -6,8 +6,8 @@ use yii\helpers\Html;
 
 dmstr\web\AdminLteAsset::register($this);
 backend\assets\AppAsset::register($this);
-if (!YII_DEBUG && false) {
-    backend\assets\IframeLayoutAsset::register($this);
+if (\kriss\iframeLayout\IframeModeChangeAction::isIframeMode()) {
+    \kriss\iframeLayout\IframeAsset::register($this);
 }
 ?>
 <?php $this->beginPage() ?>

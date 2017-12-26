@@ -1,4 +1,5 @@
 <?php
+
 use common\models\Admin;
 use common\models\base\ConfigString;
 use \kartik\datecontrol\Module as DateControlModule;
@@ -71,17 +72,16 @@ return [
         ],
         'auth' => [
             'class' => \kriss\modules\auth\Module::className(),
-            'behaviors' => [
-                'user_login' => \kriss\behaviors\web\UserLoginFilter::className(),
-                'iframe_layout' => \backend\components\IframeLayoutAction::className(),
+            'as user_login' => \kriss\behaviors\web\UserLoginFilter::className(),
+            'as iframe_layout' => [
+                'class' => \kriss\iframeLayout\IframeLinkFilter::className(),
+                'layout' => '@app/views/layouts/main-content'
             ],
             'skipAuthOptions' => []
         ],
         'log-reader' => [
             'class' => 'kriss\logReader\Module',
-            'extraBehaviors' => [
-                'login-filter' => \kriss\behaviors\web\UserLoginFilter::class
-            ],
+            'as login_filter' => \kriss\behaviors\web\UserLoginFilter::className(),
             'aliases' => [
                 'frontend' => '@frontend/runtime/logs/app.log',
                 'backend' => '@backend/runtime/logs/app.log',

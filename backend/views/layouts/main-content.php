@@ -2,9 +2,8 @@
 /* @var $this \yii\web\View */
 /* @var $content string */
 
-dmstr\web\AdminLteAsset::register($this);
+\kriss\iframeLayout\IframeAsset::register($this);
 backend\assets\AppAsset::register($this);
-backend\assets\IframeLayoutAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
     <!DOCTYPE html>

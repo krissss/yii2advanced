@@ -18,7 +18,7 @@
         "yiisoft/yii2": "~2.0.13",
         "yiisoft/yii2-bootstrap": "~2.0.0",
         "yiisoft/yii2-redis": "^2.0",
-        "kriss/yii2-common-class": "^1.4",
+        "kriss/yii2-common-class": "^1.5",
         "dmstr/yii2-adminlte-asset": "^2.5",
         "kriss/yii2-adminlte-iframe-mode": "^1.0",
         "kriss/yii2-log-reader": "^2.1",

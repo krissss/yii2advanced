@@ -50,4 +50,49 @@ class Migration extends \yii\db\Migration
         }
         return $returnArr;
     }
+
+    /**
+     * @param $table
+     * @param $columns
+     * @param bool $unique
+     */
+    public function createIndexCustom($table, $columns, $unique = false)
+    {
+        $name = 'idx-' . $table . '-' . implode('-', (array)$columns);
+        parent::createIndex($name, $table, $columns, $unique);
+    }
+
+    /**
+     * @param $table
+     * @param $columns
+     */
+    public function dropIndexCustom($table, $columns)
+    {
+        $name = 'idx-' . $table . '-' . implode('-', (array)$columns);
+        parent::dropIndex($name, $table);
+    }
+
+    /**
+     * @param $table
+     * @param $columns
+     * @param $refTable
+     * @param string $refColumns
+     * @param null $delete
+     * @param null $update
+     */
+    public function addForeignKeyCustom($table, $columns, $refTable, $refColumns = 'id', $delete = null, $update = null)
+    {
+        $name = 'fk-' . $table . '-' . $refTable;
+        parent::addForeignKey($name, $table, $columns, $refTable, $refColumns, $delete, $update);
+    }
+
+    /**
+     * @param $table
+     * @param $refTable
+     */
+    public function dropForeignKeyCustom($table, $refTable)
+    {
+        $name = 'fk-' . $table . '-' . $refTable;
+        parent::dropForeignKey($name, $table);
+    }
 }

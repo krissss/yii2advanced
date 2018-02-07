@@ -88,14 +88,22 @@ $(function () {
      * php需要配置
      * class 包含 check_operate_need_confirm_and_modal
      * data-url 为需要操作的地址
-     * data-confirm-msg 为确认的问题
+     * data-confirm-msg 为确认的问题(可选)
      * 自写对应的url地址的批量操作
      * @param $class
      */
     function checkOperateNeedConfirmAndModal($class) {
         body.on('click', '.' + $class, function () {
-            var confirmMsg = $(this).data('confirm-msg');
-            if (confirm(confirmMsg)) {
+            var confirmMsg = $(this).data('confirm-msg'),
+                hasConfrimed = false;
+            if (confirmMsg) {
+                if (confirm(confirmMsg)) {
+                    hasConfrimed = true;
+                }
+            } else {
+                hasConfrimed = true;
+            }
+            if (hasConfrimed) {
                 var keys = $('#grid').yiiGridView('getSelectedRows');
                 if (keys.length <= 0) {
                     alert("您还没有选择任何一项");

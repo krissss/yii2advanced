@@ -24,12 +24,19 @@ p {
 .pagination > li > a, .pagination > li > span,
 .input-group-addon,
 .form-control,
-.btn {
+.btn,
+.select2-container--default .select2-selection--single, .select2-selection .select2-selection--single {
     padding: 4px 8px;
 }
 
-.form-control {
+.form-control,
+.select2-container--default .select2-selection--single, .select2-selection .select2-selection--single {
     height: 30px;
+}
+
+.help-block {
+    margin-top: 3px;
+    margin-bottom: 5px;
 }
 
 .form-col-compact .col-md-3 {
@@ -68,12 +75,11 @@ p {
 
 /* 左侧调小 */
 .main-header .logo,
-.main-sidebar
-{
+.main-sidebar {
     width: 210px;
 }
 
 .main-header .navbar,
-.content-wrapper, .main-footer{
+.content-wrapper, .main-footer {
     margin-left: 210px;
 }

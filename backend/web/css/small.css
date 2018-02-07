@@ -1,9 +1,12 @@
 /* 所有样式整体调整 小一寸 */
 body {
-    font-family: '微软雅黑';
     font-size: 14px;
     color: #333;
     font-weight: normal;
+}
+
+p {
+    margin: 0 0 4px;
 }
 
 .content-header {
@@ -15,7 +18,7 @@ body {
 }
 
 .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
-    padding: 4px 2px;
+    padding: 6px 3px;
 }
 
 .pagination > li > a, .pagination > li > span,
@@ -27,6 +30,10 @@ body {
 
 .form-control {
     height: 30px;
+}
+
+.form-col-compact .col-md-3 {
+    padding-left: 4px;
 }
 
 @media (min-width: 768px) {
@@ -57,4 +64,16 @@ body {
     input[type="date"].form-control, input[type="time"].form-control, input[type="datetime-local"].form-control, input[type="month"].form-control {
         line-height: normal;
     }
+}
+
+/* 左侧调小 */
+.main-header .logo,
+.main-sidebar
+{
+    width: 210px;
+}
+
+.main-header .navbar,
+.content-wrapper, .main-footer{
+    margin-left: 210px;
 }

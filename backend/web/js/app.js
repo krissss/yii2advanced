@@ -1,6 +1,7 @@
 $(function () {
     var body = $("body");
     var csrfToken = $('meta[name="csrf-token"]').attr("content");
+    var csrfParam = '_csrf-backend'; // 请根据 config 的 request 的 csrfParam 调整
 
     /**
      * 自定义ajax方法
@@ -29,11 +30,31 @@ $(function () {
         });
     }
 
+    function _params(params) {
+        params[csrfParam] = csrfToken;
+        return params;
+    }
+
+    function _generateFormSubmit(action, params) {
+        var form = $("<form></form>");
+        form.attr('action', action);
+        form.attr('method', 'post');
+        $.each(params, function (key, value) {
+            var input = $('<input type="hidden" name="' + key + '" />');
+            input.attr('value', value);
+            form.append(input);
+        });
+        form.appendTo("body");
+        form.css('display', 'none');
+        form.submit();
+    }
+
     /**
      * 批量操作
      * php需要配置
      * class 包含 simple_check_operate
      * data-url 为需要操作的地址
+     * data-form 0或1 可选，默认0，1表示以 form 表单的形式提交
      * 自写对应的url地址的批量操作
      * 确保最后返回跳转地址
      * @param $class
@@ -42,10 +63,15 @@ $(function () {
         body.on('click', '.' + $class, function () {
             var keys = $('#grid').yiiGridView('getSelectedRows');
             var url = $(this).data('url');
+            var isForm = $(this).data('form') ? $(this).data('form') : 0;
             if (keys.length > 0) {
-                $.post(url, {_csrf: csrfToken, keys: keys}, function (data) {
-                    window.location.href = data;
-                });
+                if (!isForm) {
+                    $.post(url, _params({keys: keys}), function (data) {
+                        window.location.href = data;
+                    });
+                } else {
+                    _generateFormSubmit(url, _params({keys: keys}));
+                }
             } else {
                 alert("您还没有选择任何一项");
             }
@@ -74,7 +100,7 @@ $(function () {
             var confirmMsg = $(this).data('confirm-msg');
             if (confirm(confirmMsg)) {
                 var url = $(this).data('url');
-                $.post(url, {_csrf: csrfToken, keys: keys}, function (data) {
+                $.post(url, _params({keys: keys}), function (data) {
                     window.location.href = data;
                 });
             }
@@ -110,7 +136,7 @@ $(function () {
                     return false;
                 }
                 var url = $(this).data('url');
-                _ajax(url, {_csrf: csrfToken, keys: keys}, function (data) {
+                _ajax(url, _params({keys: keys}), function (data) {
                     $(".ajax_modal").remove();
                     body.append(data);
                     /** $(".ajax_modal") 此处已经更新过 */
@@ -134,7 +160,7 @@ $(function () {
         body.on('click', '.' + $class, function (event) {
             event.preventDefault();
             var $url = $(this).attr('href');
-            _ajax($url, {}, function (data) {
+            _ajax($url, _params({}), function (data) {
                 $(".ajax_modal").remove();
                 body.append(data);
                 /** $(".ajax_modal") 此处已经更新过 */

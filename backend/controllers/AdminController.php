@@ -3,7 +3,7 @@
 namespace backend\controllers;
 
 use backend\components\AuthWebController;
-use backend\components\MessageAlert;
+use kriss\components\MessageAlert;
 use common\components\ActiveDataProvider;
 use common\components\Tools;
 use common\models\Admin;

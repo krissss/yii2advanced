@@ -3,7 +3,7 @@
 namespace backend\controllers;
 
 use backend\components\AuthWebController;
-use backend\components\MessageAlert;
+use kriss\components\MessageAlert;
 use backend\models\UserSearch;
 use common\models\User;
 use Yii;

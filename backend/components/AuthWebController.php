@@ -13,10 +13,10 @@ class AuthWebController extends BaseWebController
         $behaviors = parent::behaviors();
 
         $behaviors['admin_login'] = [
-            'class' => UserLoginFilter::className(),
+            'class' => UserLoginFilter::class,
         ];
         $behaviors['admin_status'] = [
-            'class' => UserStatusFilter::className(),
+            'class' => UserStatusFilter::class,
             'notAllowedStatus' => [Admin::STATUS_DISABLE],
             'errorMessage' => '用户被锁定，不能执行操作'
         ];

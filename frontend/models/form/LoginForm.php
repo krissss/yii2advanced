@@ -24,7 +24,7 @@ class LoginForm extends Model
             [['cellphone', 'password'], 'required'],
             ['rememberMe', 'boolean'],
             ['password', 'validatePassword'],
-            ['cellphone', CellphoneValidator::className()],
+            ['cellphone', CellphoneValidator::class],
         ];
     }
 

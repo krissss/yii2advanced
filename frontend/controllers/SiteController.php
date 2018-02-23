@@ -19,7 +19,7 @@ class SiteController extends Controller
     {
         return [
             'verbs' => [
-                'class' => VerbFilter::className(),
+                'class' => VerbFilter::class,
                 'actions' => [
                     'logout' => ['post'],
                 ],
@@ -34,11 +34,11 @@ class SiteController extends Controller
     {
         return [
             'error' => [
-                'class' => ErrorAction::className(),
+                'class' => ErrorAction::class,
                 'layout' => 'main-login',
             ],
             'offline' => [
-                'class' => OfflineAction::className(),
+                'class' => OfflineAction::class,
                 'layout' => 'main-login',
             ],
             'captcha' => [

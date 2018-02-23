@@ -69,17 +69,17 @@ return [
             ],
         ],
         'auth' => [
-            'class' => \kriss\modules\auth\Module::className(),
-            'as user_login' => \kriss\behaviors\web\UserLoginFilter::className(),
+            'class' => \kriss\modules\auth\Module::class,
+            'as user_login' => \kriss\behaviors\web\UserLoginFilter::class,
             'as iframe_layout' => [
-                'class' => \kriss\iframeLayout\IframeLinkFilter::className(),
+                'class' => \kriss\iframeLayout\IframeLinkFilter::class,
                 'layout' => '@app/views/layouts/main-content'
             ],
             'skipAuthOptions' => []
         ],
         'log-reader' => [
             'class' => 'kriss\logReader\Module',
-            'as login_filter' => \kriss\behaviors\web\UserLoginFilter::className(),
+            'as login_filter' => \kriss\behaviors\web\UserLoginFilter::class,
             'aliases' => [
                 'frontend' => '@frontend/runtime/logs/app.log',
                 'backend' => '@backend/runtime/logs/app.log',
@@ -93,9 +93,9 @@ return [
             'csrfParam' => '_csrf-backend',
         ],
         'user' => [
-            'class' => \kriss\modules\auth\components\User::className(),
-            'authClass' => \common\models\base\Auth::className(),
-            'identityClass' => Admin::className(),
+            'class' => \kriss\modules\auth\components\User::class,
+            'authClass' => \common\models\base\Auth::class,
+            'identityClass' => Admin::class,
             'enableAutoLogin' => false,
             'identityCookie' => ['name' => '_identity-backend', 'httpOnly' => true],
         ],

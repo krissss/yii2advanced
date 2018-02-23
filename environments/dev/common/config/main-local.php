@@ -34,7 +34,7 @@ return [
             'database' => 2,
         ],
         ConfigString::COMPONENT_QI_NIU => [
-            'class' => \common\components\QiNiu::className(),
+            'class' => \common\components\QiNiu::class,
             'access_key' => '0c9ODbEP2XGHaTyxDdXqM1Bh6egcg8dLaXOOZnUR',
             'secret_key' => 'jBkDQQe_jUVaavigcFwGZB_x6xyOKouNasYlZ_HN',
             'bucket' => 'baifu-test',

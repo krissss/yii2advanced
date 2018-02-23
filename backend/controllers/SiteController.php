@@ -17,7 +17,7 @@ class SiteController extends BaseWebController
     {
         return array_merge(parent::behaviors(), [
             'verbs' => [
-                'class' => VerbFilter::className(),
+                'class' => VerbFilter::class,
                 'actions' => [
                     'logout' => ['post'],
                 ],
@@ -29,11 +29,11 @@ class SiteController extends BaseWebController
     {
         return [
             'error' => [
-                'class' => ErrorAction::className(),
+                'class' => ErrorAction::class,
                 'layout' => 'main-login',
             ],
             'offline' => [
-                'class' => OfflineAction::className(),
+                'class' => OfflineAction::class,
                 'layout' => 'main-login',
             ],
             'captcha' => [
@@ -45,7 +45,7 @@ class SiteController extends BaseWebController
                 'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
             ],
             'iframe-mode-change' => [
-                'class' => IframeModeChangeAction::className(),
+                'class' => IframeModeChangeAction::class,
             ]
         ];
     }

@@ -23,10 +23,10 @@ if (!YII_ENV_TEST) {
         'allowedIPs' => ['127.0.0.1', '::1', '192.168.*'],
         'generators' => [
             'Kriss Auth' => [
-                'class' => \kriss\modules\auth\generators\Generator::className(),
+                'class' => \kriss\modules\auth\generators\Generator::class,
             ],
             'kriss Dynagrid' => [
-                'class' => \kriss\generators\dynagrid\Generator::className()
+                'class' => \kriss\generators\dynagrid\Generator::class
             ],
         ]
     ];

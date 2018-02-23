@@ -23,7 +23,7 @@
         "kriss/yii2-common-class": "^1.7",
         "kriss/yii2-filesystem-qiniu": "^1.0",
         "kriss/yii2-log-reader": "^2.2",
-        "yiisoft/yii2": "2.0.13.1",
+        "yiisoft/yii2": "^2.0",
         "yiisoft/yii2-bootstrap": "^2.0",
         "yiisoft/yii2-redis": "^2.0"
     },

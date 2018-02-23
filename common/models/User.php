@@ -63,7 +63,7 @@ class User extends ActiveRecord implements IdentityInterface
             [['cellphone'], 'string', 'max' => 11],
             [['password_hash', 'name', 'auth_key'], 'string', 'max' => 255],
             [['cellphone'], 'unique'],
-            [['cellphone'], CellphoneValidator::className()],
+            [['cellphone'], CellphoneValidator::class],
         ];
     }
 

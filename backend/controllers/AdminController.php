@@ -19,7 +19,7 @@ class AdminController extends AuthWebController
         $actions = parent::actions();
 
         $actions['update-role'] = [
-            'class' => UserRoleUpdateAction::className(),
+            'class' => UserRoleUpdateAction::class,
             //'permissionName' => Auth::ADMIN_UPDATE_ROLE,
             'isRenderAjax' => true,
             //'view' => '_update_role',

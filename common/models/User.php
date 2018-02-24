@@ -40,18 +40,6 @@ class User extends ActiveRecord implements IdentityInterface
         return 'user';
     }
 
-    public function behaviors()
-    {
-        $behaviors = parent::behaviors();
-
-        $behaviors['time_user'] = [
-            'class' => 'kriss\components\TimeUserBehavior',
-            'useUser' => false
-        ];
-
-        return $behaviors;
-    }
-
     /**
      * @inheritdoc
      */

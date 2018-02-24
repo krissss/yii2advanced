@@ -44,17 +44,6 @@ class Admin extends ActiveRecord implements IdentityInterface
         return 'admin';
     }
 
-    public function behaviors()
-    {
-        $behaviors = parent::behaviors();
-
-        $behaviors['time_user'] = [
-            'class' => 'kriss\components\TimeUserBehavior',
-        ];
-
-        return $behaviors;
-    }
-
     /**
      * @inheritdoc
      */

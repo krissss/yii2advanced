@@ -22,11 +22,6 @@ return [
         ],
         'dynagrid' => [
             'class' => '\kartik\dynagrid\Module',
-            'defaultTheme' => 'panel-primary',
-            'cookieSettings' => ['httpOnly' => true, 'expire' => time() + 100 * 24 * 3600],
-            'defaultPageSize' => 20,
-            'minPageSize' => 5,
-            'maxPageSize' => 200,
         ],
         'datecontrol' => [
             'class' => 'kartik\datecontrol\Module',

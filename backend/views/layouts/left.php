@@ -23,7 +23,10 @@ $menu = [
     ]
 ];
 
-$menuHelper = new \backend\components\MenuHelper(['cacheEnable' => true]);
+$menuHelper = new \backend\components\MenuHelper([
+    'cacheEnable' => YII_DEBUG ? false : true,
+    'cacheTime' => 60
+]);
 $menu = $menuHelper->changeActive($menu);
 ?>
 <aside class="main-sidebar">

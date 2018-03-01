@@ -22,6 +22,9 @@ $menu = [
         ]
     ]
 ];
+
+$menuHelper = new \backend\components\MenuHelper(['cacheEnable' => true]);
+$menu = $menuHelper->changeActive($menu);
 ?>
 <aside class="main-sidebar">
 

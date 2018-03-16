@@ -3,10 +3,11 @@
 namespace backend\components;
 
 use Yii;
-use yii\base\BaseObject;
+use yii\base\Object;
+use yii\helpers\StringHelper;
 use yii\helpers\Url;
 
-class MenuHelper extends BaseObject
+class MenuHelper extends Object
 {
     /**
      * @var bool
@@ -32,7 +33,10 @@ class MenuHelper extends BaseObject
         $currentRoute = Yii::$app->controller->route;
         $this->currentAction = Yii::$app->controller->action->id;
         $routes = explode('/', $currentRoute);
-        if (count($routes) > 2) {
+        $countRoute = count($routes);
+        if ($countRoute == 3) {
+            $controllerRoute = $routes[0] . '/' . $routes[1] . '/' . $routes[2];
+        } else if ($countRoute == 2) {
             $controllerRoute = $routes[0] . '/' . $routes[1];
         } else {
             $controllerRoute = $routes[0];
@@ -84,7 +88,9 @@ class MenuHelper extends BaseObject
                 $this->changeItemActive($subItem);
             }
         } else {
-            $item['active'] = (boolean)strpos('/' . ltrim(Url::to($item['url']), '/') . '/', $this->controllerRoute);
+            if (isset($item['url'])) {
+                $item['active'] = StringHelper::startsWith($this->controllerRoute, '/' . ltrim(Url::to($item['url']), '/') . '/');
+            }
         }
 
         if (!isset($item['active'])) {

@@ -1,45 +1,22 @@
 {
-    "name": "yiisoft/yii2-app-advanced",
-    "description": "Yii 2 Advanced Project Template",
-    "keywords": ["yii2", "framework", "advanced", "project template"],
-    "homepage": "http://www.yiiframework.com/",
-    "type": "project",
-    "license": "BSD-3-Clause",
-    "support": {
-        "issues": "https://github.com/yiisoft/yii2/issues?state=open",
-        "forum": "http://www.yiiframework.com/forum/",
-        "wiki": "http://www.yiiframework.com/wiki/",
-        "irc": "irc://irc.freenode.net/yii",
-        "source": "https://github.com/yiisoft/yii2"
-    },
     "minimum-stability": "stable",
     "require": {
-        "php": ">=5.4.0",
+        "php": ">=7.0",
         "dmstr/yii2-adminlte-asset": "^2.6",
         "kartik-v/yii2-datecontrol": "^1.9",
         "kartik-v/yii2-dynagrid": "^1.4.7",
         "kriss/yii2-adminlte-iframe-mode": "^1.1",
-        "kriss/yii2-beary-chat": "^1.0",
         "kriss/yii2-common-class": "^1.7",
         "kriss/yii2-filesystem-qiniu": "^1.0",
         "kriss/yii2-log-reader": "^2.2",
-        "yiisoft/yii2": "^2.0",
+        "vlucas/phpdotenv": "^2.4",
+        "yiisoft/yii2": "2.0.15.1",
         "yiisoft/yii2-bootstrap": "^2.0",
         "yiisoft/yii2-redis": "^2.0"
     },
     "require-dev": {
-        "symfony/var-dumper": "^3.4",
         "yiisoft/yii2-debug": "^2.0",
         "yiisoft/yii2-gii": "^2.0"
-    },
-    "suggest": {
-        "2amigos/yii2-ckeditor-widget": "CKEditor",
-        "kriss/yii2-wang-editor": "WangEditor",
-        "kartik-v/yii2-widget-fileinput": "FileInput",
-        "kartik-v/yii2-widget-datetimepicker": "DatetimePicker",
-        "kartik-v/yii2-field-range": "FieldRange",
-        "kartik-v/yii2-export": "ExportMenu",
-        "trntv/yii2-file-kit": "FileUpload"
     },
     "config": {
         "process-timeout": 1800,

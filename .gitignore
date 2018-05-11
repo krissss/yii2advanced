@@ -1,5 +1,5 @@
 # yii console commands
-/yii
+#/yii
 /yii_test
 /yii_test.bat
 
@@ -21,7 +21,7 @@ Thumbs.db
 /vendor
 
 # composer itself is not needed
-#composer.phar
+composer.phar
 
 # Mac DS_Store Files
 .DS_Store
@@ -34,6 +34,8 @@ phpunit.phar
 # vagrant runtime
 /.vagrant
 
-kriss
+/kriss
 
-.env
+# .env
+/.env
+/.env-project

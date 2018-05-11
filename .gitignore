@@ -35,3 +35,5 @@ phpunit.phar
 /.vagrant
 
 kriss
+
+.env

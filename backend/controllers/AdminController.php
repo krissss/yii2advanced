@@ -66,9 +66,9 @@ class AdminController extends AuthWebController
             $model->generateAuthKey();
             $model->setPassword($model->password_hash);
             if ($model->validate() && $model->save(false)) {
-                MessageAlert::set(['success' => '新建成功']);
+                MessageAlert::success('新建成功');
             } else {
-                MessageAlert::set(['error' => Tools::formatModelErrors2String($model->errors)]);
+                MessageAlert::error(Tools::formatModelErrors2String($model->errors));
             }
             return $this->actionPreviousRedirect();
         }
@@ -86,9 +86,9 @@ class AdminController extends AuthWebController
         $model = $this->findModel($id);
         if ($model->load(Yii::$app->request->post())) {
             if ($model->validate() && $model->save()) {
-                MessageAlert::set(['success' => '修改成功']);
+                MessageAlert::success('修改成功');
             } else {
-                MessageAlert::set(['error' => Tools::formatModelErrors2String($model->errors)]);
+                MessageAlert::error(Tools::formatModelErrors2String($model->errors));
             }
             return $this->actionPreviousRedirect();
         }
@@ -107,9 +107,9 @@ class AdminController extends AuthWebController
         if ($model->load(Yii::$app->request->post())) {
             $model->setPassword($model->password_hash);
             if ($model->validate() && $model->save()) {
-                MessageAlert::set(['success' => '重置密码成功']);
+                MessageAlert::success('重置密码成功');
             } else {
-                MessageAlert::set(['error' => Tools::formatModelErrors2String($model->errors)]);
+                MessageAlert::error(Tools::formatModelErrors2String($model->errors));
             }
             return $this->actionPreviousRedirect();
         }
@@ -132,9 +132,9 @@ class AdminController extends AuthWebController
         ) {
             $model->status = $status;
             $model->save(false);
-            MessageAlert::set(['success' => '操作成功']);
+            MessageAlert::success('操作成功');
         } else {
-            MessageAlert::set(['error' => '当前状态下操作失败']);
+            MessageAlert::error('当前状态下操作失败');
         }
         return $this->actionPreviousRedirect();
     }

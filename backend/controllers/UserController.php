@@ -35,9 +35,9 @@ class UserController extends AuthWebController
         ) {
             $model->status = $status;
             $model->save(false);
-            MessageAlert::set(['success' => '操作成功']);
+            MessageAlert::success('操作成功');
         } else {
-            MessageAlert::set(['error' => '当前状态下操作失败']);
+            MessageAlert::error('当前状态下操作失败');
         }
         return $this->actionPreviousRedirect();
     }

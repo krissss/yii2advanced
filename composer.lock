@@ -76,7 +76,7 @@
             "version": "v1.35.4",
             "source": {
                 "type": "git",
-                "url": "https://github.com/nakupanda/bootstrap3-dialog.git",
+                "url": "git@github.com:nakupanda/bootstrap3-dialog.git",
                 "reference": "3dd11d586f78de75356af418907ec6e3b347377c"
             },
             "dist": {
@@ -140,7 +140,7 @@
             "version": "v1.3.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/bestiejs/punycode.js.git",
+                "url": "git@github.com:bestiejs/punycode.js.git",
                 "reference": "38c8d3131a82567bfef18da09f7f4db68c84f8a3"
             },
             "dist": {
@@ -1065,16 +1065,16 @@
         },
         {
             "name": "kriss/yii2-common-class",
-            "version": "v1.7.1",
+            "version": "v1.7.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/krissss/yii2-common-tools.git",
-                "reference": "e3c93e3ca12343bd2fd557e306c7628b65f52939"
+                "reference": "5da03fa0b1ee953cd5b2b00ec360c2229aadeef1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/krissss/yii2-common-tools/e3c93e3ca12343bd2fd557e306c7628b65f52939.zip",
-                "reference": "e3c93e3ca12343bd2fd557e306c7628b65f52939",
+                "url": "https://files.phpcomposer.com/files/krissss/yii2-common-tools/5da03fa0b1ee953cd5b2b00ec360c2229aadeef1.zip",
+                "reference": "5da03fa0b1ee953cd5b2b00ec360c2229aadeef1",
                 "shasum": ""
             },
             "require": {
@@ -1112,7 +1112,7 @@
             "keywords": [
                 "yii2"
             ],
-            "time": "2018-02-11T02:48:49+00:00"
+            "time": "2018-06-12T07:56:33+00:00"
         },
         {
             "name": "kriss/yii2-filesystem-qiniu",

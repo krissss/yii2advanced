@@ -162,3 +162,9 @@ td.kv-row-select {
     padding: 0;
     margin: 0;
 }
+
+/* 所有的表单的必填项加*号 */
+.form-group.required > label::after {
+    content: "*" !important;
+    color: #ff0000;
+}

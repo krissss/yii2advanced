@@ -7,7 +7,8 @@ $modules = require __DIR__ . '/modules.php';
 
 $config = [
     'id' => 'app-backend',
-    'basePath' => dirname(__DIR__),
+    'basePath' => '@backend',
+    'runtimePath' => '@runtime/backend',
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
     // 网站维护，打开以下注释

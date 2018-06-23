@@ -4,7 +4,8 @@ use common\models\base\ConfigString;
 
 $config = [
     'id' => 'app-frontend',
-    'basePath' => dirname(__DIR__),
+    'basePath' => '@frontend',
+    'runtimePath' => '@runtime/frontend',
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
     // 网站维护，打开以下注释

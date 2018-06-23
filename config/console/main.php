@@ -2,7 +2,8 @@
 
 return [
     'id' => 'app-console',
-    'basePath' => dirname(__DIR__),
+    'basePath' => '@console',
+    'runtimePath' => '@runtime/console',
     'bootstrap' => ['log'],
     'controllerNamespace' => 'console\controllers',
     'aliases' => [

@@ -3,11 +3,11 @@
 namespace backend\components;
 
 use Yii;
-use yii\base\Object;
+use yii\base\BaseObject;
 use yii\helpers\StringHelper;
 use yii\helpers\Url;
 
-class MenuHelper extends Object
+class MenuHelper extends BaseObject
 {
     /**
      * @var bool

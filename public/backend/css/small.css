@@ -1,24 +1,24 @@
 /* 所有样式整体调整 小一寸 */
 body {
-    font-size: 14px;
-    color: #333;
-    font-weight: normal;
+  font-size: 14px;
+  color: #333;
+  font-weight: normal;
 }
 
 p {
-    margin: 0 0 4px;
+  margin: 0 0 4px;
 }
 
 .content-header {
-    padding: 10px 10px 0 10px;
+  padding: 10px 10px 0 10px;
 }
 
 .content {
-    padding: 10px;
+  padding: 10px;
 }
 
 .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
-    padding: 6px 3px;
+  padding: 6px 3px;
 }
 
 .pagination > li > a, .pagination > li > span,
@@ -26,60 +26,60 @@ p {
 .form-control,
 .btn,
 .select2-container--default .select2-selection--single, .select2-selection .select2-selection--single {
-    padding: 4px 8px;
+  padding: 4px 8px;
 }
 
 .form-control,
 .select2-container--default .select2-selection--single, .select2-selection .select2-selection--single {
-    height: 30px;
+  height: 30px;
 }
 
 .help-block {
-    margin-top: 3px;
-    margin-bottom: 5px;
+  margin-top: 3px;
+  margin-bottom: 5px;
 }
 
 .form-col-compact .col-md-3 {
-    padding-left: 4px;
+  padding-left: 4px;
 }
 
 @media (min-width: 768px) {
-    .form-horizontal .control-label {
-        padding-top: 4px;
-    }
+  .form-horizontal .control-label {
+    padding-top: 4px;
+  }
 }
 
 .box-header > .fa, .box-header > .glyphicon, .box-header > .ion, .box-header .box-title {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .box-header,
 .box-body,
 .kv-panel-before {
-    padding: 8px;
+  padding: 8px;
 }
 
 .box-header > .box-tools {
-    top: 2px;
+  top: 2px;
 }
 
 .kv-container-from, .kv-container-to {
-    padding: 0;
+  padding: 0;
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
-    input[type="date"].form-control, input[type="time"].form-control, input[type="datetime-local"].form-control, input[type="month"].form-control {
-        line-height: normal;
-    }
+  input[type="date"].form-control, input[type="time"].form-control, input[type="datetime-local"].form-control, input[type="month"].form-control {
+    line-height: normal;
+  }
 }
 
 /* 左侧调小 */
 .main-header .logo,
 .main-sidebar {
-    width: 210px;
+  width: 210px;
 }
 
 .main-header .navbar,
 .content-wrapper, .main-footer {
-    margin-left: 210px;
+  margin-left: 210px;
 }

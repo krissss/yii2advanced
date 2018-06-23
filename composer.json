@@ -1,34 +1,34 @@
 {
-    "minimum-stability": "stable",
-    "require": {
-        "php": ">=7.0",
-        "dmstr/yii2-adminlte-asset": "^2.6",
-        "kartik-v/yii2-datecontrol": "^1.9",
-        "kartik-v/yii2-dynagrid": "^1.4.7",
-        "kriss/yii2-adminlte-iframe-mode": "^1.1",
-        "kriss/yii2-common-class": "^1.7",
-        "kriss/yii2-filesystem-qiniu": "^1.0",
-        "kriss/yii2-log-reader": "^2.2",
-        "vlucas/phpdotenv": "^2.4",
-        "yiisoft/yii2": "2.0.15.1",
-        "yiisoft/yii2-bootstrap": "^2.0",
-        "yiisoft/yii2-redis": "^2.0"
-    },
-    "require-dev": {
-        "yiisoft/yii2-debug": "^2.0",
-        "yiisoft/yii2-gii": "^2.0"
-    },
-    "config": {
-        "process-timeout": 1800,
-        "sort-packages": true
-    },
-    "extra" : {
-        "npm-asset-repository": "https://registry.npm.taobao.org"
-    },
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://asset-packagist.org"
-        }
-    ]
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=7.0",
+    "dmstr/yii2-adminlte-asset": "^2.6",
+    "kartik-v/yii2-datecontrol": "^1.9",
+    "kartik-v/yii2-dynagrid": "^1.4.7",
+    "kriss/yii2-adminlte-iframe-mode": "^1.1",
+    "kriss/yii2-common-class": "^1.7",
+    "kriss/yii2-filesystem-qiniu": "^1.0",
+    "kriss/yii2-log-reader": "^2.2",
+    "vlucas/phpdotenv": "^2.4",
+    "yiisoft/yii2": "2.0.15.1",
+    "yiisoft/yii2-bootstrap": "^2.0",
+    "yiisoft/yii2-redis": "^2.0"
+  },
+  "require-dev": {
+    "yiisoft/yii2-debug": "^2.0",
+    "yiisoft/yii2-gii": "^2.0"
+  },
+  "config": {
+    "process-timeout": 1800,
+    "sort-packages": true
+  },
+  "extra": {
+    "npm-asset-repository": "https://registry.npm.taobao.org"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ]
 }

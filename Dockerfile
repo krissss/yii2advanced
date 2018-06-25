@@ -6,7 +6,7 @@ WORKDIR /app
 # 复制代码到项目目录
 COPY . /app
 # 项目配置
-COPY ./docker/env-project /app/.env-project
+COPY ./docker/.env-project /app/.env-project
 # php
 COPY ./docker/php/php.ini /usr/local/etc/php
 # supervisor

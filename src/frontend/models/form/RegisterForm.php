@@ -2,11 +2,12 @@
 
 namespace frontend\models\form;
 
+use common\components\Tools;
 use common\models\User;
 use kriss\components\CellphoneValidator;
 use yii\base\Model;
 
-class LoginForm extends Model
+class RegisterForm extends Model
 {
     public $cellphone;
     public $password;
@@ -28,21 +29,22 @@ class LoginForm extends Model
     }
 
     /**
-     * 登录
+     * 注册
      * @return false|User
      */
-    public function login()
+    public function register()
     {
         $user = User::find()->where(['cellphone' => $this->cellphone])->one();
-        if (!$user) {
-            $this->addError('cellphone', '手机号不存在');
+        if ($user) {
+            $this->addError('cellphone', '手机号已被注册');
             return false;
         }
-        if (!$user->validatePassword($this->password)) {
-            $this->addError('password', '手机号或密码不正确');
-            return false;
-        }
+        $user = new User();
+        $user->cellphone = $this->cellphone;
+        $user->setPassword($this->password);
+        $user->auth_key = Tools::generateRandString();
         $user->refreshAccessToken(true);
+        $user->refresh();
         return $user;
     }
 }

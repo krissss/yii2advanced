@@ -15,6 +15,4 @@ docker-compose exec docker-yii2-env php yii init/init-data
 docker-compose exec docker-yii2-env php yii init-auth/restore
 ```
 
-前台：12345678910/123456
-
 后台：admin/123456

@@ -21,6 +21,7 @@ class m171102_084733_init_user extends \console\migrations\Migration
             'password_hash' => $this->string()->notNull()->comment('密码'),
             'name' => $this->string()->notNull()->comment('姓名'),
             'auth_key' => $this->string()->notNull()->comment('Auth Key'),
+            'access_toke' => $this->string()->unique()->comment('Access Token'),
         ], $this->commonColumns([
             'status', 'created_at', 'updated_at',
         ])

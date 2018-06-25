@@ -5,7 +5,6 @@ namespace common\models;
 use common\components\Tools;
 use common\models\base\ActiveRecord;
 use kriss\components\CellphoneValidator;
-use yii\base\NotSupportedException;
 use yii\web\IdentityInterface;
 
 /**
@@ -16,6 +15,7 @@ use yii\web\IdentityInterface;
  * @property string $password_hash
  * @property string $name
  * @property string $auth_key
+ * @property string $access_token
  * @property integer $status
  * @property integer $created_at
  * @property integer $updated_at
@@ -49,7 +49,7 @@ class User extends ActiveRecord implements IdentityInterface
             [['cellphone', 'password_hash', 'name', 'auth_key'], 'required'],
             [['status', 'created_at', 'updated_at'], 'integer'],
             [['cellphone'], 'string', 'max' => 11],
-            [['password_hash', 'name', 'auth_key'], 'string', 'max' => 255],
+            [['password_hash', 'name', 'auth_key', 'access_token'], 'string', 'max' => 255],
             [['cellphone'], 'unique'],
             [['cellphone'], CellphoneValidator::class],
         ];
@@ -66,10 +66,20 @@ class User extends ActiveRecord implements IdentityInterface
             'password_hash' => '密码',
             'name' => '姓名',
             'auth_key' => 'Auth Key',
+            'access_token' => 'Access Token',
             'status' => '状态',
             'created_at' => '创建时间',
             'updated_at' => '修改时间',
         ];
+    }
+
+    public function fields()
+    {
+        $fields = parent::fields();
+
+        unset($fields['auth_key'], $fields['password_hash']);
+
+        return $fields;
     }
 
     /**
@@ -77,7 +87,7 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public function getStatusName()
     {
-        return $this->toName($this->status, self::$statusData);
+        return $this->toName($this->status, static::$statusData);
     }
 
     /**
@@ -85,7 +95,7 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public static function findIdentity($id)
     {
-        return self::findOne($id);
+        return static::findOne($id);
     }
 
     /**
@@ -93,7 +103,7 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public static function findIdentityByAccessToken($token, $type = null)
     {
-        throw new NotSupportedException();
+        return static::findOne(['access_token' => $token]);
     }
 
     /**
@@ -129,6 +139,14 @@ class User extends ActiveRecord implements IdentityInterface
     }
 
     /**
+     * 生成auth_key
+     */
+    public function generateAccessToken()
+    {
+        $this->access_token = Tools::generateRandString();
+    }
+
+    /**
      * 设置密码
      * @param $password
      */
@@ -145,5 +163,17 @@ class User extends ActiveRecord implements IdentityInterface
     public function validatePassword($password)
     {
         return Tools::validatePassword($password, $this->password_hash);
+    }
+
+    /**
+     * 重新刷新 accessToken
+     * @param bool $save
+     */
+    public function refreshAccessToken($save = true)
+    {
+        $this->access_token = Tools::generateRandString();
+        if ($save) {
+            $this->save(false);
+        }
     }
 }

@@ -2,9 +2,9 @@
 
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => getenv('BD_DSN'),
-    'username' => getenv('BD_USERNAME'),
-    'password' => getenv('BD_PASSWORD'),
+    'dsn' => getenv('DB_DSN'),
+    'username' => getenv('DB_USERNAME'),
+    'password' => getenv('DB_PASSWORD'),
     'charset' => 'utf8',
     'enableSchemaCache' => true,
     'schemaCacheDuration' => 60,

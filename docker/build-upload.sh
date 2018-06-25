@@ -13,7 +13,7 @@ docker login --username=$dockerUserName --password-stdin $dockerServer
 tagImage="${imageRegistry}:${tag}"
 lastImage="${imageRegistry}:latest"
 
-docker build -t $tagImage .
+docker build -t $tagImage ../
 if [ $? -eq 0 ];then
   echo "镜像构建成功"
 else

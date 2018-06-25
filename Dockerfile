@@ -4,15 +4,15 @@ FROM daocloud.io/krissss/docker-yii2:php7.0.12-v1.0
 WORKDIR /app
 
 # 复制代码到项目目录
-COPY ../ /app
+COPY . /app
 # 项目配置
-COPY ./env-project /app/.env-project
+COPY ./docker/env-project /app/.env-project
 # php
-COPY ./php/php.ini /usr/local/etc/php
+COPY ./docker/php/php.ini /usr/local/etc/php
 # supervisor
-COPY ./supervisor/*.conf /etc/supervisor/conf.d/
+COPY ./docker/supervisor/*.conf /etc/supervisor/conf.d/
 # nginx
-COPY ./nginx/vhost.conf /etc/nginx/conf.d/vhost.conf
+COPY ./docker/nginx/vhost.conf /etc/nginx/conf.d/vhost.conf
 
 # 定义环境变量
 ENV YII_MIGRATION_DO=1 \

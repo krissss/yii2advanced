@@ -5,7 +5,7 @@
     "dmstr/yii2-adminlte-asset": "^2.6",
     "kartik-v/yii2-datecontrol": "^1.9",
     "kartik-v/yii2-dynagrid": "^1.4.7",
-    "kriss/yii2-adminlte-iframe-mode": "^1.1",
+    "kriss/yii2-adminlte-iframe-mode": "^1.2",
     "kriss/yii2-common-class": "^1.7",
     "kriss/yii2-filesystem-qiniu": "^1.0",
     "kriss/yii2-log-reader": "^2.2",

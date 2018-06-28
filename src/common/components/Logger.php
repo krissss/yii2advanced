@@ -37,6 +37,6 @@ class Logger
     public static function getCommonLogDir($category)
     {
         $date = date('Ymd');
-        return "@runtime/common/logs/{$category}/{$category}.log.{$date}";
+        return "@runtimePath/common/logs/{$category}/{$category}.log.{$date}";
     }
 }

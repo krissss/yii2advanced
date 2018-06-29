@@ -1065,16 +1065,16 @@
         },
         {
             "name": "kriss/yii2-common-class",
-            "version": "v1.7.4",
+            "version": "v1.7.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/krissss/yii2-common-tools.git",
-                "reference": "5da03fa0b1ee953cd5b2b00ec360c2229aadeef1"
+                "reference": "3e2fc558d9801244aafd42e74032eb50748528e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/krissss/yii2-common-tools/zipball/5da03fa0b1ee953cd5b2b00ec360c2229aadeef1",
-                "reference": "5da03fa0b1ee953cd5b2b00ec360c2229aadeef1",
+                "url": "https://api.github.com/repos/krissss/yii2-common-tools/zipball/3e2fc558d9801244aafd42e74032eb50748528e6",
+                "reference": "3e2fc558d9801244aafd42e74032eb50748528e6",
                 "shasum": ""
             },
             "require": {
@@ -1112,7 +1112,7 @@
             "keywords": [
                 "yii2"
             ],
-            "time": "2018-06-12T07:56:33+00:00"
+            "time": "2018-06-29T01:39:28+00:00"
         },
         {
             "name": "kriss/yii2-filesystem-qiniu",

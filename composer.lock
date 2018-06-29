@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e961ad9d275ab097853c0cd7b641ff39",
+    "content-hash": "a9037ca59803cf5fe4cce0fe988adfc7",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -1022,16 +1022,16 @@
         },
         {
             "name": "kriss/yii2-adminlte-iframe-mode",
-            "version": "v1.2",
+            "version": "v1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/krissss/yii2-adminlte-iframe-mode.git",
-                "reference": "ad87240b7be4b4666517c5437876b5ed3180358d"
+                "reference": "09518de1de07ae954738137d6f215c410a47247e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/krissss/yii2-adminlte-iframe-mode/zipball/ad87240b7be4b4666517c5437876b5ed3180358d",
-                "reference": "ad87240b7be4b4666517c5437876b5ed3180358d",
+                "url": "https://api.github.com/repos/krissss/yii2-adminlte-iframe-mode/zipball/09518de1de07ae954738137d6f215c410a47247e",
+                "reference": "09518de1de07ae954738137d6f215c410a47247e",
                 "shasum": ""
             },
             "require": {
@@ -1061,7 +1061,7 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2018-06-27T09:13:39+00:00"
+            "time": "2018-06-28T02:59:43+00:00"
         },
         {
             "name": "kriss/yii2-common-class",

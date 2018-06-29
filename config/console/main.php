@@ -3,7 +3,7 @@
 return [
     'id' => 'app-console',
     'basePath' => '@console',
-    'runtimePath' => '@runtime/console',
+    'runtimePath' => '@runtimePath/console',
     'bootstrap' => ['log'],
     'controllerNamespace' => 'console\controllers',
     'aliases' => [

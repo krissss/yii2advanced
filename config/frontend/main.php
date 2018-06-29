@@ -3,7 +3,7 @@
 $config = [
     'id' => 'app-frontend',
     'basePath' => '@frontend',
-    'runtimePath' => '@runtime/frontend',
+    'runtimePath' => '@runtimePath/frontend',
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
     // 网站维护，打开以下注释

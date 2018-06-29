@@ -26,5 +26,7 @@ return [
         ],
         // 记录必须解决的错误的日志
         getLogFileConfig(ConfigString::CATEGORY_NEED_SOLVED),
+        // 记录轮询操作的日志
+        getLogFileConfig(ConfigString::CATEGORY_QUEUE_JOB),
     ]
 ];

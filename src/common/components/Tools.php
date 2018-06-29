@@ -3,6 +3,7 @@
 namespace common\components;
 
 use kriss\tools\Fun;
+use Yii;
 
 class Tools extends Fun
 {
@@ -28,5 +29,19 @@ class Tools extends Fun
             return true;
         }
         return self::generatePasswordHash($password) === $passwordHash;
+    }
+
+    /**
+     * 在后台执行 console 下 controller 中的方法
+     * @param $yiiCmd
+     * @param null $yiiExecFile
+     * @param null $phpExecFile
+     */
+    public static function runYiiConsoleInBackground($yiiCmd, $yiiExecFile = null, $phpExecFile = null)
+    {
+        if ($yiiExecFile === null) {
+            $yiiExecFile = dirname(dirname(Yii::getAlias('@console'))) . DIRECTORY_SEPARATOR . 'yii';
+        }
+        parent::runYiiConsoleInBackground($yiiCmd, $yiiExecFile, $phpExecFile);
     }
 }

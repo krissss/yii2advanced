@@ -15,6 +15,7 @@ class ConfigString
 
     // log category
     const CATEGORY_NEED_SOLVED = 'need-solved';
+    const CATEGORY_QUEUE_JOB = 'queue-job';
 
     /**
      * @return null|object|QiNiu

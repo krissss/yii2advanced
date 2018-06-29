@@ -19,6 +19,16 @@ class Logger
     }
 
     /**
+     * 记录必须解决的日志
+     * @param $msg
+     * @param string $type
+     */
+    public static function queueJob($msg, $type = 'info')
+    {
+        static::write($msg, $type, ConfigString::CATEGORY_QUEUE_JOB);
+    }
+
+    /**
      * 写入日志
      * @param $msg
      * @param $type

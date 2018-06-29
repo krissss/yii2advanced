@@ -1,7 +1,6 @@
 <?php
 
 use common\models\Admin;
-use common\models\base\ConfigString;
 
 $modules = require __DIR__ . '/modules.php';
 
@@ -28,10 +27,6 @@ $config = [
         ],
         'session' => [
             'name' => 'back-session',
-            'class' => 'yii\redis\Session',
-            'redis' => ConfigString::COMPONENT_SESSION_REDIS,
-            'keyPrefix' => 'app_bs_',
-            'timeout' => 6 * 3600
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',

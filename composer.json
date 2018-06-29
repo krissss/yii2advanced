@@ -11,8 +11,7 @@
     "kriss/yii2-log-reader": "^2.2",
     "vlucas/phpdotenv": "^2.4",
     "yiisoft/yii2": "2.0.15.1",
-    "yiisoft/yii2-bootstrap": "^2.0",
-    "yiisoft/yii2-redis": "^2.0"
+    "yiisoft/yii2-bootstrap": "^2.0"
   },
   "require-dev": {
     "yiisoft/yii2-debug": "^2.0",

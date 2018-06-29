@@ -8,9 +8,6 @@ use Yii;
 class ConfigString
 {
     // component
-    const COMPONENT_REDIS = 'redis';
-    const COMPONENT_CACHE_REDIS = 'cache_redis';
-    const COMPONENT_SESSION_REDIS = 'session_redis';
     const COMPONENT_QI_NIU = 'qi_niu';
 
     // log category

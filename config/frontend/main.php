@@ -1,7 +1,5 @@
 <?php
 
-use common\models\base\ConfigString;
-
 $config = [
     'id' => 'app-frontend',
     'basePath' => '@frontend',
@@ -35,14 +33,6 @@ $config = [
         ],
         'session' => [
             'name' => 'front-session',
-            'class' => 'yii\redis\Session',
-            'redis' => ConfigString::COMPONENT_SESSION_REDIS,
-            'keyPrefix' => 'app_fs_',
-            'timeout' => 3 * 3600
-        ],
-        'log' => [
-            //'traceLevel' => YII_DEBUG ? 3 : 0,
-            'targets' => [],
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',

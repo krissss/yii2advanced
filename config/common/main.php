@@ -1,6 +1,5 @@
 <?php
 
-use common\models\base\ConfigString;
 use yii\helpers\ArrayHelper;
 
 $db = require __DIR__ . '/db.php';
@@ -22,8 +21,8 @@ return [
     'components' => ArrayHelper::merge([
         'db' => $db,
         'cache' => [
-            'class' => 'yii\redis\Cache',
-            'redis' => ConfigString::COMPONENT_CACHE_REDIS,
+            'class' => 'yii\caching\FileCache',
+            'cachePath' => '@runtimePath/common/cache'
         ],
         'log' => $logs,
         'assetManager' => $assetManager,

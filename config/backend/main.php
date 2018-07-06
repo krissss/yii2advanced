@@ -59,6 +59,9 @@ if (YII_ENV === 'dev') {
             'kriss Dynagrid' => [
                 'class' => \kriss\generators\dynagrid\Generator::class
             ],
+            'kriss Crud' => [
+                'class' => \kriss\generators\crud\Generator::class
+            ],
         ]
     ];
 }

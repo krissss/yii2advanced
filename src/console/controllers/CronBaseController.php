@@ -11,8 +11,8 @@ abstract class CronBaseController extends Controller
     public function actionIndex()
     {
         $sleep = $this->getSleepTime();
+        $name = $this->getName();
         while (true) {
-            $name = $this->getName();
             echo date('Y-m-d H:i:s') . ' ' . $name . '-轮询' . PHP_EOL;
             Tools::runYiiConsoleInBackground($this->id . '/do');
 

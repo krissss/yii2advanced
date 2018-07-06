@@ -2,7 +2,7 @@
 /** @var $this yii\web\view */
 /** @var $model backend\models\UserSearch */
 
-use backend\widgets\SimpleSearchForm;
+use kriss\widgets\SimpleSearchForm;
 
 $form = SimpleSearchForm::begin(['action' => ['index']]);
 

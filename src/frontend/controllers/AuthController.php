@@ -5,8 +5,8 @@ namespace frontend\controllers;
 use frontend\components\BaseRestController;
 use frontend\models\form\LoginForm;
 use frontend\models\form\RegisterForm;
+use kriss\actions\rest\crud\CommonFormAction;
 use kriss\behaviors\rest\PostVerbFilter;
-use Yii;
 
 class AuthController extends BaseRestController
 {
@@ -20,29 +20,23 @@ class AuthController extends BaseRestController
         ]);
     }
 
-    // 登录
-    public function actionLogin()
+    public function actions()
     {
-        $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post(), '') && $model->validate()) {
-            $user = $model->login();
-            if ($user) {
-                return $user;
-            }
-        }
-        return $model;
-    }
+        $actions = parent::actions();
 
-    // 注册
-    public function actionRegister()
-    {
-        $model = new RegisterForm();
-        if ($model->load(Yii::$app->request->post(), '') && $model->validate()) {
-            $user = $model->register();
-            if ($user) {
-                return $user;
-            }
-        }
-        return $model;
+        // 登录
+        $actions['login'] = [
+            'class' => CommonFormAction::class,
+            'modelClass' => LoginForm::class,
+            'doMethod' => 'login',
+        ];
+        // 注册
+        $actions['register'] = [
+            'class' => CommonFormAction::class,
+            'modelClass' => RegisterForm::class,
+            'doMethod' => 'register',
+        ];
+
+        return $actions;
     }
 }

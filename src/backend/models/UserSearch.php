@@ -2,8 +2,8 @@
 
 namespace backend\models;
 
-use common\components\ActiveDataProvider;
 use common\models\User;
+use yii\data\ActiveDataProvider;
 
 class UserSearch extends User
 {

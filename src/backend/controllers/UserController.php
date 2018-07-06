@@ -3,56 +3,55 @@
 namespace backend\controllers;
 
 use backend\components\AuthWebController;
-use kriss\components\MessageAlert;
 use backend\models\UserSearch;
 use common\models\User;
-use Yii;
-use yii\web\NotFoundHttpException;
+use kriss\actions\web\crud\CreateAction;
+use kriss\actions\web\crud\IndexAction;
+use kriss\actions\web\crud\ToggleAction;
+use kriss\actions\web\crud\UpdateAction;
+use kriss\actions\web\crud\ViewAction;
 
 class UserController extends AuthWebController
 {
-    // 列表
-    public function actionIndex()
+    public function actions()
     {
-        $this->rememberUrl();
+        $actions = parent::actions();
 
-        $searchModel = new UserSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        // 列表
+        $actions['index'] = [
+            'class' => IndexAction::class,
+            'searchModel' => UserSearch::class
+        ];
+        // 新增
+        $actions['create'] = [
+            'class' => CreateAction::class,
+            'modelClass' => User::class,
+            'isAjax' => true,
+            'view' => '_create_update',
+        ];
+        // 修改
+        $actions['update'] = [
+            'class' => UpdateAction::class,
+            'modelClass' => User::class,
+            'isAjax' => true,
+            'view' => '_create_update',
+        ];
+        // 详情
+        $actions['view'] = [
+            'class' => ViewAction::class,
+            'modelClass' => User::class,
+            'isAjax' => true,
+            'view' => '_view',
+        ];
+        // 修改状态
+        $actions['change-status'] = [
+            'class' => ToggleAction::class,
+            'modelClass' => User::class,
+            'attribute' => 'status',
+            'onValue' => User::STATUS_NORMAL,
+            'offValue' => User::STATUS_DISABLE,
+        ];
 
-        return $this->render('index', [
-            'dataProvider' => $dataProvider,
-            'searchModel' => $searchModel,
-        ]);
-    }
-
-    // 修改状态
-    public function actionChangeStatus($id, $status)
-    {
-        $model = $this->findModel($id);
-        if (
-            ($model->status == User::STATUS_NORMAL && $status == User::STATUS_DISABLE)
-            || ($model->status == User::STATUS_DISABLE && $status == User::STATUS_NORMAL)
-        ) {
-            $model->status = $status;
-            $model->save(false);
-            MessageAlert::success('操作成功');
-        } else {
-            MessageAlert::error('当前状态下操作失败');
-        }
-        return $this->actionPreviousRedirect();
-    }
-
-    /**
-     * @param $id
-     * @return User
-     * @throws NotFoundHttpException
-     */
-    protected function findModel($id)
-    {
-        $model = User::findOne($id);
-        if (!$model) {
-            throw new NotFoundHttpException();
-        }
-        return $model;
+        return $actions;
     }
 }

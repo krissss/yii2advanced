@@ -1,10 +1,11 @@
 <?php
-/** @var $this \yii\web\View */
-/** @var $model \common\models\Admin */
+/** @var $this yii\web\View */
+/** @var $model common\models\Admin */
 
-use backend\widgets\SimpleAjaxForm;
+use kriss\widgets\SimpleAjaxForm;
 
-$form = SimpleAjaxForm::begin(['header' => ($model->isNewRecord ? '创建' : '修改') . '管理员']);
+$this->title = ($model->isNewRecord ? '创建' : '修改') . '管理员';
+$form = SimpleAjaxForm::begin(['header' => $this->title]);
 
 echo $form->field($model, 'username');
 echo $form->field($model, 'name')->label('姓名');

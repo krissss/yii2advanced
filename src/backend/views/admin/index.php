@@ -1,18 +1,23 @@
 <?php
 /** @var $this yii\web\View */
-/** @var $dataProvider common\components\ActiveDataProvider */
 
-use backend\widgets\SimpleDynaGrid;
-use yii\helpers\Html;
+/** @var $dataProvider */
+
 use common\models\Admin;
+use kriss\widgets\ActionColumn;
+use kriss\widgets\SimpleDynaGrid;
+use kriss\widgets\ToggleColumn;
+use yii\helpers\Html;
 
 $this->title = '管理员管理列表';
 $this->params['breadcrumbs'] = [
-    '管理员管理',
     $this->title,
 ];
 
 $columns = [
+    [
+        'attribute' => 'id',
+    ],
     [
         'attribute' => 'username',
     ],
@@ -20,58 +25,40 @@ $columns = [
         'attribute' => 'name',
     ],
     [
+        'class' => ToggleColumn::class,
         'attribute' => 'status',
-        'value' => function (Admin $model) {
-            return $model->getStatusName();
+        'action' => 'change-status',
+        'items' => [
+            Admin::STATUS_NORMAL => '正常',
+            Admin::STATUS_DISABLE => '禁用',
+        ],
+        'onValue' => Admin::STATUS_NORMAL,
+        'offValue' => Admin::STATUS_DISABLE,
+        'canOperate' => function (Admin $model) {
+            return $model->id != Admin::SUPER_ADMIN_ID;
         }
     ],
     [
-        'class' => '\kartik\grid\ActionColumn',
-        'width' => '300px',
-        'template' => '{update} {update-role} {reset-password} {change-status}',
-        'buttons' => [
-            'update' => function ($url, Admin $model) {
-                if ($model->id == Admin::SUPER_ADMIN_ID) {
-                    return '';
+        'class' => ActionColumn::class,
+        'groupButtons' => [
+            [
+                'action' => 'update', 'label' => '更新', 'cssClass' => 'show_ajax_modal',
+                'visible' => function (Admin $model) {
+                    return $model->id != Admin::SUPER_ADMIN_ID;
                 }
-                $options = [
-                    'class' => 'btn btn-default show_ajax_modal',
-                ];
-                return Html::a('更新', $url, $options);
-            },
-            'update-role' => function ($url, $model) {
-                if ($model->id != Admin::SUPER_ADMIN_ID && $model->id != Yii::$app->user->id) {
-                    $options = [
-                        'class' => 'btn btn-warning show_ajax_modal',
-                    ];
-                    return Html::a('授权', $url, $options);
+            ],
+            [
+                'action' => 'reset-password', 'label' => '重置密码', 'type' => 'danger', 'cssClass' => 'show_ajax_modal',
+                'visible' => function (Admin $model) {
+                    return $model->id != Admin::SUPER_ADMIN_ID && $model->id != Yii::$app->user->id;
                 }
-                return '';
-            },
-            'change-status' => function ($url, Admin $model) {
-                if ($model->id == Admin::SUPER_ADMIN_ID) {
-                    return '';
+            ],
+            [
+                'action' => 'update-role', 'label' => '授权', 'type' => 'warning', 'cssClass' => 'show_ajax_modal',
+                'visible' => function (Admin $model) {
+                    return $model->id != Admin::SUPER_ADMIN_ID && $model->id != Yii::$app->user->id;
                 }
-                $options = [
-                    'class' => 'btn btn-danger',
-                    'data-method' => 'post'
-                ];
-                if ($model->status == Admin::STATUS_NORMAL) {
-                    return Html::a('禁用', ['change-status', 'id' => $model->id, 'status' => Admin::STATUS_DISABLE], $options);
-                } elseif ($model->status == Admin::STATUS_DISABLE) {
-                    return Html::a('恢复', ['change-status', 'id' => $model->id, 'status' => Admin::STATUS_NORMAL], $options);
-                }
-                return '';
-            },
-            'reset-password' => function ($url, Admin $model) {
-                if ($model->id == Admin::SUPER_ADMIN_ID) {
-                    return '';
-                }
-                $options = [
-                    'class' => 'btn btn-danger show_ajax_modal',
-                ];
-                return Html::a('重置密码', $url, $options);
-            },
+            ],
         ],
     ],
 ];
@@ -82,7 +69,7 @@ $simpleDynaGrid = new SimpleDynaGrid([
     'dataProvider' => $dataProvider,
     'extraToolbar' => [
         [
-            'content' => Html::a('新增', ['create'], ['class' => 'btn btn-default show_ajax_modal'])
+            'content' => Html::a('新增', ['create'], ['class' => 'btn btn-primary show_ajax_modal'])
         ]
     ]
 ]);

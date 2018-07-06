@@ -43,8 +43,13 @@ class RegisterForm extends Model
         $user->cellphone = $this->cellphone;
         $user->setPassword($this->password);
         $user->auth_key = Tools::generateRandString();
-        $user->refreshAccessToken(true);
-        $user->refresh();
-        return $user;
+        $user->name = Tools::generateRandString(8);
+        if ($user->validate()) {
+            $user->refreshAccessToken(true);
+            $user->refresh();
+            return $user;
+        }
+        $this->addError('xxx', Tools::getFirstError($user->errors));
+        return false;
     }
 }

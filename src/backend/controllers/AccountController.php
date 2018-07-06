@@ -4,19 +4,23 @@ namespace backend\controllers;
 
 use backend\components\AuthWebController;
 use backend\models\form\ModifyPasswordForm;
-use Yii;
-use yii\helpers\Url;
+use kriss\actions\web\crud\CommonFormAction;
 
 class AccountController extends AuthWebController
 {
-    public function actionModifyPassword(){
-        $modifyPasswordForm = new ModifyPasswordForm();
-        if ($modifyPasswordForm->load(Yii::$app->request->post()) && $modifyPasswordForm->validate()) {
-            $modifyPasswordForm->modifyPassword();
-            return $this->redirect(Url::to(['/site/login']));
-        }
-        return $this->render('modify-password', [
-            'model' => $modifyPasswordForm
-        ]);
+    public function actions()
+    {
+        $actions = parent::actions();
+
+        $actions['modify-password'] = [
+            'class' => CommonFormAction::class,
+            'modelClass' => ModifyPasswordForm::class,
+            'doMethod' => 'modifyPassword',
+            //'view' => 'modify-password',
+            'operateMsg' => '修改密码',
+            'successRedirect' => ['/site/login']
+        ];
+
+        return $actions;
     }
 }

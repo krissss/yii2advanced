@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a9037ca59803cf5fe4cce0fe988adfc7",
+    "content-hash": "8fc44af5205c63650d6d36d4ec91616c",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -1065,16 +1065,16 @@
         },
         {
             "name": "kriss/yii2-common-class",
-            "version": "v1.7.5",
+            "version": "v2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/krissss/yii2-common-tools.git",
-                "reference": "3e2fc558d9801244aafd42e74032eb50748528e6"
+                "reference": "286dfc06e3b7187d4dfffec5b870242bccfc8e9e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/krissss/yii2-common-tools/zipball/3e2fc558d9801244aafd42e74032eb50748528e6",
-                "reference": "3e2fc558d9801244aafd42e74032eb50748528e6",
+                "url": "https://files.phpcomposer.com/files/krissss/yii2-common-tools/286dfc06e3b7187d4dfffec5b870242bccfc8e9e.zip",
+                "reference": "286dfc06e3b7187d4dfffec5b870242bccfc8e9e",
                 "shasum": ""
             },
             "require": {
@@ -1082,14 +1082,6 @@
                 "kartik-v/yii2-datecontrol": "^1.9",
                 "kartik-v/yii2-dynagrid": "^1.4",
                 "yiisoft/yii2": "~2.0.6"
-            },
-            "suggest": {
-                "2amigos/yii2-ckeditor-widget": "^2.0",
-                "kartik-v/yii2-export": "^1.2",
-                "kartik-v/yii2-field-range": "^1.3",
-                "kartik-v/yii2-widget-datetimepicker": "^1.4",
-                "kartik-v/yii2-widget-fileinput": "^1.0",
-                "kriss/yii2-wang-editor": "^1.0"
             },
             "type": "yii2-extension",
             "autoload": {
@@ -1112,7 +1104,7 @@
             "keywords": [
                 "yii2"
             ],
-            "time": "2018-06-29T01:39:28+00:00"
+            "time": "2018-07-05T13:59:13+00:00"
         },
         {
             "name": "kriss/yii2-filesystem-qiniu",

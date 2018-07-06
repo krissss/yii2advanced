@@ -11,17 +11,19 @@ class ModifyPasswordForm extends Model
     public $newPassword;
     public $newPasswordAgain;
 
-    public function rules() {
+    public function rules()
+    {
         return [
             [['password', 'newPassword', 'newPasswordAgain'], 'required'],
             [['newPassword', 'newPasswordAgain'], 'string', 'min' => 6, 'max' => 16],
-            [['newPassword'], 'match', 'pattern' => '/^[0-9]*[A-Za-z_!@#$%^&*()~+|]{1,}[0-9]*$/i', 'message' => '新密码过于简单'],
+            //[['newPassword'], 'match', 'pattern' => '/^[0-9]*[A-Za-z_!@#$%^&*()~+|]{1,}[0-9]*$/i', 'message' => '新密码过于简单'],
             [['newPasswordAgain'], 'compare', 'compareAttribute' => 'newPassword', 'message' => '两次密码输入不一致'],
             [['password'], 'validatePassword'],
         ];
     }
 
-    public function attributeLabels() {
+    public function attributeLabels()
+    {
         return [
             'password' => '原密码',
             'newPassword' => '新密码',
@@ -29,7 +31,8 @@ class ModifyPasswordForm extends Model
         ];
     }
 
-    public function validatePassword($attribute) {
+    public function validatePassword($attribute)
+    {
         /** @var $admin \common\models\Admin */
         $admin = Yii::$app->user->getIdentity();
         if (!$admin->validatePassword($this->password)) {
@@ -37,11 +40,13 @@ class ModifyPasswordForm extends Model
         }
     }
 
-    public function modifyPassword() {
+    public function modifyPassword()
+    {
         /** @var $admin \common\models\Admin */
         $admin = Yii::$app->user->getIdentity();
         $admin->setPassword($this->newPassword);
         $admin->save(false);
         Yii::$app->user->logout();
+        return true;
     }
 }

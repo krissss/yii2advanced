@@ -3,7 +3,7 @@
   "description": "Yii2 advanced project template, Frontend for API and Backend with AdminLTE",
   "keywords": ["yii2", "advanced", "project template"],
   "type": "project",
-  "license": "MIT License",
+  "license": "MIT",
   "authors": [
     {
       "name": "kriss",

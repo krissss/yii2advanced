@@ -12,6 +12,7 @@ class AccountController extends AuthWebController
     {
         $actions = parent::actions();
 
+        // 修改密码
         $actions['modify-password'] = [
             'class' => CommonFormAction::class,
             'modelClass' => ModifyPasswordForm::class,

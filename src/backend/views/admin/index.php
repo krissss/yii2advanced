@@ -1,6 +1,5 @@
 <?php
 /** @var $this yii\web\View */
-
 /** @var $dataProvider */
 
 use common\models\Admin;

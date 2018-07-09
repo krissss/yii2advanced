@@ -1,5 +1,20 @@
 {
+  "name": "kriss/yii2-advanced",
+  "description": "Yii2 advanced project template, Frontend for API and Backend with AdminLTE",
+  "keywords": ["yii2", "advanced", "project template"],
+  "type": "project",
+  "license": "MIT License",
+  "authors": [
+    {
+      "name": "kriss",
+      "email": "462679766@qq.com"
+    }
+  ],
+  "support": {
+    "source": "https://github.com/krissss/yii2advanced"
+  },
   "minimum-stability": "stable",
+  "prefer-stable": true,
   "require": {
     "php": ">=7.0",
     "dmstr/yii2-adminlte-asset": "^2.6",
@@ -19,10 +34,14 @@
   },
   "config": {
     "process-timeout": 1800,
-    "sort-packages": true
+    "sort-packages": true,
+    "optimize-autoloader": true
   },
   "extra": {
     "npm-asset-repository": "https://registry.npm.taobao.org"
+  },
+  "scripts": {
+    "post-create-project-cmd": "php -r \"file_exists('.env-project') || copy('.env-project-example', '.env-project');\""
   },
   "repositories": {
     "composer": {

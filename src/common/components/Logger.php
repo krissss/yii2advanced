@@ -19,7 +19,7 @@ class Logger
     }
 
     /**
-     * 记录必须解决的日志
+     * 记录轮询脚本的日志
      * @param $msg
      * @param string $type
      */

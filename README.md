@@ -8,6 +8,8 @@ php yii init/init-data
 php yii init-auth/restore
 ```
 
+backend: admin/123456
+
 ## use docker-compose
 
 ```bash

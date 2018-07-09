@@ -5,7 +5,6 @@ services:
     image: daocloud.io/krissss/docker-yii2:${DOCKER_YII2_VERSION}
     ports:
       - 8088:80
-      - 8089:81
     volumes:
       - ${DOCKER_APP_PATH}:/app
       - ${DOCKER_APP_PATH}/docker/nginx:/etc/nginx/conf.d:ro

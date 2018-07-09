@@ -20,7 +20,6 @@ ENV YII_MIGRATION_DO=1 \
 
 # 暴露前后台端口
 EXPOSE 80
-EXPOSE 81
 
 # 修改目录权限
 RUN set -ex \

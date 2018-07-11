@@ -9,11 +9,11 @@ defined('YII_ENV') or define('YII_ENV', getenv('YII_ENV'));
 
 require __DIR__ . '/../../vendor/yiisoft/yii2/Yii.php';
 require __DIR__ . '/../../config/common/bootstrap.php';
-require __DIR__ . '/../../config/backend/bootstrap.php';
+require __DIR__ . '/../../config/admin/bootstrap.php';
 
 $config = yii\helpers\ArrayHelper::merge(
     require __DIR__ . '/../../config/common/main.php',
-    require __DIR__ . '/../../config/backend/main.php'
+    require __DIR__ . '/../../config/admin/main.php'
 );
 
 (new yii\web\Application($config))->run();

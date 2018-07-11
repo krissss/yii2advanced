@@ -29,6 +29,10 @@ p {
   padding: 4px 8px;
 }
 
+.kv-panel-before .summary {
+  padding: 5px 4px;
+}
+
 .form-control,
 .select2-container--default .select2-selection--single, .select2-selection .select2-selection--single {
   height: 30px;
@@ -82,4 +86,8 @@ p {
 .main-header .navbar,
 .content-wrapper, .main-footer {
   margin-left: 210px;
+}
+
+.iframe-content-wrapper {
+  margin-left: 0;
 }

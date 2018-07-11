@@ -6,6 +6,7 @@ use \kartik\datecontrol\Module as DateControlModule;
 
 $logReaderCategories = [
     ConfigString::CATEGORY_NEED_SOLVED,
+    ConfigString::CATEGORY_QUEUE_JOB,
 ];
 $moreLogReaderAliases = [];
 foreach ($logReaderCategories as $logReaderCategory) {

@@ -1,7 +1,7 @@
 $(function () {
   var body = $("body");
+  var csrfParam = $('meta[name="csrf-param"]').attr("content");
   var csrfToken = $('meta[name="csrf-token"]').attr("content");
-  var csrfParam = '_csrf-backend'; // 请根据 config 的 request 的 csrfParam 调整
 
   /**
    * 自定义ajax方法

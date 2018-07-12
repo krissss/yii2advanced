@@ -250,7 +250,7 @@ td.kv-row-select {
 .input-group-addon,
 .form-control {
   height: 32px;
-  padding: 4px 12px !important;
+  padding: 4px 12px;
 }
 
 .btn,

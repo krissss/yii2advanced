@@ -30,8 +30,10 @@ $config = [
             },
         ],
         'user' => [
+            'class' => 'yii\web\User',
             'identityClass' => 'common\models\User',
-            'enableAutoLogin' => true,
+            'enableAutoLogin' => false,
+            'enableSession' => false,
             'identityCookie' => ['name' => "_identity-{$moduleName}", 'httpOnly' => true],
         ],
         'session' => [

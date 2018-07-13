@@ -35,6 +35,8 @@ class AdminController extends AuthWebController
         $actions['create'] = [
             'class' => CreateAction::class,
             'modelClass' => Admin::class,
+            'isAjax' => true,
+            'view' => '_create_update',
             'beforeValidateCallback' => function (Admin $model) {
                 $model->generateAuthKey();
                 $model->setPassword($model->password_hash);
@@ -44,6 +46,8 @@ class AdminController extends AuthWebController
         $actions['update'] = [
             'class' => UpdateAction::class,
             'modelClass' => Admin::class,
+            'isAjax' => true,
+            'view' => '_create_update',
         ];
         // 重置密码
         $actions['reset-password'] = [

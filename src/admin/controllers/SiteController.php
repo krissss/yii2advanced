@@ -3,13 +3,13 @@
 namespace admin\controllers;
 
 use admin\components\BaseWebController;
+use admin\models\form\LoginForm;
 use common\models\Admin;
 use kriss\actions\web\ErrorAction;
 use kriss\actions\web\OfflineAction;
 use kriss\iframeLayout\IframeModeChangeAction;
 use Yii;
 use yii\filters\VerbFilter;
-use admin\models\form\LoginForm;
 
 class SiteController extends BaseWebController
 {

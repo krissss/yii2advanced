@@ -17,7 +17,8 @@ class AccountController extends AuthWebController
             'class' => CommonFormAction::class,
             'modelClass' => ModifyPasswordForm::class,
             'doMethod' => 'modifyPassword',
-            //'view' => 'modify-password',
+            'isAjax' => false,
+            'view' => 'modify_password',
             'operateMsg' => '修改密码',
             'successRedirect' => ['/site/login']
         ];

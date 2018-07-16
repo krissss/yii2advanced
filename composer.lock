@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a73fead20ac5a4062c93a7627b3ff521",
+    "content-hash": "dc8cd64bee598514b0bfa3f097e1afb6",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -1065,16 +1065,16 @@
         },
         {
             "name": "kriss/yii2-common-class",
-            "version": "v2.0.4",
+            "version": "v2.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/krissss/yii2-common-tools.git",
-                "reference": "14e9ad7e62417993a23cb00f72b7de88e9eb8972"
+                "reference": "041f57a5b4d4684622d79e54c7bc2d0810df6669"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/krissss/yii2-common-tools/14e9ad7e62417993a23cb00f72b7de88e9eb8972.zip",
-                "reference": "14e9ad7e62417993a23cb00f72b7de88e9eb8972",
+                "url": "https://api.github.com/repos/krissss/yii2-common-tools/zipball/041f57a5b4d4684622d79e54c7bc2d0810df6669",
+                "reference": "041f57a5b4d4684622d79e54c7bc2d0810df6669",
                 "shasum": ""
             },
             "require": {
@@ -1104,7 +1104,7 @@
             "keywords": [
                 "yii2"
             ],
-            "time": "2018-07-12T08:24:21+00:00"
+            "time": "2018-07-13T08:36:39+00:00"
         },
         {
             "name": "kriss/yii2-filesystem-qiniu",

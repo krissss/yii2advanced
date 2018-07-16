@@ -1,7 +1,11 @@
 {
   "name": "kriss/yii2-advanced",
   "description": "Yii2 advanced project template, Frontend for API and Backend with AdminLTE",
-  "keywords": ["yii2", "advanced", "project template"],
+  "keywords": [
+    "yii2",
+    "advanced",
+    "project template"
+  ],
   "type": "project",
   "license": "MIT",
   "authors": [

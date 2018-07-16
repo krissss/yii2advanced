@@ -42,11 +42,18 @@ class Logger
     /**
      * 获取日志存储路径
      * @param $category
+     * @param bool $noDate
      * @return string
      */
-    public static function getCommonLogDir($category)
+    public static function getCommonLogDir($category, $noDate = false)
     {
-        $date = date('Ymd');
-        return "@runtimePath/common/logs/{$category}/{$category}.log.{$date}";
+
+        $log = "@runtimePath/common/logs/{$category}/{$category}.log";
+        if ($noDate) {
+            return $log;
+        } else {
+            $date = date('Ymd');
+            return $log . ".{$date}";
+        }
     }
 }

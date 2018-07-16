@@ -10,7 +10,7 @@ $logReaderCategories = [
 ];
 $moreLogReaderAliases = [];
 foreach ($logReaderCategories as $logReaderCategory) {
-    $moreLogReaderAliases[$logReaderCategory] = Logger::getCommonLogDir($logReaderCategory);
+    $moreLogReaderAliases[$logReaderCategory] = Logger::getCommonLogDir($logReaderCategory, true);
 }
 
 return [

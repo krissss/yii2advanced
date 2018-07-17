@@ -73,8 +73,8 @@ return [
         'class' => 'kriss\logReader\Module',
         'as login_filter' => \kriss\behaviors\web\UserLoginFilter::class,
         'aliases' => array_merge([
-            'frontend' => '@frontend/runtime/logs/app.log',
-            'backend' => '@backend/runtime/logs/app.log',
+            'api' => '@api/runtime/logs/app.log',
+            'admin' => '@admin/runtime/logs/app.log',
             'console' => '@console/runtime/logs/app.log',
         ], $moreLogReaderAliases),
     ],

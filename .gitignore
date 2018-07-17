@@ -39,3 +39,6 @@ phpunit.phar
 # .env
 /.env
 /.env-project
+
+# php cs fix
+.php_cs.cache

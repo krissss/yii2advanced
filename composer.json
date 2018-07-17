@@ -36,6 +36,9 @@
     "yiisoft/yii2-debug": "^2.0",
     "yiisoft/yii2-gii": "^2.0"
   },
+  "suggest": {
+    "friendsofphp/php-cs-fixer": "For Fix: composer global require friendsofphp/php-cs-fixer"
+  },
   "config": {
     "process-timeout": 1800,
     "sort-packages": true,
@@ -45,7 +48,8 @@
     "npm-asset-repository": "https://registry.npm.taobao.org"
   },
   "scripts": {
-    "post-create-project-cmd": "php -r \"file_exists('.env-project') || copy('.env-project-example', '.env-project');\""
+    "post-create-project-cmd": "php -r \"file_exists('.env-project') || copy('.env-project-example', '.env-project');\"",
+    "fix": "php-cs-fixer fix --config .php_cs"
   },
   "repositories": {
     "composer": {

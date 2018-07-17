@@ -15,8 +15,8 @@ class AuthController extends BaseRestController
         return array_merge(parent::behaviors(), [
             'postVerbFilter' => [
                 'class' => PostVerbFilter::class,
-                'actions' => ['login', 'register']
-            ]
+                'actions' => ['login', 'register'],
+            ],
         ]);
     }
 

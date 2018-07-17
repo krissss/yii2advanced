@@ -1,8 +1,8 @@
 <?php
 
+use \kartik\datecontrol\Module as DateControlModule;
 use common\components\Logger;
 use common\models\base\ConfigString;
-use \kartik\datecontrol\Module as DateControlModule;
 
 $logReaderCategories = [
     ConfigString::CATEGORY_NEED_SOLVED,
@@ -42,13 +42,13 @@ return [
                     'autoclose' => true,
                     'weekStart' => 1,
                     'todayHighlight' => true,
-                ]
+                ],
             ],
             DateControlModule::FORMAT_TIME => [
                 'pluginOptions' => [
                     'autoclose' => true,
                     'showSeconds' => true,
-                ]
+                ],
             ],
             DateControlModule::FORMAT_DATETIME => [
                 'type' => 1,
@@ -65,9 +65,9 @@ return [
         'as user_login' => \kriss\behaviors\web\UserLoginFilter::class,
         'as iframe_layout' => [
             'class' => \kriss\iframeLayout\IframeLinkFilter::class,
-            'layout' => '@app/views/layouts/main-content'
+            'layout' => '@app/views/layouts/main-content',
         ],
-        'skipAuthOptions' => []
+        'skipAuthOptions' => [],
     ],
     'log-reader' => [
         'class' => 'kriss\logReader\Module',

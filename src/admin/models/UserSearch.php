@@ -24,8 +24,8 @@ class UserSearch extends User
                 'defaultOrder' => [
                     'created_at' => SORT_DESC,
                     'id' => SORT_DESC,
-                ]
-            ]
+                ],
+            ],
         ]);
 
         $this->load($params);

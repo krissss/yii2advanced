@@ -27,8 +27,8 @@ class AdminController extends AuthWebController
                     'defaultOrder' => [
                         'created_at' => SORT_DESC,
                         'id' => SORT_DESC,
-                    ]
-                ]
+                    ],
+                ],
             ],
         ];
         // 创建
@@ -62,7 +62,7 @@ class AdminController extends AuthWebController
             },
             'beforeValidateCallback' => function (Admin $model) {
                 $model->setPassword($model->password_hash);
-            }
+            },
         ];
         // 修改状态
         $actions['change-status'] = [
@@ -93,7 +93,7 @@ class AdminController extends AuthWebController
                 /** @var self $controller */
                 $controller = $action->controller;
                 return $controller->actionPreviousRedirect();
-            }
+            },
         ];
 
         return $actions;

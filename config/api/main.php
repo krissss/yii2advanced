@@ -20,7 +20,7 @@ $config = [
             'class' => 'yii\web\Response',
             'on beforeSend' => function ($event) {
                 $response = $event->sender;
-                if($response->data !== null && is_array($response->data)){
+                if ($response->data !== null && is_array($response->data)) {
                     $response->data = array_merge([
                         'status' => $response->statusCode,
                         'message' => $response->statusText,

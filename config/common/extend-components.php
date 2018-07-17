@@ -9,6 +9,6 @@ return [
         'secret_key' => getenv('QN_SK'),
         'bucket' => getenv('QN_BUCKET'),
         'domain' => getenv('QN_DOMAIN'),
-        'savePath' => getenv('QN_SAVE_PATH')
+        'savePath' => getenv('QN_SAVE_PATH'),
     ],
 ];

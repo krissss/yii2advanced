@@ -59,12 +59,12 @@ if (YII_ENV === 'dev') {
                 'class' => \kriss\modules\auth\generators\Generator::class,
             ],
             'kriss Dynagrid' => [
-                'class' => \kriss\generators\dynagrid\Generator::class
+                'class' => \kriss\generators\dynagrid\Generator::class,
             ],
             'kriss Crud' => [
-                'class' => \kriss\generators\crud\Generator::class
+                'class' => \kriss\generators\crud\Generator::class,
             ],
-        ]
+        ],
     ];
 }
 

@@ -20,7 +20,7 @@ class UserController extends AuthWebController
         // 列表
         $actions['index'] = [
             'class' => IndexAction::class,
-            'searchModel' => UserSearch::class
+            'searchModel' => UserSearch::class,
         ];
         // 新增
         $actions['create'] = [

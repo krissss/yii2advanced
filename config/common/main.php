@@ -22,7 +22,7 @@ return [
         'db' => $db,
         'cache' => [
             'class' => 'yii\caching\FileCache',
-            'cachePath' => '@runtimePath/common/cache'
+            'cachePath' => '@runtimePath/common/cache',
         ],
         'log' => $logs,
         'assetManager' => $assetManager,

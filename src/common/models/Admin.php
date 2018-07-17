@@ -2,8 +2,8 @@
 
 namespace common\models;
 
-use common\models\base\ActiveRecord;
 use common\components\Tools;
+use common\models\base\ActiveRecord;
 use yii\base\NotSupportedException;
 use yii\web\IdentityInterface;
 

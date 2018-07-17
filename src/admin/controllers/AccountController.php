@@ -20,7 +20,7 @@ class AccountController extends AuthWebController
             'isAjax' => false,
             'view' => 'modify_password',
             'operateMsg' => '修改密码',
-            'successRedirect' => ['/site/login']
+            'successRedirect' => ['/site/login'],
         ];
 
         return $actions;

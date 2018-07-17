@@ -47,7 +47,6 @@ class Logger
      */
     public static function getCommonLogDir($category, $noDate = false)
     {
-
         $log = "@runtimePath/common/logs/{$category}/{$category}.log";
         if ($noDate) {
             return $log;

@@ -2,9 +2,9 @@
 
 namespace admin\components;
 
+use common\models\Admin;
 use kriss\behaviors\web\UserLoginFilter;
 use kriss\behaviors\web\UserStatusFilter;
-use common\models\Admin;
 
 class AuthWebController extends BaseWebController
 {
@@ -18,7 +18,7 @@ class AuthWebController extends BaseWebController
         $behaviors['admin_status'] = [
             'class' => UserStatusFilter::class,
             'notAllowedStatus' => [Admin::STATUS_DISABLE],
-            'errorMessage' => '用户被锁定，不能执行操作'
+            'errorMessage' => '用户被锁定，不能执行操作',
         ];
 
         return $behaviors;

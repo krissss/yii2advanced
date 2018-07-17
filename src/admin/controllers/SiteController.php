@@ -46,7 +46,7 @@ class SiteController extends BaseWebController
             ],
             'iframe-mode-change' => [
                 'class' => IframeModeChangeAction::class,
-            ]
+            ],
         ];
     }
 

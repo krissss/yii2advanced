@@ -35,7 +35,7 @@ class BaseRestController extends Controller
     public function setUserIdentity()
     {
         $authMethod = new QueryParamAuth([
-            'tokenParam' => AuthRestController::TOKEN_PARAM
+            'tokenParam' => AuthRestController::TOKEN_PARAM,
         ]);
         $authMethod->authenticate(Yii::$app->user, Yii::$app->request, Yii::$app->response);
     }

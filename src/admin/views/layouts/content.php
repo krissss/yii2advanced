@@ -2,8 +2,8 @@
 /* @var $this yii\web\View */
 /** @var $content */
 
-use yii\widgets\Breadcrumbs;
 use dmstr\widgets\Alert;
+use yii\widgets\Breadcrumbs;
 
 ?>
 <section class="content-header">

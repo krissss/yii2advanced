@@ -1,0 +1,26 @@
+<?php
+/** @link https://github.com/FriendsOfPHP/PHP-CS-Fixer/blob/2.12/README.rst */
+
+$finder = PhpCsFixer\Finder::create()
+    ->exclude([
+        'views' // views 下的注释和 header_comment 冲突，所以先跳过
+    ])
+    ->in([
+        __DIR__ . '/src',
+        __DIR__ . '/config',
+        __DIR__ . '/environments',
+    ]);
+
+return PhpCsFixer\Config::create()
+    ->setCacheFile(__DIR__ . '/runtime/php_cs_header.cache')
+    ->setRules([
+        // 顶部注释
+        'header_comment' => [
+            'comment_type' => 'PHPDoc',
+            'header' => '', // 不添加则为空
+            'location' => 'after_open',
+            'separate' => 'none',
+        ],
+        'blank_line_after_opening_tag' => true, // 在 <?php 开头的后面增加一个空行
+    ])
+    ->setFinder($finder);

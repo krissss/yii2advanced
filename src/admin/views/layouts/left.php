@@ -2,8 +2,8 @@
 /* @var $this \yii\web\View */
 
 use common\models\Admin;
-use kriss\modules\auth\tools\AuthValidate;
 use common\models\base\Auth;
+use kriss\modules\auth\tools\AuthValidate;
 
 /** @var $admin Admin */
 $admin = Yii::$app->user->identity;

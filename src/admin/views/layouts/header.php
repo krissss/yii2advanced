@@ -9,11 +9,10 @@ $admin = Yii::$app->user->identity;
 
 <header class="main-header">
 
-    <?= Html::a(
-        '<span class="logo-mini">' . Yii::$app->name . '</span>' .
-        '<span class="logo-lg">' . Html::img('@web/images/logo-white.png', ['alt' => Yii::$app->name]) . '</span>'
-        , Yii::$app->homeUrl, ['class' => 'logo']
-    ) ?>
+    <a href="<?= Yii::$app->homeUrl ?>" class="logo">
+        <span class="logo-mini"><?= Yii::$app->name ?></span>
+        <span class="logo-lg"><?= Html::img('@web/images/logo-white.png', ['alt' => Yii::$app->name]) ?></span>
+    </a>
 
     <nav class="navbar navbar-static-top" role="navigation">
 
@@ -34,11 +33,11 @@ $admin = Yii::$app->user->identity;
                         <span class="hidden-xs">&nbsp;<?= $admin->name ?></span>
                     </a>
                     <div class="dropdown-menu">
-                        <?= Html::a((\kriss\iframeLayout\IframeModeChangeAction::isIframeMode() ? '关闭' : '开启') . '标签页模式',
-                            ['/site/iframe-mode-change'], [
-                                'data-method' => 'post',
-                                'class' => 'dropdown-menu-item'
-                            ]) ?>
+                        <?= Html::a(
+                            (\kriss\iframeLayout\IframeModeChangeAction::isIframeMode() ? '关闭' : '开启') . '标签页模式',
+                            ['/site/iframe-mode-change'],
+                            ['data-method' => 'post', 'class' => 'dropdown-menu-item']
+                        ) ?>
                         <?= Html::a('修改密码', ['/account/modify-password'], [
                             'class' => 'dropdown-menu-item'
                         ]) ?>

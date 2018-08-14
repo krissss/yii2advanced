@@ -2,8 +2,8 @@
 /* @var $this yii\web\View */
 /* @var $model \admin\models\form\LoginForm */
 
-use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
+use yii\helpers\Html;
 
 $this->title = '管理员登录';
 

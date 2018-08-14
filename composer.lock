@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dc8cd64bee598514b0bfa3f097e1afb6",
+    "content-hash": "f8184d177633308bcab7cbe60fef9709",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -1022,16 +1022,16 @@
         },
         {
             "name": "kriss/yii2-adminlte-iframe-mode",
-            "version": "v1.4",
+            "version": "v1.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/krissss/yii2-adminlte-iframe-mode.git",
-                "reference": "09518de1de07ae954738137d6f215c410a47247e"
+                "reference": "46387e601dc5a67732193c52d5fe6173cba87842"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/krissss/yii2-adminlte-iframe-mode/zipball/09518de1de07ae954738137d6f215c410a47247e",
-                "reference": "09518de1de07ae954738137d6f215c410a47247e",
+                "url": "https://api.github.com/repos/krissss/yii2-adminlte-iframe-mode/zipball/46387e601dc5a67732193c52d5fe6173cba87842",
+                "reference": "46387e601dc5a67732193c52d5fe6173cba87842",
                 "shasum": ""
             },
             "require": {
@@ -1061,20 +1061,20 @@
                 "extension",
                 "yii2"
             ],
-            "time": "2018-06-28T02:59:43+00:00"
+            "time": "2018-07-19T04:39:44+00:00"
         },
         {
             "name": "kriss/yii2-common-class",
-            "version": "v2.0.7",
+            "version": "v2.0.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/krissss/yii2-common-tools.git",
-                "reference": "041f57a5b4d4684622d79e54c7bc2d0810df6669"
+                "reference": "c87c37f17298038ee67730e76c1968b9d5f47bcc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/krissss/yii2-common-tools/zipball/041f57a5b4d4684622d79e54c7bc2d0810df6669",
-                "reference": "041f57a5b4d4684622d79e54c7bc2d0810df6669",
+                "url": "https://api.github.com/repos/krissss/yii2-common-tools/zipball/c87c37f17298038ee67730e76c1968b9d5f47bcc",
+                "reference": "c87c37f17298038ee67730e76c1968b9d5f47bcc",
                 "shasum": ""
             },
             "require": {
@@ -1086,7 +1086,8 @@
             "type": "yii2-extension",
             "autoload": {
                 "psr-4": {
-                    "kriss\\": "/"
+                    "kriss\\": "",
+                    "kriss\\auth\\": "modules/auth"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1104,7 +1105,7 @@
             "keywords": [
                 "yii2"
             ],
-            "time": "2018-07-13T08:36:39+00:00"
+            "time": "2018-08-13T02:44:48+00:00"
         },
         {
             "name": "kriss/yii2-filesystem-qiniu",

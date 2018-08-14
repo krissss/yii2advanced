@@ -9,6 +9,4 @@ $form = SimpleSearchForm::begin(['action' => ['index']]);
 echo $form->field($model, 'cellphone');
 echo $form->field($model, 'name');
 
-echo $form->renderFooterButtons();
-
 $form->end();

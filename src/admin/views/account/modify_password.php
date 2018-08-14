@@ -17,6 +17,4 @@ echo $form->field($model, 'password')->passwordInput();
 echo $form->field($model, 'newPassword')->passwordInput();
 echo $form->field($model, 'newPasswordAgain')->passwordInput();
 
-echo $form->renderFooterButtons();
-
 $form->end();

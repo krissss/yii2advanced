@@ -4,6 +4,7 @@ namespace common\models;
 
 use common\components\Tools;
 use common\models\base\ActiveRecord;
+use common\models\enum\AdminStatus;
 use yii\base\NotSupportedException;
 use yii\web\IdentityInterface;
 
@@ -28,14 +29,6 @@ class Admin extends ActiveRecord implements IdentityInterface
 {
     const SUPER_ADMIN_ID = 1;
 
-    const STATUS_NORMAL = 0; // 正常
-    const STATUS_DISABLE = 10; // 不可登录
-
-    public static $statusData = [
-        self::STATUS_NORMAL => '正常',
-        self::STATUS_DISABLE => '不可用',
-    ];
-
     /**
      * @inheritdoc
      */
@@ -54,6 +47,7 @@ class Admin extends ActiveRecord implements IdentityInterface
             [['status', 'created_at', 'created_by', 'updated_at', 'updated_by'], 'integer'],
             [['username', 'password_hash', 'name', 'auth_key', 'auth_role'], 'string', 'max' => 255],
             [['username'], 'unique'],
+            [['status'], 'in', 'range' => AdminStatus::getValues()],
         ];
     }
 
@@ -82,7 +76,7 @@ class Admin extends ActiveRecord implements IdentityInterface
      */
     public function getStatusName()
     {
-        return $this->toName($this->status, self::$statusData);
+        return AdminStatus::getDescription($this->status);
     }
 
     /**

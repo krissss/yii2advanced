@@ -1,5 +1,6 @@
 <?php
 
+use kriss\iframeLayout\component\IframeMode;
 use yii\helpers\ArrayHelper;
 
 $db = require __DIR__ . '/db.php';
@@ -16,7 +17,7 @@ return [
     //'catchAll' => ['site/offline'],
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
-        '@npm'   => '@vendor/npm-asset',
+        '@npm' => '@vendor/npm-asset',
     ],
     'components' => ArrayHelper::merge([
         'db' => $db,
@@ -32,5 +33,10 @@ return [
             'rules' => [
             ],
         ],
+        IframeMode::COMPONENT_NAME => [
+            'class' => IframeMode::class,
+            'enable' => true,
+            'defaultSwitch' => false,
+        ]
     ], $extendComponents),
 ];

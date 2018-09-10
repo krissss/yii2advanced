@@ -3,6 +3,7 @@
 /** @var $dataProvider */
 
 use common\models\Admin;
+use common\models\enum\AdminStatus;
 use kriss\widgets\ActionColumn;
 use kriss\widgets\SimpleDynaGrid;
 use kriss\widgets\ToggleColumn;
@@ -27,12 +28,9 @@ $columns = [
         'class' => ToggleColumn::class,
         'attribute' => 'status',
         'action' => 'change-status',
-        'items' => [
-            Admin::STATUS_NORMAL => '正常',
-            Admin::STATUS_DISABLE => '禁用',
-        ],
-        'onValue' => Admin::STATUS_NORMAL,
-        'offValue' => Admin::STATUS_DISABLE,
+        'items' => AdminStatus::getViewItems(),
+        'onValue' => AdminStatus::NORMAL,
+        'offValue' => AdminStatus::DISABLE,
         'canOperate' => function (Admin $model) {
             return $model->id != Admin::SUPER_ADMIN_ID;
         }
@@ -62,14 +60,12 @@ $columns = [
     ],
 ];
 
-$simpleDynaGrid = new SimpleDynaGrid([
-    'dynaGridId' => 'dynagrid-admin-index',
-    'columns' => $columns,
+echo SimpleDynaGrid::widget([
     'dataProvider' => $dataProvider,
+    'columns' => $columns,
     'extraToolbar' => [
         [
             'content' => Html::a('新增', ['create'], ['class' => 'btn btn-primary show_ajax_modal'])
-        ]
-    ]
+        ],
+    ],
 ]);
-$simpleDynaGrid->renderDynaGrid();

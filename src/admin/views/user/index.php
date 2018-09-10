@@ -3,7 +3,7 @@
 /** @var $dataProvider */
 /** @var $searchModel */
 
-use common\models\User;
+use common\models\enum\UserStatus;
 use kriss\widgets\ActionColumn;
 use kriss\widgets\DatetimeColumn;
 use kriss\widgets\SimpleDynaGrid;
@@ -33,12 +33,9 @@ $columns = [
         'class' => ToggleColumn::class,
         'attribute' => 'status',
         'action' => 'change-status',
-        'items' => [
-            User::STATUS_NORMAL => '正常',
-            User::STATUS_DISABLE => '禁用',
-        ],
-        'onValue' => User::STATUS_NORMAL,
-        'offValue' => User::STATUS_DISABLE,
+        'items' => UserStatus::getViewItems(),
+        'onValue' => UserStatus::NORMAL,
+        'offValue' => UserStatus::DISABLE,
     ],
     [
         'class' => DatetimeColumn::class,
@@ -57,14 +54,12 @@ $columns = [
     ],
 ];
 
-$simpleDynaGrid = new SimpleDynaGrid([
-    'dynaGridId' => 'dynagrid-user-index',
-    'columns' => $columns,
+echo SimpleDynaGrid::widget([
     'dataProvider' => $dataProvider,
+    'columns' => $columns,
     'extraToolbar' => [
         [
             'content' => Html::a('新增', ['create'], ['class' => 'btn btn-primary show_ajax_modal'])
         ]
-    ]
+    ],
 ]);
-$simpleDynaGrid->renderDynaGrid();

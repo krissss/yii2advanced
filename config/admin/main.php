@@ -3,6 +3,7 @@
 use common\models\Admin;
 
 $modules = require __DIR__ . '/modules.php';
+$definitions = require __DIR__ . '/definitions.php';
 $moduleName = 'admin';
 $cookieKey = getenv('COOKIE_KEY');
 
@@ -15,6 +16,9 @@ $config = [
     // 网站维护，打开以下注释
     //'catchAll' => ['site/offline'],
     'modules' => $modules,
+    'container' => [
+        'definitions' => $definitions,
+    ],
     'components' => [
         'request' => [
             'csrfParam' => "_csrf-{$moduleName}",

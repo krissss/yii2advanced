@@ -2,7 +2,7 @@
 
 namespace admin\components;
 
-use kriss\iframeLayout\IframeLinkFilter;
+use kriss\iframeLayout\filter\IframeLinkFilter;
 use kriss\traits\WebControllerTrait;
 use yii\web\Controller;
 

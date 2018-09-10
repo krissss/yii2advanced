@@ -2,7 +2,7 @@
 
 namespace api\components;
 
-use common\models\User;
+use common\models\enum\UserStatus;
 use kriss\behaviors\rest\QueryParamAuth;
 
 class AuthRestController extends BaseRestController
@@ -31,7 +31,7 @@ class AuthRestController extends BaseRestController
         ];
         $behaviors['user_status'] = [
             'class' => UserStatusFilter::class,
-            'notAllowedStatus' => [User::STATUS_DISABLE],
+            'notAllowedStatus' => [UserStatus::DISABLE],
             'errorMessage' => '用户被禁止操作',
             'only' => $this->authOnly,
             'except' => $this->authExcept,

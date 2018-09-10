@@ -23,8 +23,8 @@
     "php": ">=7.0",
     "dmstr/yii2-adminlte-asset": "^2.6",
     "kartik-v/yii2-datecontrol": "^1.9",
-    "kartik-v/yii2-dynagrid": "^1.4.7",
-    "kriss/yii2-adminlte-iframe-mode": "^1.6",
+    "kartik-v/yii2-dynagrid": "^1.4",
+    "kriss/yii2-adminlte-iframe-mode": "^2.0",
     "kriss/yii2-common-class": "^2.0",
     "kriss/yii2-filesystem-qiniu": "^1.0",
     "kriss/yii2-log-reader": "^2.2",
@@ -57,6 +57,10 @@
     "composer": {
       "type": "composer",
       "url": "https://asset-packagist.org"
+    },
+    "kriss/yii2-common-class": {
+      "type": "path",
+      "url": "D:\\phpStudy\\WWW\\kriss-composer\\kriss"
     }
   }
 }

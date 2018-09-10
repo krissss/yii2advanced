@@ -7,7 +7,7 @@ use admin\models\form\LoginForm;
 use common\models\Admin;
 use kriss\actions\web\ErrorAction;
 use kriss\actions\web\OfflineAction;
-use kriss\iframeLayout\IframeModeChangeAction;
+use kriss\iframeLayout\action\IframeModeSwitchAction;
 use Yii;
 use yii\filters\VerbFilter;
 
@@ -44,8 +44,8 @@ class SiteController extends BaseWebController
                 //'foreColor' => 0x000000,
                 'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
             ],
-            'iframe-mode-change' => [
-                'class' => IframeModeChangeAction::class,
+            'iframe-mode-switch' => [
+                'class' => IframeModeSwitchAction::class,
             ],
         ];
     }

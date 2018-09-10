@@ -4,6 +4,7 @@ namespace common\models;
 
 use common\components\Tools;
 use common\models\base\ActiveRecord;
+use common\models\enum\UserStatus;
 use kriss\components\CellphoneValidator;
 use yii\web\IdentityInterface;
 
@@ -24,14 +25,6 @@ use yii\web\IdentityInterface;
  */
 class User extends ActiveRecord implements IdentityInterface
 {
-    const STATUS_NORMAL = 0; // 正常
-    const STATUS_DISABLE = 10; // 不可登录
-
-    public static $statusData = [
-        self::STATUS_NORMAL => '正常',
-        self::STATUS_DISABLE => '不可登录',
-    ];
-
     /**
      * @inheritdoc
      */
@@ -52,6 +45,7 @@ class User extends ActiveRecord implements IdentityInterface
             [['password_hash', 'name', 'auth_key', 'access_token'], 'string', 'max' => 255],
             [['cellphone'], 'unique'],
             [['cellphone'], CellphoneValidator::class],
+            [['status'], 'in', 'range' => UserStatus::getValues()],
         ];
     }
 
@@ -87,7 +81,7 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public function getStatusName()
     {
-        return $this->toName($this->status, static::$statusData);
+        return UserStatus::getDescription($this->status);
     }
 
     /**

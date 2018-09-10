@@ -6,9 +6,7 @@ use yii\helpers\Html;
 
 dmstr\web\AdminLteAsset::register($this);
 admin\assets\AppAsset::register($this);
-if (\kriss\iframeLayout\IframeModeChangeAction::isIframeMode()) {
-    \kriss\iframeLayout\IframeAsset::register($this);
-}
+\kriss\iframeLayout\widget\IframeModeAssetWidget::widget();
 ?>
 <?php $this->beginPage() ?>
     <!DOCTYPE html>

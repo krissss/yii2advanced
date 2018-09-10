@@ -4,6 +4,7 @@ namespace admin\controllers;
 
 use admin\components\AuthWebController;
 use admin\models\UserSearch;
+use common\models\enum\UserStatus;
 use common\models\User;
 use kriss\actions\web\crud\CreateAction;
 use kriss\actions\web\crud\IndexAction;
@@ -48,8 +49,8 @@ class UserController extends AuthWebController
             'class' => ToggleAction::class,
             'modelClass' => User::class,
             'attribute' => 'status',
-            'onValue' => User::STATUS_NORMAL,
-            'offValue' => User::STATUS_DISABLE,
+            'onValue' => UserStatus::NORMAL,
+            'offValue' => UserStatus::DISABLE,
         ];
 
         return $actions;

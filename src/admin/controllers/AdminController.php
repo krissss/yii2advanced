@@ -4,6 +4,7 @@ namespace admin\controllers;
 
 use admin\components\AuthWebController;
 use common\models\Admin;
+use common\models\enum\AdminStatus;
 use kriss\actions\web\crud\CreateAction;
 use kriss\actions\web\crud\IndexAction;
 use kriss\actions\web\crud\ToggleAction;
@@ -69,8 +70,8 @@ class AdminController extends AuthWebController
             'class' => ToggleAction::class,
             'modelClass' => Admin::class,
             'attribute' => 'status',
-            'onValue' => Admin::STATUS_NORMAL,
-            'offValue' => Admin::STATUS_DISABLE,
+            'onValue' => AdminStatus::NORMAL,
+            'offValue' => AdminStatus::DISABLE,
             'beforeRunCallback' => function ($id) {
                 if ($id == Admin::SUPER_ADMIN_ID) {
                     throw new ForbiddenHttpException('不能修改超级管理员信息');

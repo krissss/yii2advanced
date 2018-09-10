@@ -3,6 +3,7 @@
 use \kartik\datecontrol\Module as DateControlModule;
 use common\components\Logger;
 use common\models\base\ConfigString;
+use kriss\iframeLayout\filter\IframeLinkFilter;
 
 $logReaderCategories = [
     ConfigString::CATEGORY_NEED_SOLVED,
@@ -64,7 +65,7 @@ return [
         'class' => \kriss\modules\auth\Module::class,
         'as user_login' => \kriss\behaviors\web\UserLoginFilter::class,
         'as iframe_layout' => [
-            'class' => \kriss\iframeLayout\IframeLinkFilter::class,
+            'class' => IframeLinkFilter::class,
             'layout' => '@app/views/layouts/main-content',
         ],
         'skipAuthOptions' => [],

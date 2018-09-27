@@ -1,6 +1,5 @@
 <?php
 
-use kriss\iframeLayout\component\IframeMode;
 use yii\helpers\ArrayHelper;
 
 $db = require __DIR__ . '/db.php';
@@ -33,10 +32,5 @@ return [
             'rules' => [
             ],
         ],
-        IframeMode::COMPONENT_NAME => [
-            'class' => IframeMode::class,
-            'enable' => true,
-            'defaultSwitch' => false,
-        ]
     ], $extendComponents),
 ];

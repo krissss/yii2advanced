@@ -14,5 +14,3 @@ Thumbs.db
 /.env-project
 
 .php_cs.cache
-
-yii

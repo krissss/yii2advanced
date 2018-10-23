@@ -26,7 +26,6 @@
     "kartik-v/yii2-dynagrid": "^1.4",
     "kriss/yii2-adminlte-iframe-mode": "^2.0",
     "kriss/yii2-common-class": "^2.0",
-    "kriss/yii2-filesystem-qiniu": "^1.0",
     "kriss/yii2-log-reader": "^2.2",
     "vlucas/phpdotenv": "^2.4",
     "yiisoft/yii2": "2.0.15.1",

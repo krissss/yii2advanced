@@ -1,18 +1,8 @@
 <?php
 
-use \kartik\datecontrol\Module as DateControlModule;
 use common\components\Logger;
-use common\models\base\ConfigString;
+use \kartik\datecontrol\Module as DateControlModule;
 use kriss\iframeLayout\filter\IframeLinkFilter;
-
-$logReaderCategories = [
-    ConfigString::CATEGORY_NEED_SOLVED,
-    ConfigString::CATEGORY_QUEUE_JOB,
-];
-$moreLogReaderAliases = [];
-foreach ($logReaderCategories as $logReaderCategory) {
-    $moreLogReaderAliases[$logReaderCategory] = Logger::getCommonLogDir($logReaderCategory, true);
-}
 
 return [
     'gridview' => [
@@ -77,6 +67,6 @@ return [
             'api' => '@api/runtime/logs/app.log',
             'admin' => '@admin/runtime/logs/app.log',
             'console' => '@console/runtime/logs/app.log',
-        ], $moreLogReaderAliases),
+        ], Logger::getLogReaderAliases()),
     ],
 ];

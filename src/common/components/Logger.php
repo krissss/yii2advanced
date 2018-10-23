@@ -2,30 +2,22 @@
 
 namespace common\components;
 
-use common\models\base\ConfigString;
 use Yii;
 use yii\helpers\Json;
 
+/**
+ * @method static needSolve($msg, $type = 'info')
+ * @method static queueJob($msg, $type = 'info')
+ */
 class Logger
 {
     /**
-     * 记录必须解决的日志
-     * @param $msg
-     * @param string $type
+     * @param $name
+     * @param $arguments
      */
-    public static function needSolved($msg, $type = 'info')
+    public static function __callStatic($name, $arguments)
     {
-        static::write($msg, $type, ConfigString::CATEGORY_NEED_SOLVED);
-    }
-
-    /**
-     * 记录轮询脚本的日志
-     * @param $msg
-     * @param string $type
-     */
-    public static function queueJob($msg, $type = 'info')
-    {
-        static::write($msg, $type, ConfigString::CATEGORY_QUEUE_JOB);
+        static::write($arguments[0], isset($arguments[1]) ? $arguments[1] : 'info', $name);
     }
 
     /**
@@ -45,7 +37,7 @@ class Logger
      * @param bool $noDate
      * @return string
      */
-    public static function getCommonLogDir($category, $noDate = false)
+    protected static function getCommonLogDir($category, $noDate = false)
     {
         $log = "@runtimePath/common/logs/{$category}/{$category}.log";
         if ($noDate) {
@@ -54,5 +46,48 @@ class Logger
             $date = date('Ymd');
             return $log . ".{$date}";
         }
+    }
+
+    /**
+     * log reader 组件的 aliases
+     * @return array
+     */
+    public static function getLogReaderAliases()
+    {
+        $categories = LoggerCategory::getValues();
+        $res = [];
+        foreach ($categories as $category) {
+            $res[$category] = static::getCommonLogDir($category, true);
+        }
+        return $res;
+    }
+
+    /**
+     * yii 的 log target
+     * @return array
+     */
+    public static function getCommonYiiLogTargets()
+    {
+        $categories = LoggerCategory::getValues();
+        $app = [
+            [
+                'class' => 'yii\log\FileTarget',
+                'levels' => ['error', 'warning'],
+                'except' => [
+                    'yii\web\HttpException:401',
+                ],
+            ]
+        ];
+        $others = array_map(function ($category) {
+            return [
+                'class' => 'yii\log\FileTarget',
+                'categories' => [$category],
+                'logVars' => [],
+                'logFile' => Logger::getCommonLogDir($category),
+                'maxLogFiles' => 31,
+                'dirMode' => 0777,
+            ];
+        }, $categories);
+        return array_merge($app, $others);
     }
 }

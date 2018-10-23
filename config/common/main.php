@@ -1,9 +1,9 @@
 <?php
 
+use common\components\Logger;
 use yii\helpers\ArrayHelper;
 
 $db = require __DIR__ . '/db.php';
-$logs = require __DIR__ . '/logs.php';
 $assetManager = require __DIR__ . '/asset-manager.php';
 $extendComponents = require __DIR__ . '/extend-components.php';
 
@@ -24,7 +24,9 @@ return [
             'class' => 'yii\caching\FileCache',
             'cachePath' => '@runtimePath/common/cache',
         ],
-        'log' => $logs,
+        'log' => [
+            'targets' => Logger::getCommonYiiLogTargets(),
+        ],
         'assetManager' => $assetManager,
         'urlManager' => [
             'enablePrettyUrl' => true,

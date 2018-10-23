@@ -6,26 +6,16 @@ use Yii;
 use yii\helpers\Json;
 
 /**
- * @method static needSolve($msg, $type = 'info')
- * @method static queueJob($msg, $type = 'info')
+ * @method static void needSolve($msg, $type = 'info')
+ * @method static void queueJob($msg, $type = 'info')
  */
 class Logger
 {
-    /**
-     * @param $name
-     * @param $arguments
-     */
     public static function __callStatic($name, $arguments)
     {
         static::write($arguments[0], isset($arguments[1]) ? $arguments[1] : 'info', $name);
     }
 
-    /**
-     * 写入日志
-     * @param $msg
-     * @param $type
-     * @param $category
-     */
     protected static function write($msg, $type, $category)
     {
         Yii::$type(is_array($msg) ? Json::encode($msg) : $msg, $category);

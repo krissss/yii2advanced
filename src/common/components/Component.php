@@ -20,7 +20,7 @@ class Component
         return $component;
     }
 
-    public static function flySystem()
+    public static function fileSystem()
     {
         return static::storage()->getFileSystem();
     }

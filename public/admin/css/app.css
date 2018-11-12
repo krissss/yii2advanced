@@ -265,3 +265,12 @@ td.kv-row-select {
 .btn-box-tool {
   box-shadow: none;
 }
+
+/* control-label 超出高度后导致的换行问题 */
+.control-label {
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-top: 0 !important;
+}

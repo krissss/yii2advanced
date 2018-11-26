@@ -1,15 +1,13 @@
 version: '2'
 
 services:
-  docker-yii2-env:
-    image: daocloud.io/krissss/docker-yii2:${DOCKER_YII2_VERSION}
+  yii2advanced:
+    image: hub.tencentyun.com/kriss/docker-yii2:${DOCKER_YII2_VERSION}
     ports:
-      - 8088:80
+      - ${DOCKER_PORT_80}:80
     volumes:
       - ${DOCKER_APP_PATH}:/app
       - ${DOCKER_APP_PATH}/docker/nginx:/etc/nginx/conf.d:ro
       - ${DOCKER_APP_PATH}/docker/php/php.ini:/usr/local/etc/php/conf.d/php.ini:ro
       #- ${DOCKER_APP_PATH}/docker/supervisor/queue.conf:/etc/supervisor/conf.d/queue.conf:ro
       - ${COMPOSER_HOME}:/tmp
-    environment:
-      - VOLUME_PATH=/app

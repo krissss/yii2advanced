@@ -1,7 +1,7 @@
 version: '2'
 
 services:
-  yii2advanced:
+  app:
     image: hub.tencentyun.com/kriss/docker-yii2:${DOCKER_YII2_VERSION}
     ports:
       - ${DOCKER_PORT_80}:80

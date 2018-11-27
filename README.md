@@ -16,8 +16,9 @@ backend: admin/123456
 cp .env-example .env
 # modify .env and .env-project
 docker-compose up
-docker-compose exec docker-yii2-env composer install -vvv
-docker-compose exec docker-yii2-env php yii migrate
-docker-compose exec docker-yii2-env php yii init/init-data
-docker-compose exec docker-yii2-env php yii init-auth/restore
+docker-compose exec app composer install -vvv
+docker-compose exec app php yii migrate
+docker-compose exec app php yii init/init-data
+docker-compose exec app php yii init-auth/restore
+docker-compose exec app bash
 ```

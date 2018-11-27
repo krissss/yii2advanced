@@ -1,4 +1,4 @@
-FROM daocloud.io/krissss/docker-yii2:php7.0.12-v1.0
+FROM hub.tencentyun.com/kriss/docker-yii2:7.1-master
 
 # 设置项目目录
 WORKDIR /app
@@ -20,12 +20,3 @@ ENV YII_MIGRATION_DO=1 \
 
 # 暴露前后台端口
 EXPOSE 80
-
-# 修改目录权限
-RUN set -ex \
-    && for path in ${VOLUME_PATH} \
-    ; do \
-        mkdir -p "$path"; \
-        chmod 0777 "$path"; \
-        chown -R www-data:www-data "$path"; \
-    done

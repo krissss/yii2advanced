@@ -2,7 +2,7 @@
 
 ```php
 composer create-project kriss/yii2-advanced xxx
-# modify .env-project
+# modify .env
 php yii migrate
 php yii init/init-data
 php yii init-auth/restore
@@ -14,7 +14,7 @@ backend: admin/123456
 
 ```bash
 cp .env-example .env
-# modify .env and .env-project
+# modify .env
 docker-compose up
 docker-compose exec app composer install -vvv
 docker-compose exec app php yii migrate

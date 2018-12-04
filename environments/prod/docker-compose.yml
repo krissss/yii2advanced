@@ -1,0 +1,39 @@
+# 由 common\components\EnvGenerator 生成，可以修改参数值，不要直接修改参数属性
+# 正式环境
+version: '2'
+
+services:
+  app:
+    image: daocloud.io/krissss/docker-yii2_71:v1.6-unzip
+    ports:
+      - 10080:80
+    volumes:
+      - /app/yii2advanced:/app
+      - /app/yii2advanced/docker/nginx:/etc/nginx/conf.d:ro
+      - /app/yii2advanced/docker/php/php.ini:/usr/local/etc/php/conf.d/php.ini:ro
+      #- /app/yii2advanced/docker/supervisor/queue.conf:/etc/supervisor/conf.d/queue.conf:ro
+      - ~/.composer:/tmp
+    links:
+      - mysql
+      - redis
+  mysql:
+    image: mysql:5.7
+    ports:
+      - 13306:3306
+    volumes:
+      - /mnt/yii2advanced/mysql_data:/var/lib/mysql
+      - /app/yii2advanced/docker/mysql:/etc/mysql/conf.d
+    environment:
+      - MYSQL_ROOT_PASSWORD=root@923847213
+      - MYSQL_DATABASE=yii2advanced
+      - MYSQL_USER=yii2advanced
+      - MYSQL_PASSWORD=yii2advanced@342321113
+  redis:
+    image: redis:3.2
+    ports:
+      - 16379:6379
+    volumes:
+      - /mnt/yii2advanced/redis_data:/data
+    command: >
+      --bind 0.0.0.0
+      --requirepass yii2advanced@1123324

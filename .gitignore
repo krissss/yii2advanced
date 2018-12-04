@@ -11,6 +11,6 @@ Thumbs.db
 /.vscode
 
 /.env
-/.env-project
+/docker-compose.yml
 
 .php_cs.cache

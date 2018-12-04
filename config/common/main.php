@@ -4,6 +4,7 @@ use common\components\Logger;
 use yii\helpers\ArrayHelper;
 
 $db = require __DIR__ . '/db.php';
+$redis = require __DIR__ . '/redis.php';
 $assetManager = require __DIR__ . '/asset-manager.php';
 $extendComponents = require __DIR__ . '/extend-components.php';
 
@@ -20,10 +21,16 @@ return [
     ],
     'components' => ArrayHelper::merge([
         'db' => $db,
+        'sessionRedis' => array_merge($redis, [
+            'database' => getenv('REDIS_DB_SESSION'),
+        ]),
         'cache' => [
-            'class' => 'yii\caching\FileCache',
-            'cachePath' => '@runtimePath/common/cache',
+            'class' => \yii\redis\Cache::class,
+            'redis' => 'cacheRedis'
         ],
+        'cacheRedis' => array_merge($redis, [
+            'database' => getenv('REDIS_DB_CACHE'),
+        ]),
         'log' => [
             'targets' => Logger::getCommonYiiLogTargets(),
         ],

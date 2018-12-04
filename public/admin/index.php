@@ -1,7 +1,7 @@
 <?php
 require __DIR__ . '/../../vendor/autoload.php';
 
-$dotenv = new Dotenv\Dotenv(__DIR__ . '/../../', '.env-project');
+$dotenv = new Dotenv\Dotenv(__DIR__ . '/../../', '.env');
 $dotenv->load();
 
 defined('YII_DEBUG') or define('YII_DEBUG', getenv('YII_DEBUG'));

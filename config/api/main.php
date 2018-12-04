@@ -37,6 +37,8 @@ $config = [
             'identityCookie' => ['name' => "_identity-{$moduleName}", 'httpOnly' => true],
         ],
         'session' => [
+            'class' => \yii\redis\Session::class,
+            'redis' => 'sessionRedis',
             'name' => "_session-{$moduleName}",
         ],
         'errorHandler' => [

@@ -1,6 +1,8 @@
 <?php
-/** @var $this yii\web\view */
-/** @var $model admin\models\UserSearch */
+/**
+ * @var $this yii\web\view
+ * @var $model admin\models\UserSearch
+ */
 
 use kriss\widgets\SimpleSearchForm;
 

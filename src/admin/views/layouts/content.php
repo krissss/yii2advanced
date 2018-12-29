@@ -1,6 +1,8 @@
 <?php
-/* @var $this yii\web\View */
-/** @var $content */
+/**
+ * @var $this yii\web\View
+ * @var $content string
+ */
 
 use dmstr\widgets\Alert;
 use yii\widgets\Breadcrumbs;

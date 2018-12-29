@@ -1,6 +1,8 @@
 <?php
-/** @var $this yii\web\View */
-/** @var $model common\models\Admin */
+/**
+ * @var $this yii\web\View
+ * @var $model common\models\Admin
+ */
 
 use kriss\widgets\SimpleAjaxForm;
 

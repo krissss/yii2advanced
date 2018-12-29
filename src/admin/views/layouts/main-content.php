@@ -1,6 +1,8 @@
 <?php
-/* @var $this \yii\web\View */
-/* @var $content string */
+/**
+ * @var $this \yii\web\View
+ * @var $content string
+ */
 
 \kriss\iframeLayout\widget\IframeModeAssetWidget::widget();
 \admin\assets\AppAsset::register($this);

@@ -1,7 +1,9 @@
 <?php
-/** @var $this yii\web\View */
-/** @var $dataProvider */
-/** @var $searchModel */
+/**
+ * @var $this yii\web\View
+ * @var $dataProvider
+ * @var $searchModel
+ */
 
 use common\models\enum\UserStatus;
 use kriss\widgets\ActionColumn;

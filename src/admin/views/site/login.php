@@ -1,6 +1,8 @@
 <?php
-/* @var $this yii\web\View */
-/* @var $model \admin\models\form\LoginForm */
+/**
+ * @var $this yii\web\View
+ * @var $model \admin\models\form\LoginForm
+ */
 
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;

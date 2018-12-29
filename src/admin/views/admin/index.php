@@ -1,6 +1,8 @@
 <?php
-/** @var $this yii\web\View */
-/** @var $dataProvider */
+/**
+ * @var $this yii\web\View
+ * @var $dataProvider
+ */
 
 use common\models\Admin;
 use common\models\enum\AdminStatus;

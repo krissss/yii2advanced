@@ -1,7 +1,7 @@
 <?php
 
-use common\components\Logger;
 use \kartik\datecontrol\Module as DateControlModule;
+use common\components\Logger;
 use kriss\iframeLayout\filter\IframeLinkFilter;
 
 return [

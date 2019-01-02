@@ -16,7 +16,7 @@ require_once __DIR__ . '/../config/common/bootstrap.php';
                 'app' => [
                     'name' => 'app',
                     'image' => 'daocloud.io/krissss/docker-yii2_71',
-                    'version' => 'v1.6-unzip',
+                    'version' => 'v1.7',
                     'port' => 10080,
                     'appPath' => '/app/yii2advanced',
                     'composerPath' => '~/.composer',

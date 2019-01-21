@@ -60,6 +60,9 @@ return [
         ],
         'skipAuthOptions' => [],
     ],
+    'admin-settings' => [
+        'class' => 'yii2mod\settings\Module',
+    ],
     'log-reader' => [
         'class' => 'kriss\logReader\Module',
         'as login_filter' => \kriss\behaviors\web\UserLoginFilter::class,

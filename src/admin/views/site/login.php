@@ -4,6 +4,7 @@
  * @var $model \admin\models\form\LoginForm
  */
 
+use common\components\Tools;
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
 
@@ -23,14 +24,13 @@ $fieldOptions2 = [
 <div class="login-box">
     <div class="login-logo">
         <a href="javascript:void(0);">
-            <?= Html::img('@web/images/logo.png', [
-                'alt' => Yii::$app->name,
+            <?= Tools::getAppLogoImg([
                 'style' => 'max-width: 80%;'
             ]) ?>
         </a>
     </div>
     <div class="login-box-body">
-        <p class="login-box-msg"><?=Yii::$app->name?></p>
+        <p class="login-box-msg"><?= Tools::getAppName() ?></p>
 
         <?php $form = ActiveForm::begin(['id' => 'login-form', 'enableClientValidation' => false]); ?>
 

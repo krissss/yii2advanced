@@ -7,4 +7,5 @@ use kriss\enum\BaseEnum;
 class ComponentName extends BaseEnum
 {
     const STORAGE = 'storage';
+    const SETTINGS = 'settings';
 }

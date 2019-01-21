@@ -3,6 +3,7 @@
  * @var $this \yii\web\View
  */
 
+use common\components\Tools;
 use yii\helpers\Html;
 
 /** @var $admin \common\models\Admin */
@@ -12,8 +13,10 @@ $admin = Yii::$app->user->identity;
 <header class="main-header">
 
     <a href="<?= Yii::$app->homeUrl ?>" class="logo">
-        <span class="logo-mini"><?= Yii::$app->name ?></span>
-        <span class="logo-lg"><?= Html::img('@web/images/logo-white.png', ['alt' => Yii::$app->name]) ?></span>
+        <span class="logo-mini"><?= Tools::getAppName() ?></span>
+        <span class="logo-lg">
+            <?= Tools::getAppLogoImg() ?>
+        </span>
     </a>
 
     <nav class="navbar navbar-static-top" role="navigation">

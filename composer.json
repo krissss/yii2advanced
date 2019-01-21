@@ -30,6 +30,7 @@
     "kriss/yii2-flysystem": "^1.1",
     "kriss/yii2-log-reader": "^2.2",
     "vlucas/phpdotenv": "^2.4",
+    "yii2mod/yii2-settings": "^2.4",
     "yiisoft/yii2": "2.0.15.1",
     "yiisoft/yii2-bootstrap": "^2.0",
     "yiisoft/yii2-redis": "^2.0"
@@ -57,6 +58,10 @@
     "fix": "php-cs-fixer fix --config .php_cs && php-cs-fixer fix --config .php_cs_header"
   },
   "repositories": {
+    "packagist": {
+      "type": "composer",
+      "url": "https://packagist.phpcomposer.com"
+    },
     "composer": {
       "type": "composer",
       "url": "https://asset-packagist.org"

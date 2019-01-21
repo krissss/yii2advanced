@@ -94,10 +94,10 @@ EOL;
       - {$app['port']}:80
     volumes:
       - {$app['appPath']}:/app
-      {$comment['nginxConf']}- {$app['appPath']}/docker/nginx:/etc/nginx/conf.d:ro
-      {$comment['phpConf']}- {$app['appPath']}/docker/php/php.ini:/usr/local/etc/php/conf.d/php.ini:ro
-      {$comment['supervisorConf']}- {$app['appPath']}/docker/supervisor/queue.conf:/etc/supervisor/conf.d/queue.conf:ro
-      - {$app['composerPath']}:/tmp:ro
+      {$comment['nginxConf']}- {$app['appPath']}/docker/nginx:/etc/nginx/conf.d
+      {$comment['phpConf']}- {$app['appPath']}/docker/php/php.ini:/usr/local/etc/php/conf.d/php.ini
+      {$comment['supervisorConf']}- {$app['appPath']}/docker/supervisor/queue.conf:/etc/supervisor/conf.d/queue.conf
+      - {$app['composerPath']}:/tmp
     links:
       {$comment['mysql']}- {$config['docker']['mysql']['name']}
       {$comment['redis']}- {$config['docker']['redis']['name']}

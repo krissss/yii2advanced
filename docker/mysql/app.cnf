@@ -1,7 +1,8 @@
 [client]
-default-character-set=utf8
+character_set_client=utf8
 
 [mysqld]
 # @link https://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html
 
-character-set-server=utf8
+character_set_server=utf8
+lower_case_table_names=1

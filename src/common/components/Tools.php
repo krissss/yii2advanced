@@ -2,8 +2,11 @@
 
 namespace common\components;
 
+use common\models\settings\SettingApp;
 use kriss\tools\Fun;
 use Yii;
+use yii\helpers\ArrayHelper;
+use yii\helpers\Html;
 
 class Tools extends Fun
 {
@@ -43,5 +46,25 @@ class Tools extends Fun
             $yiiExecFile = dirname(dirname(Yii::getAlias('@console'))) . DIRECTORY_SEPARATOR . 'yii';
         }
         parent::runYiiConsoleInBackground($yiiCmd, $yiiExecFile, $phpExecFile);
+    }
+
+    /**
+     * @return string
+     */
+    public static function getAppName()
+    {
+        return SettingApp::getValue('name', Yii::$app->name);
+    }
+
+    /**
+     * @param array $options
+     * @return string
+     */
+    public static function getAppLogoImg($options = [])
+    {
+        $options = ArrayHelper::merge([
+            'alt' => static::getAppName(),
+        ], $options);
+        return Html::img(SettingApp::getValue('logo'), $options);
     }
 }

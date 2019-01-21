@@ -6,15 +6,14 @@
  * @var $exception Exception
  */
 
-use yii\helpers\Html;
+use common\components\Tools;
 
 $this->title = $name;
 ?>
 <div class="login-box">
     <div class="login-logo">
         <a href="javascript:void(0);">
-            <?= Html::img('@web/images/logo.png', [
-                'alt' => Yii::$app->name,
+            <?= Tools::getAppLogoImg([
                 'style' => 'max-width: 80%;'
             ]) ?>
         </a>

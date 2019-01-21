@@ -8,5 +8,8 @@ return [
         'adapter' => function () {
             return new \League\Flysystem\Adapter\Local(Yii::getAlias('@runtimePath/storage'));
         },
-    ]
+    ],
+    ComponentName::SETTINGS => [
+        'class' => 'yii2mod\settings\components\Settings',
+    ],
 ];

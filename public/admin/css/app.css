@@ -267,7 +267,7 @@ td.kv-row-select {
 }
 
 /* control-label 超出高度后导致的换行问题 */
-.control-label {
+.form-horizontal .control-label {
   height: 32px;
   display: flex;
   align-items: center;

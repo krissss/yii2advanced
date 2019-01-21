@@ -4,8 +4,6 @@
  */
 
 use common\models\Admin;
-use common\models\base\Auth;
-use kriss\modules\auth\tools\AuthValidate;
 
 /** @var $admin Admin */
 $admin = Yii::$app->user->identity;
@@ -17,12 +15,13 @@ $menu = [
     ['label' => '用户管理', 'icon' => 'circle-o', 'url' => [$baseUrl . '/user']],
     ['label' => '管理员管理', 'icon' => 'circle-o', 'url' => [$baseUrl . '/admin']],
     [
-        'label' => '权限管理', 'icon' => 'list', 'url' => '#', 'visible' => AuthValidate::has([Auth::PERMISSION_VIEW, Auth::ROLE_VIEW]),
+        'label' => '权限管理', 'icon' => 'list', 'url' => '#',
         'items' => [
-            ['label' => '权限查看', 'icon' => 'circle-o', 'url' => [$baseUrl . '/auth/permission'], 'visible' => AuthValidate::has([Auth::PERMISSION_VIEW])],
-            ['label' => '角色管理', 'icon' => 'circle-o', 'url' => [$baseUrl . '/auth/role'], 'visible' => AuthValidate::has([Auth::ROLE_VIEW])],
+            ['label' => '权限查看', 'icon' => 'circle-o', 'url' => [$baseUrl . '/auth/permission']],
+            ['label' => '角色管理', 'icon' => 'circle-o', 'url' => [$baseUrl . '/auth/role']],
         ]
-    ]
+    ],
+    ['label' => '系统设置', 'icon' => 'circle-o', 'url' => [$baseUrl . '/setting/app']],
 ];
 ?>
 <aside class="main-sidebar">

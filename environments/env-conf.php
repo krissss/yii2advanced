@@ -10,7 +10,7 @@ return [
         'config' => [
             'docker' => [
                 'app' => [
-                    'appPath' => 'D:\phpStudy\WWW\yii2advanced',
+                    'appPath' => '.',
                     'composerPath' => 'C:\Users\<user>\AppData\Roaming\Composer',
                 ],
                 'mysql' => [

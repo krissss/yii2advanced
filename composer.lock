@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b8a1bf7ece517b0ab0700e2e18b5e6dc",
+    "content-hash": "359225b2f2f08649126c1e5515ea7d6b",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -1099,23 +1099,25 @@
         },
         {
             "name": "kriss/yii2-common-class",
-            "version": "v2.2.5",
+            "version": "2.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/krissss/yii2-common-tools.git",
-                "reference": "5374bb727b7b0e67bf4f757e5b7a5ab04a878068"
+                "reference": "ad8315aa20bb2c98067b85be210132080faef84c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/krissss/yii2-common-tools/zipball/5374bb727b7b0e67bf4f757e5b7a5ab04a878068",
-                "reference": "5374bb727b7b0e67bf4f757e5b7a5ab04a878068",
+                "url": "https://api.github.com/repos/krissss/yii2-common-tools/zipball/ad8315aa20bb2c98067b85be210132080faef84c",
+                "reference": "ad8315aa20bb2c98067b85be210132080faef84c",
                 "shasum": ""
             },
             "require": {
+                "yiisoft/yii2": "~2.0.6"
+            },
+            "suggest": {
                 "dmstr/yii2-adminlte-asset": "^2.5",
                 "kartik-v/yii2-datecontrol": "^1.9",
-                "kartik-v/yii2-dynagrid": "^1.4",
-                "yiisoft/yii2": "~2.0.6"
+                "kartik-v/yii2-dynagrid": "^1.4"
             },
             "type": "yii2-extension",
             "autoload": {
@@ -1139,7 +1141,7 @@
             "keywords": [
                 "yii2"
             ],
-            "time": "2019-01-16T04:30:38+00:00"
+            "time": "2019-01-25T09:31:31+00:00"
         },
         {
             "name": "kriss/yii2-flysystem",

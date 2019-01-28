@@ -26,7 +26,7 @@
     "kartik-v/yii2-dynagrid": "^1.4",
     "kriss/env-generator": "^1.0",
     "kriss/yii2-adminlte-iframe-mode": "^2.0",
-    "kriss/yii2-common-class": "^2.0",
+    "kriss/yii2-common-class": "^2.2",
     "kriss/yii2-flysystem": "^1.1",
     "kriss/yii2-log-reader": "^2.2",
     "vlucas/phpdotenv": "^2.4",

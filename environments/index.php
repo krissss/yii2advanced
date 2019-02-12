@@ -10,7 +10,7 @@ $setExecutablePath = [
     'yii',
 ];
 
-$envConf = require __DIR__ . '/env-conf.php';
+$envConf = require __DIR__ . '/generate-config/env-conf.php';
 $envArr = [];
 foreach ($envConf as $env => $conf) {
     /** @var $conf \kriss\envGenerator\Env */

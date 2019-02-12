@@ -24,7 +24,7 @@
     "dmstr/yii2-adminlte-asset": "^2.6",
     "kartik-v/yii2-datecontrol": "^1.9",
     "kartik-v/yii2-dynagrid": "^1.4",
-    "kriss/env-generator": "^1.0",
+    "kriss/env-generator": "^1.1",
     "kriss/yii2-adminlte-iframe-mode": "^2.0",
     "kriss/yii2-common-class": "^2.2",
     "kriss/yii2-flysystem": "^1.1",

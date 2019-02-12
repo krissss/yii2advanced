@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "359225b2f2f08649126c1e5515ea7d6b",
+    "content-hash": "ebecbaaf8b0730649c940d85263b6379",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -1023,23 +1023,22 @@
         },
         {
             "name": "kriss/env-generator",
-            "version": "v1.0",
+            "version": "v1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/krissss/env-generator.git",
-                "reference": "8956c32b0923448da6d965eeb1802fa15fb4883d"
+                "reference": "a95ca85913244ef65bb77ed6dac4d69e5a8d2304"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/krissss/env-generator/zipball/8956c32b0923448da6d965eeb1802fa15fb4883d",
-                "reference": "8956c32b0923448da6d965eeb1802fa15fb4883d",
+                "url": "https://api.github.com/repos/krissss/env-generator/zipball/a95ca85913244ef65bb77ed6dac4d69e5a8d2304",
+                "reference": "a95ca85913244ef65bb77ed6dac4d69e5a8d2304",
                 "shasum": ""
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "kriss\\envGenerator\\": "src",
-                    "kriss\\envGeneratorExample\\": "example"
+                    "kriss\\envGenerator\\": "src"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1052,7 +1051,8 @@
                     "email": "462679766@qq.com"
                 }
             ],
-            "time": "2018-12-03T13:02:30+00:00"
+            "description": "php env generator",
+            "time": "2019-02-12T07:08:20+00:00"
         },
         {
             "name": "kriss/yii2-adminlte-iframe-mode",

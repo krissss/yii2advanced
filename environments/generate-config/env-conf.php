@@ -1,26 +1,27 @@
 <?php
 
-require_once __DIR__ . '/../vendor/autoload.php';
-
-use kriss\envGenerator\Env;
+require_once __DIR__ . '/config.php';
 
 return [
-    'dev' => new Env([
+    'dev' => [
         'desc' => '开发环境',
         'config' => [
             'docker' => [
                 'app' => [
-                    'appPath' => '.',
-                    'composerPath' => 'C:\Users\<user>\AppData\Roaming\Composer',
+                    'appPath' => $devAppPath,
+                    'port' => $devPortApp,
+                    'composerPath' => $devComposerPath,
                 ],
                 'mysql' => [
-                    'dataPath' => 'D:\docker\yii2advanced\mysql_data',
+                    'port' => $devPortMysql,
+                    'dataPath' => "{$devDataPath}\\{$appName}\\mysql_data",
                     'rootPassword' => 'root@128931237',
-                    'password' => 'yii2advanced@12378243',
+                    'password' => "{$appName}@12378243",
                 ],
                 'redis' => [
-                    'dataPath' => 'D:\docker\yii2advanced\redis_data',
-                    'password' => 'yii2advanced@123324',
+                    'port' => $devPortRedis,
+                    'dataPath' => "{$devDataPath}\\{$appName}\\redis_data",
+                    'password' => "{$appName}@123324",
                 ],
             ],
             'project' => [
@@ -29,22 +30,22 @@ return [
                 'cookieKey' => 'jjkj1kj3j1239890aksdqwe',
             ],
         ],
-    ]),
-    'prod' => new Env([
+    ],
+    'prod' => [
         'desc' => '正式环境',
         'config' => [
             'docker' => [
                 'mysql' => [
                     'rootPassword' => 'root@923847213',
-                    'password' => 'yii2advanced@342321113',
+                    'password' => "{$appName}@342321113",
                 ],
                 'redis' => [
-                    'password' => 'yii2advanced@1123324',
+                    'password' => "{$appName}@1123324",
                 ],
             ],
             'project' => [
                 'cookieKey' => '12jlkjsd90898qjkl123',
             ],
         ],
-    ]),
+    ],
 ];

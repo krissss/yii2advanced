@@ -1,5 +1,6 @@
 [client]
-character_set_client=utf8
+# client 不需要设置，默认为 utf8mb4
+#character_set_client=utf8
 
 [mysqld]
 # @link https://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html

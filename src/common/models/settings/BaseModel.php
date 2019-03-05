@@ -15,11 +15,15 @@ abstract class BaseModel extends Model
 
     public static function getValue($key, $defaultValue = null)
     {
-        return Component::settings()->get(
+        $value = Component::settings()->get(
             static::getSectionName(),
             $key,
-            isset(static::attributeDefaultValue()[$key]) ? static::attributeDefaultValue()[$key] : $defaultValue
+            $defaultValue
         );
+        if (!$value && isset(static::attributeDefaultValue()[$key])) {
+            return static::attributeDefaultValue()[$key];
+        }
+        return $value;
     }
 
     abstract protected static function attributeDefaultValue();

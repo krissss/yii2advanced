@@ -9,7 +9,7 @@ return [
             'app' => [
                 'name' => 'app',
                 'image' => 'daocloud.io/krissss/docker-yii2_71',
-                'version' => 'v1.7',
+                'version' => 'v1.9',
                 'port' => $prodPortApp,
                 'appPath' => "{$prodAppPath}/{$appName}",
                 'composerPath' => $prodComposerPath,

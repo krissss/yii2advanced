@@ -25,6 +25,7 @@
     "kartik-v/yii2-datecontrol": "^1.9",
     "kartik-v/yii2-dynagrid": "^1.4",
     "kriss/env-generator": "^1.1",
+    "kriss/foxy-yii2-convert": "^0.1",
     "kriss/yii2-adminlte-iframe-mode": "^2.0",
     "kriss/yii2-common-class": "^2.2",
     "kriss/yii2-flysystem": "^1.1",
@@ -39,16 +40,29 @@
     "yiisoft/yii2-debug": "^2.0",
     "yiisoft/yii2-gii": "^2.0"
   },
+  "provide": {
+    "bower-asset/bootstrap": "*",
+    "bower-asset/jquery": "*",
+    "bower-asset/inputmask": "*",
+    "bower-asset/punycode": "*",
+    "bower-asset/yii2-pjax": "*",
+    "bower-asset/typeahead.js": "*"
+  },
   "suggest": {
     "friendsofphp/php-cs-fixer": "For Fix: composer global require friendsofphp/php-cs-fixer"
   },
   "config": {
     "process-timeout": 1800,
     "sort-packages": true,
-    "optimize-autoloader": true
-  },
-  "extra": {
-    "npm-asset-repository": "https://registry.npm.taobao.org"
+    "optimize-autoloader": true,
+    "foxy": {
+      "enabled": true,
+      "manager": "yarn",
+      "enable-packages": {
+        "almasaeed2010/adminlte": false,
+        "*": true
+      }
+    }
   },
   "scripts": {
     "post-create-project-cmd": "php init --env=dev --overwrite=all",
@@ -60,15 +74,7 @@
   "repositories": {
     "packagist": {
       "type": "composer",
-      "url": "https://packagist.phpcomposer.com"
-    },
-    "composer": {
-      "type": "composer",
-      "url": "https://asset-packagist.org"
-    },
-    "kriss/yii2-common-class": {
-      "type": "path",
-      "url": "D:\\phpStudy\\WWW\\kriss-composer\\kriss"
+      "url": "https://packagist.laravel-china.org"
     }
   }
 }

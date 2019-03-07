@@ -22,14 +22,14 @@ return [
     'components' => ArrayHelper::merge([
         'db' => $db,
         'sessionRedis' => array_merge($redis, [
-            'database' => getenv('REDIS_DB_SESSION'),
+            'database' => getenv('RDB_DB_SESSION'),
         ]),
         'cache' => [
             'class' => \yii\redis\Cache::class,
             'redis' => 'cacheRedis'
         ],
         'cacheRedis' => array_merge($redis, [
-            'database' => getenv('REDIS_DB_CACHE'),
+            'database' => getenv('RDB_DB_CACHE'),
         ]),
         'log' => [
             'targets' => Logger::getCommonYiiLogTargets(),

@@ -60,11 +60,11 @@ DB_USERNAME={$project['db']['username']}
 DB_PASSWORD={$project['db']['password']}
 
 # redis
-REDIS_HOST={$project['redis']['host']}
-REDIS_PORT={$project['redis']['port']}
-REDIS_PASSWORD={$project['redis']['password']}
-REDIS_DB_SESSION={$project['redis']['dbSession']}
-REDIS_DB_CACHE={$project['redis']['dbCache']}
+RDB_HOST={$project['redis']['host']}
+RDB_PORT={$project['redis']['port']}
+RDB_PASSWORD={$project['redis']['password']}
+RDB_DB_SESSION={$project['redis']['dbSession']}
+RDB_DB_CACHE={$project['redis']['dbCache']}
 
 # 增加额外其他配置，请到 {$thisFile}::{$thisFunc}() 下增加配置参数，然后重新生成该文件
 # 在此后面添加

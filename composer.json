@@ -30,7 +30,7 @@
     "kriss/yii2-common-class": "^2.2",
     "kriss/yii2-flysystem": "^1.1",
     "kriss/yii2-log-reader": "^2.2",
-    "vlucas/phpdotenv": "^2.4",
+    "vlucas/phpdotenv": "^3.3",
     "yii2mod/yii2-settings": "^2.4",
     "yiisoft/yii2": "2.0.15.1",
     "yiisoft/yii2-bootstrap": "^2.0",

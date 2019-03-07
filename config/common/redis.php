@@ -1,10 +1,10 @@
 <?php
 
-$password = getenv('REDIS_PASSWORD');
+$password = getenv('RDB_PASSWORD');
 $redisConf = [
     'class' => 'yii\redis\Connection',
-    'hostname' => getenv('REDIS_HOST'),
-    'port' => getenv('REDIS_PORT'),
+    'hostname' => getenv('RDB_HOST'),
+    'port' => getenv('RDB_PORT'),
     'database' => 0,
 ];
 if ($password) {

@@ -4,7 +4,7 @@ version: '2'
 
 services:
   app:
-    image: daocloud.io/krissss/docker-yii2_71:v1.7
+    image: daocloud.io/krissss/docker-yii2_71:v1.9.1
     ports:
       - 10080:80
     volumes:

@@ -100,7 +100,7 @@ EOL;
       {$comment['nginxConf']}- {$app['appPath']}/docker/nginx:/etc/nginx/conf.d
       {$comment['phpConf']}- {$app['appPath']}/docker/php/php.ini:/usr/local/etc/php/conf.d/php.ini
       {$comment['supervisorConf']}- {$app['appPath']}/docker/supervisor/queue.conf:/etc/supervisor/conf.d/queue.conf
-      - {$app['composerPath']}:/tmp
+      - {$app['composerPath']}:/composer
     links:
       {$comment['mysql']}- {$config['docker']['mysql']['name']}
       {$comment['redis']}- {$config['docker']['redis']['name']}

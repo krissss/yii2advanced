@@ -4,7 +4,7 @@ version: '2'
 
 services:
   app:
-    image: daocloud.io/krissss/docker-yii2_71:v1.9.1
+    image: daocloud.io/krissss/docker-yii2_71:v2.0
     ports:
       - 10080:80
     volumes:
@@ -12,7 +12,7 @@ services:
       - ./docker/nginx:/etc/nginx/conf.d
       - ./docker/php/php.ini:/usr/local/etc/php/conf.d/php.ini
       #- ./docker/supervisor/queue.conf:/etc/supervisor/conf.d/queue.conf
-      - C:\Users\<user>\AppData\Roaming\Composer:/tmp
+      - C:\Users\<user>\AppData\Roaming\Composer:/composer
     links:
       - mysql
       - redis

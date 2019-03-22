@@ -16,8 +16,8 @@ return [
     // 网站维护，打开以下注释
     //'catchAll' => ['site/offline'],
     'aliases' => [
-        '@bower' => '@vendor/bower-asset',
-        '@npm' => '@vendor/npm-asset',
+        '@bower' => '@project/node_modules',
+        '@npm' => '@project/node_modules',
     ],
     'components' => ArrayHelper::merge([
         'db' => $db,

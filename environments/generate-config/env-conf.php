@@ -11,6 +11,7 @@ return [
                     'appPath' => $devAppPath,
                     'port' => $devPortApp,
                     'composerPath' => $devComposerPath,
+                    'phpConf' => 'dev',
                 ],
                 'mysql' => [
                     'port' => $devPortMysql,

@@ -81,7 +81,7 @@ EOL;
 
         $comment = [
             'nginxConf' => $app['hasNginxConf'] ? '' : '#',
-            'phpConf' => $app['hasPhpConf'] ? '' : '#',
+            'phpConf' => $app['phpConf'] ? '' : '#',
             'supervisorConf' => $app['hasSupervisorConf'] ? '' : '#',
             'mysql' => $mysql['use'] ? '' : '#',
             'mysqlConf' => $mysql['hasMysqlConf'] ? '' : '#',
@@ -98,7 +98,7 @@ EOL;
     volumes:
       - {$app['appPath']}:/app
       {$comment['nginxConf']}- {$app['appPath']}/docker/nginx:/etc/nginx/conf.d
-      {$comment['phpConf']}- {$app['appPath']}/docker/php/php.ini:/usr/local/etc/php/conf.d/php.ini
+      {$comment['phpConf']}- {$app['appPath']}/docker/php/{$app['phpConf']}.ini:/usr/local/etc/php/conf.d/php.ini
       {$comment['supervisorConf']}- {$app['appPath']}/docker/supervisor/queue.conf:/etc/supervisor/conf.d/queue.conf
       - {$app['composerPath']}:/composer
     links:

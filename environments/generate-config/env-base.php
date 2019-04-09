@@ -14,7 +14,7 @@ return [
                 'appPath' => "{$prodAppPath}/{$appName}",
                 'composerPath' => $prodComposerPath,
                 'hasNginxConf' => true,
-                'hasPhpConf' => true,
+                'phpConf' => 'prod', // prod dev 或 false
                 'hasSupervisorConf' => false,
             ],
             'mysql' => [

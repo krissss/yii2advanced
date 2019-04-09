@@ -10,7 +10,7 @@ services:
     volumes:
       - .:/app
       - ./docker/nginx:/etc/nginx/conf.d
-      - ./docker/php/php.ini:/usr/local/etc/php/conf.d/php.ini
+      - ./docker/php/dev.ini:/usr/local/etc/php/conf.d/php.ini
       #- ./docker/supervisor/queue.conf:/etc/supervisor/conf.d/queue.conf
       - C:\Users\<user>\AppData\Roaming\Composer:/composer
     links:

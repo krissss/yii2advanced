@@ -50,6 +50,10 @@ return [
                     'class' => 'yii\i18n\PhpMessageSource',
                     'basePath' => '@yii2mod/settings/messages',
                 ],
+                'kriss' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@project/vendor/kriss/yii2-common-class/messages',
+                ],
             ]
         ]
     ], $extendComponents),

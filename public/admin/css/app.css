@@ -274,3 +274,8 @@ td.kv-row-select {
   justify-content: flex-end;
   padding-top: 0 !important;
 }
+
+/* 控制在左侧菜单栏比较少的情况下，右侧不出现滚动条 */
+.content-wrapper {
+  min-height: 90%;
+}

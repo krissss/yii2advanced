@@ -36,6 +36,7 @@ $config = [
             'class' => \yii\redis\Session::class,
             'redis' => 'sessionRedis',
             'name' => "_session-{$moduleName}",
+            'timeout' => 86400,
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',

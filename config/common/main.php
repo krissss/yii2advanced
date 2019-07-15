@@ -1,6 +1,7 @@
 <?php
 
 use common\components\Logger;
+use kriss\messages\I18NHelper;
 use yii\helpers\ArrayHelper;
 
 $db = require __DIR__ . '/db.php';
@@ -50,10 +51,7 @@ return [
                     'class' => 'yii\i18n\PhpMessageSource',
                     'basePath' => '@yii2mod/settings/messages',
                 ],
-                'kriss' => [
-                    'class' => 'yii\i18n\PhpMessageSource',
-                    'basePath' => '@project/vendor/kriss/yii2-common-class/messages',
-                ],
+                'kriss' => I18NHelper::getKrissMessageConfig(),
             ]
         ]
     ], $extendComponents),

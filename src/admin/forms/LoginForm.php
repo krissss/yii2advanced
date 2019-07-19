@@ -1,6 +1,6 @@
 <?php
 
-namespace admin\models\form;
+namespace admin\forms;
 
 use common\models\Admin;
 use Yii;

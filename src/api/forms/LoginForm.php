@@ -1,6 +1,6 @@
 <?php
 
-namespace api\models\form;
+namespace api\forms;
 
 use common\models\User;
 use kriss\components\CellphoneValidator;

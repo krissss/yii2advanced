@@ -3,7 +3,7 @@
 namespace admin\controllers;
 
 use admin\components\BaseWebController;
-use admin\models\form\LoginForm;
+use admin\forms\LoginForm;
 use common\models\Admin;
 use kriss\actions\web\ErrorAction;
 use kriss\actions\web\OfflineAction;

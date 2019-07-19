@@ -3,7 +3,7 @@
 namespace admin\controllers;
 
 use admin\components\AuthWebController;
-use admin\models\form\ModifyPasswordForm;
+use admin\forms\ModifyPasswordForm;
 use kriss\actions\web\crud\CommonFormAction;
 
 class AccountController extends AuthWebController

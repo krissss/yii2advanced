@@ -1,6 +1,6 @@
 <?php
 
-namespace api\models\form;
+namespace api\forms;
 
 use common\components\Tools;
 use common\models\User;

@@ -3,8 +3,8 @@
 namespace api\controllers;
 
 use api\components\BaseRestController;
-use api\models\form\LoginForm;
-use api\models\form\RegisterForm;
+use api\forms\LoginForm;
+use api\forms\RegisterForm;
 use kriss\actions\rest\crud\CommonFormAction;
 use kriss\behaviors\rest\PostVerbFilter;
 

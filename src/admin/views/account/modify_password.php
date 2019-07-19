@@ -1,7 +1,7 @@
 <?php
 /**
  * @var $this yii\web\View
- * @var $model admin\models\form\ModifyPasswordForm
+ * @var $model admin\forms\ModifyPasswordForm
  */
 
 use kriss\widgets\SimpleActiveForm;

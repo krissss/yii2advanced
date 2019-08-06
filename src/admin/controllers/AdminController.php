@@ -4,11 +4,10 @@ namespace admin\controllers;
 
 use admin\components\AuthWebController;
 use common\models\Admin;
-use common\models\enum\AdminStatus;
 use kriss\actions\web\crud\CreateAction;
 use kriss\actions\web\crud\IndexAction;
-use kriss\actions\web\crud\ToggleAction;
 use kriss\actions\web\crud\UpdateAction;
+use kriss\actions\web\UsedUnusedChangeAction;
 use kriss\modules\auth\actions\UserRoleUpdateAction;
 use Yii;
 use yii\web\ForbiddenHttpException;
@@ -67,11 +66,8 @@ class AdminController extends AuthWebController
         ];
         // 修改状态
         $actions['change-status'] = [
-            'class' => ToggleAction::class,
+            'class' => UsedUnusedChangeAction::class,
             'modelClass' => Admin::class,
-            'attribute' => 'status',
-            'onValue' => AdminStatus::NORMAL,
-            'offValue' => AdminStatus::DISABLE,
             'beforeRunCallback' => function ($id) {
                 if ($id == Admin::SUPER_ADMIN_ID) {
                     throw new ForbiddenHttpException('不能修改超级管理员信息');

@@ -5,11 +5,10 @@
  * @var $searchModel
  */
 
-use common\models\enum\UserStatus;
 use kriss\widgets\ActionColumn;
 use kriss\widgets\DatetimeColumn;
 use kriss\widgets\SimpleDynaGrid;
-use kriss\widgets\ToggleColumn;
+use kriss\widgets\UsedUnusedStatusColumn;
 use yii\helpers\Html;
 
 $this->title = '用户列表';
@@ -32,12 +31,8 @@ $columns = [
         'attribute' => 'name',
     ],
     [
-        'class' => ToggleColumn::class,
+        'class' => UsedUnusedStatusColumn::class,
         'attribute' => 'status',
-        'action' => 'change-status',
-        'items' => UserStatus::getViewItems(),
-        'onValue' => UserStatus::NORMAL,
-        'offValue' => UserStatus::DISABLE,
     ],
     [
         'class' => DatetimeColumn::class,

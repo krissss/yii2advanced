@@ -22,6 +22,7 @@
   "require": {
     "php": ">=7.0",
     "dmstr/yii2-adminlte-asset": "^2.6",
+    "kartik-v/yii2-date-range": "^1.7",
     "kartik-v/yii2-datecontrol": "^1.9",
     "kartik-v/yii2-dynagrid": "^1.5",
     "kriss/env-generator": "^1.1",

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a2211dc83dda976c0157877b1f5e9364",
+    "content-hash": "e69969bd00b61bf18004ed5d5a08faa0",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -463,6 +463,66 @@
                 "time"
             ],
             "time": "2018-07-13T06:56:46+00:00"
+        },
+        {
+            "name": "kartik-v/yii2-date-range",
+            "version": "v1.7.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kartik-v/yii2-date-range.git",
+                "reference": "c8ed362fb201d17a1b84d4de3a4c7b0be8e0d7c1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kartik-v/yii2-date-range/zipball/c8ed362fb201d17a1b84d4de3a4c7b0be8e0d7c1",
+                "reference": "c8ed362fb201d17a1b84d4de3a4c7b0be8e0d7c1",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "kartik-v/yii2-krajee-base": ">=2.0.0"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.7.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "kartik\\daterange\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Kartik Visweswaran",
+                    "email": "kartikv2@gmail.com",
+                    "homepage": "http://www.krajee.com/"
+                }
+            ],
+            "description": "An advanced Yii 2 date range picker input for based on bootstrap-daterangepicker plugin.",
+            "homepage": "https://github.com/kartik-v/yii2-date-range",
+            "keywords": [
+                "bootstrap",
+                "bootstrap 3",
+                "date",
+                "date-range",
+                "extension",
+                "range",
+                "time",
+                "widget",
+                "yii2"
+            ],
+            "time": "2019-05-17T12:35:38+00:00"
         },
         {
             "name": "kartik-v/yii2-datecontrol",
@@ -1071,16 +1131,16 @@
         },
         {
             "name": "kriss/yii2-common-class",
-            "version": "v2.3.0",
+            "version": "v2.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/krissss/yii2-common-tools.git",
-                "reference": "7f79863eb30af8cbb6086926834512b323a12096"
+                "reference": "4b909bec720965f8a2213f18fec816b5f35c54b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/krissss/yii2-common-tools/zipball/7f79863eb30af8cbb6086926834512b323a12096",
-                "reference": "7f79863eb30af8cbb6086926834512b323a12096",
+                "url": "https://api.github.com/repos/krissss/yii2-common-tools/zipball/4b909bec720965f8a2213f18fec816b5f35c54b2",
+                "reference": "4b909bec720965f8a2213f18fec816b5f35c54b2",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -1120,7 +1180,7 @@
             "keywords": [
                 "yii2"
             ],
-            "time": "2019-07-15T04:48:58+00:00"
+            "time": "2019-08-06T02:13:43+00:00"
         },
         {
             "name": "kriss/yii2-flysystem",

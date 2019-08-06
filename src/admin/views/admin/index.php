@@ -5,10 +5,9 @@
  */
 
 use common\models\Admin;
-use common\models\enum\AdminStatus;
 use kriss\widgets\ActionColumn;
 use kriss\widgets\SimpleDynaGrid;
-use kriss\widgets\ToggleColumn;
+use kriss\widgets\UsedUnusedStatusColumn;
 use yii\helpers\Html;
 
 $this->title = '管理员管理列表';
@@ -27,12 +26,7 @@ $columns = [
         'attribute' => 'name',
     ],
     [
-        'class' => ToggleColumn::class,
-        'attribute' => 'status',
-        'action' => 'change-status',
-        'items' => AdminStatus::getViewItems(),
-        'onValue' => AdminStatus::NORMAL,
-        'offValue' => AdminStatus::DISABLE,
+        'class' => UsedUnusedStatusColumn::class,
         'canOperate' => function (Admin $model) {
             return $model->id != Admin::SUPER_ADMIN_ID;
         }

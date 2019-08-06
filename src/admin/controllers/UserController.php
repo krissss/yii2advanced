@@ -4,13 +4,12 @@ namespace admin\controllers;
 
 use admin\components\AuthWebController;
 use admin\models\UserSearch;
-use common\models\enum\UserStatus;
 use common\models\User;
 use kriss\actions\web\crud\CreateAction;
 use kriss\actions\web\crud\IndexAction;
-use kriss\actions\web\crud\ToggleAction;
 use kriss\actions\web\crud\UpdateAction;
 use kriss\actions\web\crud\ViewAction;
+use kriss\actions\web\UsedUnusedChangeAction;
 
 class UserController extends AuthWebController
 {
@@ -46,11 +45,8 @@ class UserController extends AuthWebController
         ];
         // 修改状态
         $actions['change-status'] = [
-            'class' => ToggleAction::class,
+            'class' => UsedUnusedChangeAction::class,
             'modelClass' => User::class,
-            'attribute' => 'status',
-            'onValue' => UserStatus::NORMAL,
-            'offValue' => UserStatus::DISABLE,
         ];
 
         return $actions;

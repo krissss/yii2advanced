@@ -11,6 +11,7 @@ class UserSearch extends User
     {
         return [
             [['cellphone', 'name'], 'string'],
+            [['created_at'], 'safe'],
         ];
     }
 
@@ -36,6 +37,15 @@ class UserSearch extends User
 
         $query->andFilterWhere(['like', 'cellphone', $this->cellphone])
             ->andFilterWhere(['like', 'name', $this->name]);
+
+
+        $timeRangeAttributes = ['created_at'];
+        foreach ($timeRangeAttributes as $attribute) {
+            if ($this->$attribute) {
+                list($start, $end) = explode(' - ', $this->$attribute);
+                $query->andWhere(['between', $attribute, strtotime($start), strtotime($end)]);
+            }
+        }
 
         return $dataProvider;
     }

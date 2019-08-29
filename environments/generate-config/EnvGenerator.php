@@ -48,23 +48,23 @@ EOL;
 # 应用环境
     
 # Yii 环境
-YII_DEBUG={$project['yiiDebug']}
-YII_ENV={$project['yiiEnv']}
+YII_DEBUG="{$project['yiiDebug']}"
+YII_ENV="{$project['yiiEnv']}"
 
 # Request Cookie
-COOKIE_KEY={$project['cookieKey']}
+COOKIE_KEY="{$project['cookieKey']}"
 
 # 数据库
-DB_DSN={$project['db']['dsn']}
-DB_USERNAME={$project['db']['username']}
-DB_PASSWORD={$project['db']['password']}
+DB_DSN="{$project['db']['dsn']}"
+DB_USERNAME="{$project['db']['username']}"
+DB_PASSWORD="{$project['db']['password']}"
 
 # redis
-RDB_HOST={$project['redis']['host']}
-RDB_PORT={$project['redis']['port']}
-RDB_PASSWORD={$project['redis']['password']}
-RDB_DB_SESSION={$project['redis']['dbSession']}
-RDB_DB_CACHE={$project['redis']['dbCache']}
+RDB_HOST="{$project['redis']['host']}"
+RDB_PORT="{$project['redis']['port']}"
+RDB_PASSWORD="{$project['redis']['password']}"
+RDB_DB_SESSION="{$project['redis']['dbSession']}"
+RDB_DB_CACHE="{$project['redis']['dbCache']}"
 
 # 增加额外其他配置，请到 {$thisFile}::{$thisFunc}() 下增加配置参数，然后重新生成该文件
 # 在此后面添加

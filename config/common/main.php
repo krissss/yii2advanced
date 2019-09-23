@@ -26,7 +26,7 @@ return [
             'database' => getenv('RDB_DB_SESSION'),
         ]),
         'cache' => [
-            'class' => \yii\redis\Cache::class,
+            'class' => 'yii\redis\Cache',
             'redis' => 'cacheRedis'
         ],
         'cacheRedis' => array_merge($redis, [

@@ -13,7 +13,12 @@ $config = [
     'basePath' => "@{$moduleName}",
     'runtimePath' => "@runtimePath/{$moduleName}",
     'controllerNamespace' => "{$moduleName}\controllers",
-    'bootstrap' => ['log'],
+    'bootstrap' => [
+        'log',
+        function () {
+            Yii::setAlias('@public', Yii::getAlias('@web/../'));
+        }
+    ],
     // 网站维护，打开以下注释
     //'catchAll' => ['site/offline'],
     'modules' => $modules,
@@ -26,14 +31,14 @@ $config = [
             'cookieValidationKey' => "{$moduleName}-{$cookieKey}",
         ],
         'user' => [
-            'class' => \kriss\modules\auth\components\User::class,
-            'authClass' => \common\models\base\Auth::class,
+            'class' => 'kriss\modules\auth\components\User',
+            'authClass' => 'common\models\base\Auth',
             'identityClass' => Admin::class,
             'enableAutoLogin' => false,
             'identityCookie' => ['name' => "_identity-{$moduleName}", 'httpOnly' => true],
         ],
         'session' => [
-            'class' => \yii\redis\Session::class,
+            'class' => 'yii\redis\Session',
             'redis' => 'sessionRedis',
             'name' => "_session-{$moduleName}",
             'timeout' => 86400,

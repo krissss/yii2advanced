@@ -1,12 +1,13 @@
 <?php
 
 use common\components\ComponentName;
+use League\Flysystem\Adapter\Local;
 
 return [
     ComponentName::STORAGE => [
-        'class' => \kriss\storage\Storage::class,
+        'class' => 'kriss\storage\Storage',
         'adapter' => function () {
-            return new \League\Flysystem\Adapter\Local(Yii::getAlias('@runtimePath/storage'));
+            return new Local(Yii::getAlias('@runtimePath/storage'));
         },
     ],
     ComponentName::SETTINGS => [

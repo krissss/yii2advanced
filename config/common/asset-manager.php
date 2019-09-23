@@ -1,6 +1,11 @@
 <?php
 
+use yii\web\AssetManager;
+
 return [
+    'class' => AssetManager::class,
+    'basePath' => '@publicRoot/assets',
+    'baseUrl' => '@public/assets',
     'appendTimestamp' => true,
     'hashCallback' => function ($path) {
         return hash('md4', $path);

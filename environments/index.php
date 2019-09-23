@@ -2,8 +2,7 @@
 
 $writablePath = [
     'runtime',
-    'public/admin/assets',
-    'public/api/assets',
+    'public/assets',
 ];
 
 $setExecutablePath = [

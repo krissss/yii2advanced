@@ -39,8 +39,8 @@ class SettingApp extends BaseModel
     {
         return [
             'name' => Yii::$app->name,
-            'logo' => Url::to('@web/images/logo.png'),
-            'favicon' => Url::to('@web/favicon.ico'),
+            'logo' => Url::to('@public/common/images/logo.png'),
+            'favicon' => Url::to('@public/common/images/favicon.ico'),
         ];
     }
 }

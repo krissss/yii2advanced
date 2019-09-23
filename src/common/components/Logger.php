@@ -66,6 +66,8 @@ class Logger
                 'except' => [
                     'yii\web\HttpException:401',
                 ],
+                'fileMode' => 0777,
+                'dirMode' => 0777
             ]
         ];
         $others = array_map(function ($category) {
@@ -75,7 +77,8 @@ class Logger
                 'logVars' => [],
                 'logFile' => Logger::getCommonLogDir($category),
                 'maxLogFiles' => 31,
-                'dirMode' => 0777,
+                'fileMode' => 0777,
+                'dirMode' => 0777
             ];
         }, $categories);
         return array_merge($app, $others);

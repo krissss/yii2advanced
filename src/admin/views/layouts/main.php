@@ -24,6 +24,8 @@ admin\assets\AppAsset::register($this);
 
         <?= $this->render('left.php') ?>
 
+        <?= Html::tag('div', '加载中', ['class' => 'loading', 'style' => 'display:none']) ?>
+
         <div class="content-wrapper">
             <ul class="menu-tabs hidden">
                 <li>

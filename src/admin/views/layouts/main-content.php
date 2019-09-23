@@ -6,7 +6,8 @@
 
 \kriss\iframeLayout\widget\IframeModeAssetWidget::widget();
 \admin\assets\AppAsset::register($this);
-?>
+
+use yii\helpers\Html; ?>
 <?php $this->beginPage() ?>
     <!DOCTYPE html>
     <html lang="<?= Yii::$app->language ?>">
@@ -16,6 +17,7 @@
     <body class="<?= \dmstr\helpers\AdminLteHelper::skinClass() ?>">
     <?php $this->beginBody() ?>
 
+    <?= Html::tag('div', '加载中', ['class' => 'loading', 'style' => 'display:none']) ?>
     <div class="iframe-content-wrapper content-wrapper">
 
         <?= $this->render('content.php', [

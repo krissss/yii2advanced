@@ -3,6 +3,15 @@ $(function () {
   var csrfParam = $('meta[name="csrf-param"]').attr("content");
   var csrfToken = $('meta[name="csrf-token"]').attr("content");
 
+  var loading = {
+    show: function (content) {
+      $('.loading').html(content).show();
+    },
+    hide: function () {
+      $('.loading').html('').hide();
+    }
+  };
+
   /**
    * 自定义ajax方法
    * @param $url  请求地址
@@ -86,6 +95,7 @@ $(function () {
    * class 包含 check_operate_need_confirm
    * data-url 为需要操作的地址
    * data-confirm-msg 为确认的问题
+   * data-loading="加载中..." 可以在网络请求比较长时显示等待
    * 自写对应的url地址的批量操作
    * 确保最后返回跳转地址
    * @param $class
@@ -100,7 +110,10 @@ $(function () {
       var confirmMsg = $(this).data('confirm-msg');
       if (confirm(confirmMsg)) {
         var url = $(this).data('url');
+        var showLoading = $(this).data('loading');
+        showLoading && loading.show(showLoading);
         $.post(url, _params({keys: keys}), function (data) {
+          showLoading && loading.hide();
           window.location.href = data;
         });
       }
@@ -153,6 +166,7 @@ $(function () {
    * php需要配置
    * a标签带href
    * class 包含 show_ajax_modal
+   * data-loading="加载中..." 可以在网络请求比较长时显示等待
    * 自写renderAjax modal
    * @param $class
    */
@@ -160,9 +174,13 @@ $(function () {
     body.on('click', '.' + $class, function (event) {
       event.preventDefault();
       var $url = $(this).attr('href');
+      var showLoading = $(this).data('loading');
+      showLoading && loading.show(showLoading);
       _ajax($url, _params({}), function (data) {
         $(".ajax_modal").remove();
+        $(".modal-backdrop").remove();
         body.append(data);
+        showLoading && loading.hide();
         /** $(".ajax_modal") 此处已经更新过 */
         $(".ajax_modal").last().modal('show');
       });

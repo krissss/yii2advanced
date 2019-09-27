@@ -1131,16 +1131,16 @@
         },
         {
             "name": "kriss/yii2-common-class",
-            "version": "v2.3.2",
+            "version": "v2.3.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/krissss/yii2-common-tools.git",
-                "reference": "4b909bec720965f8a2213f18fec816b5f35c54b2"
+                "reference": "02a3574b079e3ec145e3d7fedbf86ad0ec4bbbcd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/krissss/yii2-common-tools/zipball/4b909bec720965f8a2213f18fec816b5f35c54b2",
-                "reference": "4b909bec720965f8a2213f18fec816b5f35c54b2",
+                "url": "https://api.github.com/repos/krissss/yii2-common-tools/zipball/02a3574b079e3ec145e3d7fedbf86ad0ec4bbbcd",
+                "reference": "02a3574b079e3ec145e3d7fedbf86ad0ec4bbbcd",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -1150,7 +1150,7 @@
                 ]
             },
             "require": {
-                "yiisoft/yii2": "~2.0.6"
+                "yiisoft/yii2": "~2.0.13"
             },
             "suggest": {
                 "dmstr/yii2-adminlte-asset": "admin theme",
@@ -1180,7 +1180,7 @@
             "keywords": [
                 "yii2"
             ],
-            "time": "2019-08-06T02:13:43+00:00"
+            "time": "2019-09-27T08:13:20+00:00"
         },
         {
             "name": "kriss/yii2-flysystem",

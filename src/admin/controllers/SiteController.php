@@ -66,7 +66,7 @@ class SiteController extends BaseWebController
             /** @var Admin|false $user */
             $user = $model->login();
             if ($user) {
-                return $this->redirect(['index']);
+                return $this->goBack();
             }
         }
         return $this->render('login', [

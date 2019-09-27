@@ -26,7 +26,7 @@
     "kartik-v/yii2-datecontrol": "^1.9",
     "kartik-v/yii2-dynagrid": "^1.5",
     "kriss/env-generator": "^1.1",
-    "kriss/foxy-yii2-convert": "^0.1.0",
+    "kriss/foxy-yii2-convert": "^1.0",
     "kriss/yii2-adminlte-iframe-mode": "^2.0",
     "kriss/yii2-common-class": "^2.3",
     "kriss/yii2-flysystem": "^1.1",

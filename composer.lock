@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e69969bd00b61bf18004ed5d5a08faa0",
+    "content-hash": "32ba83724b4fcd051370ab98ee78196a",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -1037,16 +1037,16 @@
         },
         {
             "name": "kriss/foxy-yii2-convert",
-            "version": "v0.1",
+            "version": "v1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/krissss/foxy-yii2-convert.git",
-                "reference": "75cee2cba480565878d0ec7b29e081328cfaddc3"
+                "reference": "074d98c30c6b670e83005980e55d85f462577cf0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/krissss/foxy-yii2-convert/zipball/75cee2cba480565878d0ec7b29e081328cfaddc3",
-                "reference": "75cee2cba480565878d0ec7b29e081328cfaddc3",
+                "url": "https://api.github.com/repos/krissss/foxy-yii2-convert/zipball/074d98c30c6b670e83005980e55d85f462577cf0",
+                "reference": "074d98c30c6b670e83005980e55d85f462577cf0",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -1078,7 +1078,7 @@
                     "email": "462679766@qq.com"
                 }
             ],
-            "time": "2019-03-04T02:58:17+00:00"
+            "time": "2019-09-27T02:25:08+00:00"
         },
         {
             "name": "kriss/yii2-adminlte-iframe-mode",
@@ -1238,16 +1238,16 @@
         },
         {
             "name": "kriss/yii2-log-reader",
-            "version": "v2.2.4",
+            "version": "v2.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/krissss/yii2-log-reader.git",
-                "reference": "13732de9a1dc8aeda50b15bfd1f9354eb5299fb0"
+                "reference": "e3f90370731e08616bda32cece084a2476114788"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/krissss/yii2-log-reader/zipball/13732de9a1dc8aeda50b15bfd1f9354eb5299fb0",
-                "reference": "13732de9a1dc8aeda50b15bfd1f9354eb5299fb0",
+                "url": "https://api.github.com/repos/krissss/yii2-log-reader/zipball/e3f90370731e08616bda32cece084a2476114788",
+                "reference": "e3f90370731e08616bda32cece084a2476114788",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -1257,12 +1257,12 @@
                 ]
             },
             "require": {
-                "yiisoft/yii2": "*"
+                "yiisoft/yii2": "~2.0.13"
             },
             "type": "yii2-extension",
             "autoload": {
                 "psr-4": {
-                    "kriss\\logReader\\": ""
+                    "kriss\\logReader\\": "src"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1283,7 +1283,7 @@
                 "module",
                 "yii2"
             ],
-            "time": "2018-11-21T05:24:58+00:00"
+            "time": "2019-09-27T01:54:15+00:00"
         },
         {
             "name": "league/flysystem",

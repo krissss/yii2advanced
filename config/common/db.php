@@ -11,4 +11,6 @@ return [
     'schemaCacheExclude' => [],
     'schemaCache' => 'cache',
     'queryCache' => 'cache',
+    'enableLogging' => YII_DEBUG,
+    'enableProfiling' => YII_DEBUG,
 ];

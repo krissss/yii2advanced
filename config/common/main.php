@@ -27,7 +27,8 @@ return [
         ]),
         'cache' => [
             'class' => 'yii\redis\Cache',
-            'redis' => 'cacheRedis'
+            'redis' => 'cacheRedis',
+            'defaultDuration' => 3600,
         ],
         'cacheRedis' => array_merge($redis, [
             'database' => getenv('RDB_DB_CACHE'),

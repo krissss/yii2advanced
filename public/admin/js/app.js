@@ -188,4 +188,9 @@ $(function () {
   }
 
   simpleAjaxModal('show_ajax_modal');
+
+  // 防止表单因网络卡多次提交
+  $('body').on('submit', 'form', function () {
+    $(':submit', this).attr('disabled', true);
+  })
 });

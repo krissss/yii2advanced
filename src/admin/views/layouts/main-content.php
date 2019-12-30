@@ -7,7 +7,9 @@
 \kriss\iframeLayout\widget\IframeModeAssetWidget::widget();
 \admin\assets\AppAsset::register($this);
 
-use yii\helpers\Html; ?>
+use yii\helpers\Html;
+
+?>
 <?php $this->beginPage() ?>
     <!DOCTYPE html>
     <html lang="<?= Yii::$app->language ?>">

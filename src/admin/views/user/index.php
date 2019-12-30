@@ -45,8 +45,8 @@ $columns = [
     [
         'class' => ActionColumn::class,
         'groupButtons' => [
-            ['action' => 'view', 'label' => '详情', 'cssClass' => 'show_ajax_modal',],
-            ['action' => 'update', 'label' => '修改', 'type' => 'primary', 'cssClass' => 'show_ajax_modal',],
+            ['action' => 'view', 'label' => '详情', 'cssClass' => 'show_ajax_modal'],
+            ['action' => 'update', 'label' => '修改', 'type' => 'primary', 'cssClass' => 'show_ajax_modal'],
         ],
     ],
 ];

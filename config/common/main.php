@@ -20,6 +20,9 @@ return [
         '@bower' => '@project/node_modules',
         '@npm' => '@project/node_modules',
     ],
+    'params' => [
+        'bsVersion' => '4'
+    ],
     'components' => ArrayHelper::merge([
         'db' => $db,
         'sessionRedis' => array_merge($redis, [

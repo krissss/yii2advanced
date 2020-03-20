@@ -27,6 +27,9 @@ class UserSearch extends User
                     'id' => SORT_DESC,
                 ],
             ],
+            'pagination' => [
+                'defaultPageSize' => 2,
+            ]
         ]);
 
         $this->load($params);

@@ -44,9 +44,9 @@ class SiteController extends BaseWebController
                 //'foreColor' => 0x000000,
                 'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
             ],
-            'iframe-mode-switch' => [
+            /*'iframe-mode-switch' => [
                 'class' => IframeModeSwitchAction::class,
-            ],
+            ],*/
         ];
     }
 

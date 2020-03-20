@@ -14,10 +14,10 @@ class BaseWebController extends Controller
     {
         $behaviors = parent::behaviors();
 
-        $behaviors['iframe_layout'] = [
+        /*$behaviors['iframe_layout'] = [
             'class' => IframeLinkFilter::class,
             'layout' => '@app/views/layouts/main-content',
-        ];
+        ];*/
 
         return $behaviors;
     }

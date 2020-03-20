@@ -21,20 +21,21 @@
   "prefer-stable": true,
   "require": {
     "php": ">=7.0",
-    "dmstr/yii2-adminlte-asset": "^2.6",
+    "almasaeed2010/adminlte": "^3.0",
+    "kartik-v/yii2-bootstrap4-dropdown": "^1.0",
     "kartik-v/yii2-date-range": "^1.7",
     "kartik-v/yii2-datecontrol": "^1.9",
     "kartik-v/yii2-dynagrid": "^1.5",
     "kriss/env-generator": "^1.1",
     "kriss/foxy-yii2-convert": "^1.0",
-    "kriss/yii2-adminlte-iframe-mode": "^2.0",
     "kriss/yii2-common-class": "^2.3",
     "kriss/yii2-flysystem": "^1.1",
     "kriss/yii2-log-reader": "^2.2",
+    "rmrevin/yii2-fontawesome": "^3.4",
     "vlucas/phpdotenv": "^3.4",
     "yii2mod/yii2-settings": "^2.5",
     "yiisoft/yii2": "^2.0.22",
-    "yiisoft/yii2-bootstrap": "^2.0",
+    "yiisoft/yii2-bootstrap4": "^2.0",
     "yiisoft/yii2-redis": "^2.0"
   },
   "require-dev": {
@@ -47,8 +48,10 @@
     "bower-asset/inputmask": "*",
     "bower-asset/punycode": "*",
     "bower-asset/yii2-pjax": "*",
-    "bower-asset/typeahead.js": "*"
+    "bower-asset/typeahead.js": "*",
+    "npm-asset/bootstrap": "*"
   },
+  "replace": {},
   "suggest": {
     "friendsofphp/php-cs-fixer": "For Fix: composer global require friendsofphp/php-cs-fixer"
   },

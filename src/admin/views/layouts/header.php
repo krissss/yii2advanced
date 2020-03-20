@@ -3,52 +3,60 @@
  * @var $this \yii\web\View
  */
 
-use common\components\Tools;
-use yii\helpers\Html;
+use yii\bootstrap4\Nav;
+use yii\bootstrap4\NavBar;
 
 /** @var $admin \common\models\Admin */
 $admin = Yii::$app->user->identity;
+
+$leftMenus = [
+    ['label' => 'Home', 'url' => '#'],
+    ['label' => 'Contact', 'url' => '#'],
+    ['label' => 'Help', 'url' => '#', 'items' => [
+        ['label' => 'FAQ', 'url' => '#'],
+        ['label' => 'Support', 'url' => '#'],
+        '-',
+        ['label' => 'Contact', 'url' => '#'],
+    ]],
+];
+$rightMenus = [];
 ?>
-
-<header class="main-header">
-
-    <a href="<?= Yii::$app->homeUrl ?>" class="logo">
-        <span class="logo-mini"><?= Tools::getAppName() ?></span>
-        <span class="logo-lg">
-            <?= Tools::getAppLogoImg() ?>
-        </span>
-    </a>
-
-    <nav class="navbar navbar-static-top" role="navigation">
-
-        <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-            <span class="sr-only">Toggle navigation</span>
-        </a>
-
-        <a href="javascript:history.back()" class="return-toggle" role="button">
-            <span class="sr-only">返回</span>&nbsp;返回
-        </a>
-
-        <div class="navbar-custom-menu">
-
-            <ul class="nav navbar-nav">
-                <li class="header-menu">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="fa fa-user"></i>
-                        <span class="hidden-xs">&nbsp;<?= $admin->name ?></span>
-                    </a>
-                    <div class="dropdown-menu">
-                        <?= \kriss\iframeLayout\widget\IframeModeSwitchWidget::widget() ?>
-                        <?= Html::a('修改密码', ['/account/modify-password'], [
-                            'class' => 'dropdown-menu-item'
-                        ]) ?>
-                        <?= Html::a('退出登录', ['/site/logout'], [
-                            'data-method' => 'post',
-                            'class' => 'dropdown-menu-item'
-                        ]) ?>
-                    </div>
-                </li>
-            </ul>
+<?php
+$navBar = NavBar::begin([
+    'brandLabel' => false,
+    'options' => ['class' => 'main-header navbar-expand navbar-white navbar-light'],
+    'renderInnerContainer' => false,
+    'collapseOptions' => ['tag' => null],
+]);
+?>
+    <!-- Left navbar links -->
+<?= Nav::widget([
+    'items' => array_merge([
+        ['label' => '<i class="fas fa-bars"></i>', 'encode' => false, 'linkOptions' => ['data-widget' => 'pushmenu'], 'url' => '#'],
+    ], $leftMenus),
+    'options' => ['class' => 'navbar-nav'],
+]) ?>
+    <!-- SEARCH FORM -->
+    <form class="form-inline ml-3">
+        <div class="input-group input-group-sm">
+            <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+            <div class="input-group-append">
+                <button class="btn btn-navbar" type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
         </div>
-    </nav>
-</header>
+    </form>
+    <!-- Right navbar links -->
+<?= Nav::widget([
+    'items' => array_merge($rightMenus, [
+        ['label' => $admin->name, 'url' => '#', 'items' => [
+            ['label' => '修改密码', 'url' => '#'],
+            '-',
+            ['label' => '退出登录', 'url' => '#'],
+        ]],
+    ]),
+    'options' => ['class' => 'navbar-nav ml-auto'],
+]) ?>
+<?php
+$navBar->end();

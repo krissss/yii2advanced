@@ -53,11 +53,11 @@ $config = [
                 ],
             ],
         ],
-        IframeMode::COMPONENT_NAME => [
+        /*IframeMode::COMPONENT_NAME => [
             'class' => IframeMode::class,
             'enable' => true,
             'defaultSwitch' => false,
-        ],
+        ],*/
     ],
 ];
 

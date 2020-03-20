@@ -5,8 +5,11 @@
  * @var $searchModel
  */
 
+use kartik\dynagrid\DynaGrid;
+use kartik\grid\GridView;
 use kriss\widgets\ActionColumn;
 use kriss\widgets\DatetimeColumn;
+use kriss\widgets\LinkPagerWithSubmit;
 use kriss\widgets\SimpleDynaGrid;
 use kriss\widgets\UsedUnusedStatusColumn;
 use yii\helpers\Html;
@@ -51,7 +54,36 @@ $columns = [
     ],
 ];
 
-echo SimpleDynaGrid::widget([
+$layout = <<<HTML
+<div class="card">
+<div class="card-header">
+{summary}
+<div class="">
+{toolbar}
+</div>
+</div>
+<div class="card-body">
+{items}
+{pager}
+</div>
+</div>
+HTML;
+echo GridView::widget([
+    'columns' => $columns,
+    'dataProvider' => $dataProvider,
+    //'filterModel' => $searchModel,
+    'layout' => $layout,
+    'pager' => [
+        'options' => ['class' => 'pagination justify-content-center mt-3 mb-0']
+    ],
+    'toolbar' => [
+        [
+            'content' => Html::button('新增', ['class' => 'btn btn-primary'])
+        ]
+    ],
+]);
+
+/*echo SimpleDynaGrid::widget([
     'dataProvider' => $dataProvider,
     'columns' => $columns,
     'extraToolbar' => [
@@ -59,4 +91,4 @@ echo SimpleDynaGrid::widget([
             'content' => Html::a('新增', ['create'], ['class' => 'btn btn-primary show_ajax_modal'])
         ]
     ],
-]);
+]);*/

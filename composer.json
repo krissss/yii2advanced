@@ -38,6 +38,7 @@
     "yiisoft/yii2-redis": "^2.0"
   },
   "require-dev": {
+    "deployer/deployer": "^6.7",
     "yiisoft/yii2-debug": "^2.0",
     "yiisoft/yii2-gii": "^2.0"
   },

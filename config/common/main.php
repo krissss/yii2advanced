@@ -1,6 +1,7 @@
 <?php
 
 use common\components\Logger;
+use common\components\Params;
 use kriss\messages\I18NHelper;
 use yii\helpers\ArrayHelper;
 
@@ -20,6 +21,7 @@ return [
         '@bower' => '@project/node_modules',
         '@npm' => '@project/node_modules',
     ],
+    'params' => Params::loadFromEnv(),
     'components' => ArrayHelper::merge([
         'db' => $db,
         'sessionRedis' => array_merge($redis, [

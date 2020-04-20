@@ -3,6 +3,7 @@
 namespace common\components;
 
 use Yii;
+use yii\helpers\StringHelper;
 use yii\web\NotFoundHttpException;
 
 /**
@@ -14,7 +15,10 @@ class Params
     {
         if (isset(Yii::$app->params[$name])) {
             $val = Yii::$app->params[$name];
-            return Yii::getAlias($val);
+            if ($val && is_string($val) && StringHelper::startsWith($val, '@')) {
+                $val = Yii::getAlias($val);
+            }
+            return $val;
         }
         throw new NotFoundHttpException('未定义的param：' . $name);
     }

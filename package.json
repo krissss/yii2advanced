@@ -4,6 +4,7 @@
         "@composer-asset/almasaeed2010--adminlte": "file:./vendor/foxy/composer-asset/almasaeed2010/adminlte",
         "@composer-asset/fortawesome--font-awesome": "file:./vendor/foxy/composer-asset/fortawesome/font-awesome",
         "@composer-asset/kartik-v--php-date-formatter": "file:./vendor/foxy/composer-asset/kartik-v/php-date-formatter",
+        "@composer-asset/select2--select2": "file:./vendor/foxy/composer-asset/select2/select2",
         "@composer-asset/yiisoft--yii2": "file:./vendor/foxy/composer-asset/yiisoft/yii2",
         "@composer-asset/yiisoft--yii2-bootstrap": "file:./vendor/foxy/composer-asset/yiisoft/yii2-bootstrap"
     }

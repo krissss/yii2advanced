@@ -13,8 +13,10 @@ require __DIR__ . '/vendor/autoload.php';
 $dotEnv = Dotenv\Dotenv::create(__DIR__, '.env');
 $dotEnv->overload();
 
-defined('YII_DEBUG') or define('YII_DEBUG', getenv('YII_DEBUG'));
-defined('YII_ENV') or define('YII_ENV', getenv('YII_ENV'));
+require __DIR__ . '/config/common/bootstrap-env.php';
+
+defined('YII_DEBUG') or define('YII_DEBUG', get_env('YII_DEBUG'));
+defined('YII_ENV') or define('YII_ENV', get_env('YII_ENV'));
 
 require __DIR__ . '/vendor/yiisoft/yii2/Yii.php';
 require __DIR__ . '/config/common/bootstrap.php';

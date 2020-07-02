@@ -1,7 +1,7 @@
 <?php
 
 $moduleName = 'api';
-$cookieKey = getenv('COOKIE_KEY');
+$cookieKey = get_env('COOKIE_KEY');
 
 $config = [
     'id' => "app-{$moduleName}",

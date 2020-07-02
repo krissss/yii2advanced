@@ -25,7 +25,7 @@ return [
     'components' => ArrayHelper::merge([
         'db' => $db,
         'sessionRedis' => array_merge($redis, [
-            'database' => getenv('RDB_DB_SESSION'),
+            'database' => get_env('RDB_DB_SESSION'),
         ]),
         'cache' => [
             'class' => 'yii\redis\Cache',
@@ -33,7 +33,7 @@ return [
             'defaultDuration' => 3600,
         ],
         'cacheRedis' => array_merge($redis, [
-            'database' => getenv('RDB_DB_CACHE'),
+            'database' => get_env('RDB_DB_CACHE'),
         ]),
         'log' => [
             'targets' => Logger::getCommonYiiLogTargets(),

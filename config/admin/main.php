@@ -6,7 +6,7 @@ use kriss\iframeLayout\component\IframeMode;
 $modules = require __DIR__ . '/modules.php';
 $definitions = require __DIR__ . '/definitions.php';
 $moduleName = 'admin';
-$cookieKey = getenv('COOKIE_KEY');
+$cookieKey = get_env('COOKIE_KEY');
 
 $config = [
     'id' => "app-{$moduleName}",

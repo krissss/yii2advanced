@@ -53,7 +53,7 @@ class Tools extends Fun
      */
     public static function getAppName()
     {
-        return SettingApp::getValue('name', Yii::$app->name);
+        return SettingApp::name(Yii::$app->name);
     }
 
     /**
@@ -62,9 +62,14 @@ class Tools extends Fun
      */
     public static function getAppLogoImg($options = [])
     {
+        $logo = SettingApp::logo();
+        if (!$logo || $logo === '-') {
+            return static::getAppName();
+        }
+
         $options = ArrayHelper::merge([
             'alt' => static::getAppName(),
         ], $options);
-        return Html::img(SettingApp::getValue('logo'), $options);
+        return Html::img($logo, $options);
     }
 }

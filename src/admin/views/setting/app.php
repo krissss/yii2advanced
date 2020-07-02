@@ -13,8 +13,8 @@ $form = SimpleActiveForm::begin([
     'title' => $this->title,
 ]);
 
-echo $form->field($model, 'name')->textInput(['value' => SettingApp::getValue('name')]);
-echo $form->field($model, 'logo')->textInput(['value' => SettingApp::getValue('logo')]);
-echo $form->field($model, 'favicon')->textInput(['value' => SettingApp::getValue('favicon')]);
+echo $form->field($model, 'name')->textInput(['value' => SettingApp::name()]);
+echo $form->field($model, 'logo')->textInput(['value' => SettingApp::logo()]);
+echo $form->field($model, 'favicon')->textInput(['value' => SettingApp::favicon()]);
 
 $form->end();

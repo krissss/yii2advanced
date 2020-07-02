@@ -5,6 +5,11 @@ namespace common\models\settings;
 use Yii;
 use yii\helpers\Url;
 
+/**
+ * @method static string name($default = null)
+ * @method static string logo($default = null)
+ * @method static string favicon($default = null)
+ */
 class SettingApp extends BaseModel
 {
     public $name;

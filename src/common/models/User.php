@@ -3,8 +3,8 @@
 namespace common\models;
 
 use common\components\Tools;
+use common\enums\UserStatus;
 use common\models\base\ActiveRecord;
-use common\models\enum\UserStatus;
 use kriss\components\CellphoneValidator;
 use yii\web\IdentityInterface;
 

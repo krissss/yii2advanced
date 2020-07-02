@@ -4,7 +4,7 @@ namespace common\models;
 
 use common\components\Tools;
 use common\models\base\ActiveRecord;
-use common\models\enum\AdminStatus;
+use common\enums\AdminStatus;
 use yii\base\NotSupportedException;
 use yii\web\IdentityInterface;
 

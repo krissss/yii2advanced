@@ -2,7 +2,7 @@
 
 namespace admin\components;
 
-use common\models\enum\AdminStatus;
+use common\enums\AdminStatus;
 use kriss\behaviors\web\UserLoginFilter;
 use kriss\behaviors\web\UserStatusFilter;
 

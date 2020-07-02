@@ -2,7 +2,7 @@
 
 namespace api\components;
 
-use common\models\enum\UserStatus;
+use common\enums\UserStatus;
 use kriss\behaviors\rest\QueryParamAuth;
 
 class AuthRestController extends BaseRestController

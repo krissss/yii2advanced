@@ -1,6 +1,6 @@
 <?php
 
-namespace common\models\enum;
+namespace common\enums;
 
 use kriss\enum\UsedUnusedStatus;
 

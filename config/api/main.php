@@ -1,5 +1,8 @@
 <?php
 
+use api\components\ApiResponse;
+use common\components\Request;
+
 $moduleName = 'api';
 $cookieKey = get_env('COOKIE_KEY');
 
@@ -18,21 +21,15 @@ $config = [
     //'catchAll' => ['site/offline'],
     'components' => [
         'request' => [
+            'class' => Request::class,
             'csrfParam' => "_csrf-{$moduleName}",
             'cookieValidationKey' => "{$moduleName}-{$cookieKey}",
+            'parsers' => [
+                'application/json' => 'yii\web\JsonParser',
+            ],
         ],
         'response' => [
-            'class' => 'yii\web\Response',
-            'on beforeSend' => function ($event) {
-                $response = $event->sender;
-                if ($response->data !== null && is_array($response->data)) {
-                    $response->data = array_merge([
-                        'status' => $response->statusCode,
-                        'message' => $response->statusText,
-                    ], $response->data);
-                    $response->statusCode = 200;
-                }
-            },
+            'class' => ApiResponse::class,
         ],
         'user' => [
             'class' => 'yii\web\User',
@@ -56,6 +53,11 @@ if (YII_ENV === 'dev') {
     $config['bootstrap'][] = 'debug';
     $config['modules']['debug'] = [
         'class' => 'yii\debug\Module',
+        'allowedIPs' => ['127.0.0.1', '::1', '192.168.*', '172.*', '10.*'],
+    ];
+    $config['bootstrap'][] = 'gii';
+    $config['modules']['gii'] = [
+        'class' => 'yii\gii\Module',
         'allowedIPs' => ['127.0.0.1', '::1', '192.168.*', '172.*', '10.*'],
     ];
 }

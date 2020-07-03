@@ -6,7 +6,7 @@ use common\enums\AdminStatus;
 use kriss\behaviors\web\UserLoginFilter;
 use kriss\behaviors\web\UserStatusFilter;
 
-class AuthWebController extends BaseWebController
+abstract class AuthWebController extends BaseWebController
 {
     public function behaviors()
     {

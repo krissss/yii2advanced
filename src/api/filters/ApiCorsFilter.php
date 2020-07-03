@@ -1,8 +1,10 @@
 <?php
 
-namespace api\components;
+namespace api\filters;
 
-class Cors extends \yii\filters\Cors
+use yii\filters\Cors;
+
+class ApiCorsFilter extends Cors
 {
     public function init()
     {

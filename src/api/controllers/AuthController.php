@@ -2,23 +2,14 @@
 
 namespace api\controllers;
 
-use api\components\BaseRestController;
+use api\components\BaseApiController;
 use api\forms\LoginForm;
 use api\forms\RegisterForm;
 use kriss\actions\rest\crud\CommonFormAction;
-use kriss\behaviors\rest\PostVerbFilter;
 
-class AuthController extends BaseRestController
+class AuthController extends BaseApiController
 {
-    public function behaviors()
-    {
-        return array_merge(parent::behaviors(), [
-            'postVerbFilter' => [
-                'class' => PostVerbFilter::class,
-                'actions' => ['login', 'register'],
-            ],
-        ]);
-    }
+    public $postVerbActions = ['login', 'register'];
 
     public function actions()
     {

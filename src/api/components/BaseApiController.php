@@ -2,29 +2,31 @@
 
 namespace api\components;
 
+use api\filters\ApiCorsFilter;
+use kriss\behaviors\rest\PostVerbFilter;
 use kriss\behaviors\rest\QueryParamAuth;
 use Yii;
 use yii\base\Model;
 use yii\rest\Controller;
 
-class BaseRestController extends Controller
+abstract class BaseApiController extends Controller
 {
-    public $serializer = [
-        'class' => 'kriss\components\rest\Serializer',
-        'paginationTotalCount' => 'total',
-        'paginationPageCount' => 'last_page',
-        'paginationCurrentPage' => 'current_page',
-        'paginationPageSize' => 'per_page',
-        'dataProviderInData' => true,
-    ];
+    public $serializer = ApiSerializer::class;
+    public $postVerbActions = [];
 
     public function behaviors()
     {
         $behaviors = parent::behaviors();
         // 去除不用的
-        unset($behaviors['verbFilter'], $behaviors['authenticator'], $behaviors['rateLimiter']);
+        unset($behaviors['authenticator'], $behaviors['rateLimiter']);
         // 跨域访问
-        $behaviors['corsFilter'] = Cors::class;
+        $behaviors['corsFilter'] = ApiCorsFilter::class;
+        // 必须是 post 请求的action
+        $behaviors['postVerbFilter'] = [
+            'class' => PostVerbFilter::class,
+            'actions' => $this->postVerbActions,
+        ];
+
         return $behaviors;
     }
 
@@ -35,7 +37,7 @@ class BaseRestController extends Controller
     public function setUserIdentity()
     {
         $authMethod = new QueryParamAuth([
-            'tokenParam' => AuthRestController::TOKEN_PARAM,
+            'tokenParam' => AuthApiController::TOKEN_PARAM,
         ]);
         $authMethod->authenticate(Yii::$app->user, Yii::$app->request, Yii::$app->response);
     }

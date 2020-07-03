@@ -2,15 +2,12 @@
 
 namespace api\controllers;
 
-use api\components\BaseRestController;
+use api\components\BaseApiController;
 use kriss\actions\rest\ErrorAction;
 use kriss\actions\rest\OfflineAction;
 
-class SiteController extends BaseRestController
+class SiteController extends BaseApiController
 {
-    /**
-     * @inheritdoc
-     */
     public function actions()
     {
         return [

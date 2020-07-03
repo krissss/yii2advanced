@@ -1,5 +1,6 @@
 <?php
 
+use common\components\Request;
 use common\models\Admin;
 use kriss\iframeLayout\component\IframeMode;
 
@@ -27,6 +28,7 @@ $config = [
     ],
     'components' => [
         'request' => [
+            'class' => Request::class,
             'csrfParam' => "_csrf-{$moduleName}",
             'cookieValidationKey' => "{$moduleName}-{$cookieKey}",
         ],

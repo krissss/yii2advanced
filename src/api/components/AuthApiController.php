@@ -2,10 +2,11 @@
 
 namespace api\components;
 
+use api\filters\UserStatusFilter;
 use common\enums\UserStatus;
 use kriss\behaviors\rest\QueryParamAuth;
 
-class AuthRestController extends BaseRestController
+abstract class AuthApiController extends BaseApiController
 {
     const TOKEN_PARAM = 'access-token';
 

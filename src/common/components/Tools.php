@@ -72,4 +72,16 @@ class Tools extends Fun
         ], $options);
         return Html::img($logo, $options);
     }
+
+    /**
+     * 获取用户ip
+     * @return mixed|null|string
+     */
+    public static function getUserIp()
+    {
+        if (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+            return trim(explode(',', $_SERVER['HTTP_X_FORWARDED_FOR'])[0]);
+        }
+        return isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : null;
+    }
 }

@@ -6,7 +6,7 @@ use kriss\iframeLayout\filter\IframeLinkFilter;
 use kriss\traits\WebControllerTrait;
 use yii\web\Controller;
 
-class BaseWebController extends Controller
+abstract class BaseWebController extends Controller
 {
     use WebControllerTrait;
 

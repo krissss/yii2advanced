@@ -1,6 +1,6 @@
 <?php
 
-namespace api\components;
+namespace api\filters;
 
 use Yii;
 use yii\web\ForbiddenHttpException;

@@ -11,10 +11,6 @@ return [
         '@npm' => '@vendor/npm-asset',
     ],
     'controllerMap' => [
-        'fixture' => [
-            'class' => 'yii\console\controllers\FixtureController',
-            'namespace' => 'common\fixtures',
-        ],
         'migrate' => [
             'class' => 'yii\console\controllers\MigrateController',
             'migrationPath' => [

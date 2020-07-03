@@ -1,8 +1,8 @@
 <?php
 require __DIR__ . '/../../vendor/autoload.php';
 
-$dotEnv = Dotenv\Dotenv::create(__DIR__ . '/../../', '.env');
-$dotEnv->overload();
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
+$dotenv->load();
 
 require __DIR__ . '/../../config/common/bootstrap-env.php';
 

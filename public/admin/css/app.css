@@ -137,10 +137,6 @@ td.kv-group-even {
   background-color: #fff !important;
 }
 
-.table-responsive.kv-grid-container {
-  overflow-x: inherit;
-}
-
 .kv-page-summary {
   border-top: 0;
 }

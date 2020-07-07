@@ -49,6 +49,11 @@
     "bower-asset/yii2-pjax": "*",
     "bower-asset/typeahead.js": "*"
   },
+  "autoload": {
+    "files": [
+      "src/global_functions.php"
+    ]
+  },
   "suggest": {
     "friendsofphp/php-cs-fixer": "For Fix: composer global require friendsofphp/php-cs-fixer"
   },

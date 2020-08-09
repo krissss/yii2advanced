@@ -4,34 +4,46 @@ namespace common\models\settings;
 
 use common\components\Component;
 use yii\base\Model;
+use yii\helpers\Inflector;
 
+/**
+ * 用于全局的配置参数
+ * use:
+ * SettingApp::name();
+ * SettingApp::appName();
+ * SettingApp::getInstance()->getValue('name');
+ */
 abstract class BaseModel extends Model
 {
     const NULL_VALUE = [null, ''];
 
-    protected static function getSectionName()
+    public function getSectionName()
     {
-        $self = new static();
-        return $self->formName();
+        return $this->formName();
     }
 
-    public static function getValue($key, $defaultValue = null)
+    public static function getInstance()
+    {
+        return new static();
+    }
+
+    public function getValue($key, $defaultValue = null)
     {
         $value = Component::settings()->get(
-            static::getSectionName(),
+            $this->getSectionName(),
             $key,
             $defaultValue
         );
-        if (in_array($value, static::NULL_VALUE) && isset(static::attributeDefaultValue()[$key])) {
-            return static::attributeDefaultValue()[$key];
+        if (in_array($value, static::NULL_VALUE) && isset($this->attributeDefaultValue()[$key])) {
+            return $this->attributeDefaultValue()[$key];
         }
         return $value;
     }
 
-    abstract protected static function attributeDefaultValue();
+    abstract protected function attributeDefaultValue();
 
     public static function __callStatic($name, $arguments)
     {
-        return static::getValue($name, $arguments[0] ?? null);
+        return static::getInstance()->getValue(Inflector::underscore($name), $arguments[0] ?? null);
     }
 }

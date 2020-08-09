@@ -40,7 +40,7 @@ class SettingApp extends BaseModel
         ];
     }
 
-    public static function attributeDefaultValue()
+    public function attributeDefaultValue()
     {
         return [
             'name' => Yii::$app->name,

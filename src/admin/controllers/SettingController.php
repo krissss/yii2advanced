@@ -3,8 +3,8 @@
 namespace admin\controllers;
 
 use admin\components\AuthWebController;
+use common\actions\SettingAction;
 use common\models\settings\SettingApp;
-use yii2mod\settings\actions\SettingsAction;
 
 class SettingController extends AuthWebController
 {
@@ -13,7 +13,7 @@ class SettingController extends AuthWebController
         $actions = parent::actions();
 
         $actions['app'] = [
-            'class' => SettingsAction::class,
+            'class' => SettingAction::class,
             'modelClass' => SettingApp::class,
             'view' => 'app',
             'successMessage' => '修改成功',

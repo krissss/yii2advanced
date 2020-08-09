@@ -50,6 +50,7 @@ class SettingAction extends SettingsAction
                     $model->{$attribute} = $model->getValue($attribute);
                 }
             }
+            return;
         }
         parent::prepareModel($model);
     }

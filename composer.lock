@@ -1376,16 +1376,16 @@
         },
         {
             "name": "kriss/yii2-common-class",
-            "version": "v2.4.3",
+            "version": "v2.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/krissss/yii2-common-tools.git",
-                "reference": "969e39511c086f5095d2c99da50a391b5d74b169"
+                "reference": "6ad1d31bc2080a94e443b5562ebcec100e8bc12a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/krissss/yii2-common-tools/zipball/969e39511c086f5095d2c99da50a391b5d74b169",
-                "reference": "969e39511c086f5095d2c99da50a391b5d74b169",
+                "url": "https://api.github.com/repos/krissss/yii2-common-tools/zipball/6ad1d31bc2080a94e443b5562ebcec100e8bc12a",
+                "reference": "6ad1d31bc2080a94e443b5562ebcec100e8bc12a",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -1425,11 +1425,7 @@
             "keywords": [
                 "yii2"
             ],
-            "support": {
-                "issues": "https://github.com/krissss/yii2-common-tools/issues",
-                "source": "https://github.com/krissss/yii2-common-tools/tree/master"
-            },
-            "time": "2020-06-29T08:06:14+00:00"
+            "time": "2021-02-08T03:35:00+00:00"
         },
         {
             "name": "kriss/yii2-flysystem",

@@ -3,8 +3,8 @@
 namespace common\models;
 
 use common\components\Tools;
-use common\models\base\ActiveRecord;
 use common\enums\AdminStatus;
+use common\models\base\ActiveRecord;
 use yii\base\NotSupportedException;
 use yii\web\IdentityInterface;
 

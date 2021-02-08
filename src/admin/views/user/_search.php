@@ -1,7 +1,7 @@
 <?php
 /**
- * @var $this yii\web\view
- * @var $model admin\models\UserSearch
+ * @var yii\web\view $this
+ * @var admin\models\UserSearch $model
  */
 
 use kriss\widgets\DateTimeRangePicker;

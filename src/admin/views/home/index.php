@@ -1,6 +1,6 @@
 <?php
 /**
- * @var $this \yii\web\View
+ * @var \yii\web\View $this
  */
 
 $this->title = '首页';

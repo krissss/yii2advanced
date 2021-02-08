@@ -1,7 +1,7 @@
 <?php
 /**
- * @var $this yii\web\View
- * @var $dataProvider
+ * @var yii\web\View $this
+ * @var yii\data\DataProviderInterface $dataProvider
  */
 
 use common\models\Admin;

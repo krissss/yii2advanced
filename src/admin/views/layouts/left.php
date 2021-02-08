@@ -1,12 +1,12 @@
 <?php
 /**
- * @var $this \yii\web\View
+ * @var \yii\web\View $this
  */
 
 use common\models\Admin;
 use kriss\modules\auth\tools\AuthValidate;
 
-/** @var $admin Admin */
+/** @var Admin $admin */
 $admin = Yii::$app->user->identity;
 $authUsed = false;
 

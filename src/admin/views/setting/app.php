@@ -1,7 +1,7 @@
 <?php
 /**
- * @var $this \yii\web\View
- * @var $model \common\models\settings\SettingApp
+ * @var \yii\web\View $this
+ * @var \common\models\settings\SettingApp $model
  */
 
 use kriss\widgets\SimpleActiveForm;

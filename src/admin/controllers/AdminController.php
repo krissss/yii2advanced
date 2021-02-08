@@ -81,7 +81,7 @@ class AdminController extends AuthWebController
             'isRenderAjax' => true,
             //'view' => '_update_role',
             'successCallback' => function ($action, $result) {
-                /** @var $action UserRoleUpdateAction */
+                /** @var UserRoleUpdateAction $action */
                 if ($result['type'] == 'success') {
                     Yii::$app->session->setFlash('success', '授权成功');
                 } else {

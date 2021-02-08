@@ -1,8 +1,8 @@
 <?php
 /**
- * @var $this yii\web\View
- * @var $dataProvider
- * @var $searchModel
+ * @var yii\web\View $this
+ * @var yii\data\DataProviderInterface $dataProvider
+ * @var admin\models\UserSearch $searchModel
  */
 
 use kriss\widgets\ActionColumn;

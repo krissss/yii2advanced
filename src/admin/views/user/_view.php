@@ -1,7 +1,7 @@
 <?php
 /**
- * @var $this yii\web\view
- * @var $model common\models\User
+ * @var yii\web\view $this
+ * @var common\models\User $model
  */
 
 use kriss\widgets\SimpleAjaxView;

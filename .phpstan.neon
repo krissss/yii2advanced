@@ -1,6 +1,6 @@
-# @see https://phpstan.org/config-reference
+# 配置说明: https://phpstan.org/config-reference
 parameters:
-    level: 0
+    level: 1
     paths:
         - src
     excludePaths:
@@ -8,4 +8,5 @@ parameters:
     tmpDir: runtime/phpstan
     bootstrapFiles:
         - config/common/bootstrap.php
-    #checkMissingIterableValueType: false
+    # Level6 数组值类型检查: https://phpstan.org/config-reference#vague-typehints
+    checkMissingIterableValueType: false

@@ -1,13 +1,16 @@
 <?php
 /**
- * @var $this \yii\web\View
- * @var $content string
+ * @var \yii\web\View $this
+ * @var string $content
  */
 
-\kriss\iframeLayout\widget\IframeModeAssetWidget::widget();
-\admin\assets\AppAsset::register($this);
-
+use admin\assets\AppAsset;
+use dmstr\helpers\AdminLteHelper;
+use kriss\iframeLayout\widget\IframeModeAssetWidget;
 use yii\helpers\Html;
+
+IframeModeAssetWidget::widget();
+AppAsset::register($this);
 
 ?>
 <?php $this->beginPage() ?>
@@ -16,7 +19,7 @@ use yii\helpers\Html;
     <head>
         <?= $this->render('@common/views/html-head') ?>
     </head>
-    <body class="<?= \dmstr\helpers\AdminLteHelper::skinClass() ?>">
+    <body class="<?= AdminLteHelper::skinClass() ?>">
     <?php $this->beginBody() ?>
 
     <?= Html::tag('div', '加载中', ['class' => 'loading', 'style' => 'display:none']) ?>

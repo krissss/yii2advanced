@@ -1,7 +1,7 @@
 <?php
 /**
- * @var $this yii\web\View
- * @var $model \admin\forms\LoginForm
+ * @var yii\web\View $this
+ * @var \admin\forms\LoginForm $model
  */
 
 use common\components\Tools;

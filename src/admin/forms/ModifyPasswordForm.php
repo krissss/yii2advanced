@@ -33,7 +33,7 @@ class ModifyPasswordForm extends Model
 
     public function validatePassword($attribute)
     {
-        /** @var $admin \common\models\Admin */
+        /** @var \common\models\Admin $admin */
         $admin = Yii::$app->user->getIdentity();
         if (!$admin->validatePassword($this->password)) {
             $this->addError($attribute, "原密码错误");
@@ -42,7 +42,7 @@ class ModifyPasswordForm extends Model
 
     public function modifyPassword()
     {
-        /** @var $admin \common\models\Admin */
+        /** @var \common\models\Admin $admin */
         $admin = Yii::$app->user->getIdentity();
         $admin->setPassword($this->newPassword);
         $admin->save(false);

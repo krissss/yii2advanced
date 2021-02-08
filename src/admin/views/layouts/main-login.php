@@ -1,10 +1,13 @@
 <?php
 /**
- * @var $this \yii\web\View
- * @var $content string
+ * @var \yii\web\View $this
+ * @var string $content
  */
 
-dmstr\web\AdminLteAsset::register($this);
+use dmstr\web\AdminLteAsset;
+use kriss\widgets\Alert;
+
+AdminLteAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
     <!DOCTYPE html>
@@ -14,7 +17,7 @@ dmstr\web\AdminLteAsset::register($this);
     </head>
     <body class="login-page">
     <?php $this->beginBody() ?>
-    <?= \kriss\widgets\Alert::widget() ?>
+    <?= Alert::widget() ?>
 
     <?= $content ?>
 

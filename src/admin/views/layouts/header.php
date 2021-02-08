@@ -1,12 +1,13 @@
 <?php
 /**
- * @var $this \yii\web\View
+ * @var \yii\web\View $this
  */
 
 use common\components\Tools;
+use kriss\iframeLayout\widget\IframeModeSwitchWidget;
 use yii\helpers\Html;
 
-/** @var $admin \common\models\Admin */
+/** @var \common\models\Admin $admin */
 $admin = Yii::$app->user->identity;
 ?>
 
@@ -38,7 +39,7 @@ $admin = Yii::$app->user->identity;
                         <span class="hidden-xs">&nbsp;<?= $admin->name ?></span>
                     </a>
                     <div class="dropdown-menu">
-                        <?= \kriss\iframeLayout\widget\IframeModeSwitchWidget::widget() ?>
+                        <?= IframeModeSwitchWidget::widget() ?>
                         <?= Html::a('修改密码', ['/account/modify-password'], [
                             'class' => 'dropdown-menu-item'
                         ]) ?>

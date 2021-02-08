@@ -20,7 +20,7 @@
   "minimum-stability": "stable",
   "prefer-stable": true,
   "require": {
-    "php": ">=7.0",
+    "php": "^7.1",
     "dmstr/yii2-adminlte-asset": "^2.6",
     "kartik-v/yii2-date-range": "^1.7",
     "kartik-v/yii2-datecontrol": "^1.9",
@@ -38,6 +38,7 @@
     "yiisoft/yii2-redis": "^2.0"
   },
   "require-dev": {
+    "symfony/var-dumper": "^4.4",
     "yiisoft/yii2-debug": "^2.1",
     "yiisoft/yii2-gii": "^2.2"
   },
@@ -51,7 +52,7 @@
   },
   "autoload": {
     "files": [
-      "src/global_functions.php"
+      "src/helpers.php"
     ]
   },
   "suggest": {

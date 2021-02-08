@@ -17,6 +17,11 @@ abstract class BaseModel extends Model
 {
     const NULL_VALUE = [null, ''];
 
+    final public function __construct($config = [])
+    {
+        parent::__construct($config);
+    }
+
     public function getSectionName()
     {
         return $this->formName();

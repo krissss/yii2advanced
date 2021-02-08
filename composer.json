@@ -56,7 +56,8 @@
     ]
   },
   "suggest": {
-    "friendsofphp/php-cs-fixer": "For Fix: composer global require friendsofphp/php-cs-fixer"
+    "friendsofphp/php-cs-fixer": "For Fix: composer global require --dev friendsofphp/php-cs-fixer",
+    "phpstan/phpstan": "For Code Analyse: composer global require --dev phpstan/phpstan"
   },
   "config": {
     "process-timeout": 1800,
@@ -76,7 +77,8 @@
     "env-g": "php environments/generate.php",
     "env-dev": "php init --env=dev --overwrite=all",
     "env-prod": "php init --env=prod --overwrite=all",
-    "fix": "php-cs-fixer fix --config .php_cs && php-cs-fixer fix --config .php_cs_header"
+    "fix": "php-cs-fixer fix --config .php_cs && php-cs-fixer fix --config .php_cs_header",
+    "analyse": "phpstan analyse -c .phpstan.neon"
   },
   "repositories": {
     "packagist": {

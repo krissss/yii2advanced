@@ -17,6 +17,15 @@ class LoginForm extends Model
      */
     private $_user;
 
+    public function init()
+    {
+        parent::init();
+        if (YII_DEBUG) {
+            $this->username = 'admin';
+            $this->password = '123456';
+        }
+    }
+
     public function rules()
     {
         return [

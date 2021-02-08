@@ -9,25 +9,24 @@ use yii\helpers\Inflector;
 /**
  * 用于针对某个用户的配置
  * use:
- * ExampleSetting::getInstance($userId)->key1();
- * ExampleSetting::getInstance()->keyName2();
+ * ExampleSetting::getInstance()->key1();
+ * ExampleSetting::getInstance()->withUserId($userId)->keyName2();
  */
 abstract class BaseUserModel extends BaseModel
 {
-    protected $userId;
+    public $userId;
 
-    public function __construct($userId = 'current')
+    public function init()
     {
-        if ($userId === 'current') {
-            $userId = Yii::$app->user->id;
+        if (!$this->userId) {
+            $this->userId = Yii::$app->user->id;
         }
-        $this->userId = $userId;
-        parent::__construct();
     }
 
-    public static function getInstance($userId = 'current')
+    public function withUserId($userId)
     {
-        return new static($userId);
+        $this->userId = $userId;
+        return $this;
     }
 
     public function getSectionName()

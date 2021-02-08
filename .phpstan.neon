@@ -1,0 +1,11 @@
+# @see https://phpstan.org/config-reference
+parameters:
+    level: 0
+    paths:
+        - src
+    excludePaths:
+        - src/console/controllers/TestController.php
+    tmpDir: runtime/phpstan
+    bootstrapFiles:
+        - config/common/bootstrap.php
+    #checkMissingIterableValueType: false

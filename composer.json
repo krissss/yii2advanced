@@ -22,6 +22,7 @@
   "require": {
     "php": "^7.1",
     "dmstr/yii2-adminlte-asset": "^2.6",
+    "jianyan74/yii2-easy-wechat": "^1.1",
     "kartik-v/yii2-date-range": "^1.7",
     "kartik-v/yii2-datecontrol": "^1.9",
     "kartik-v/yii2-dynagrid": "^1.5",
@@ -56,7 +57,8 @@
   },
   "suggest": {
     "friendsofphp/php-cs-fixer": "For Fix: composer global require --dev friendsofphp/php-cs-fixer",
-    "phpstan/phpstan": "For Code Analyse: composer global require --dev phpstan/phpstan"
+    "phpstan/phpstan": "For Code Analyse: composer global require --dev phpstan/phpstan",
+    "jianyan74/yii2-easy-wechat": "For Wechat: compoer require jianyan74/yii2-easy-wechat"
   },
   "config": {
     "process-timeout": 1800,

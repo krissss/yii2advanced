@@ -11,7 +11,7 @@ class ApiCorsFilter extends Cors
         parent::init();
         $this->cors = [
             'Origin' => ['*'],
-            'Access-Control-Request-Method' => ['GET', 'POST'],
+            'Access-Control-Request-Method' => ['OPTIONS', 'GET', 'POST'],
             'Access-Control-Request-Headers' => ['*'],
             'Access-Control-Allow-Credentials' => null,
             'Access-Control-Max-Age' => 86400,

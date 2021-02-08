@@ -30,6 +30,7 @@ $config = [
         ],
         'response' => [
             'class' => ApiResponse::class,
+            'apiFormat' => false,
         ],
         'user' => [
             'class' => 'yii\web\User',

@@ -14,11 +14,13 @@ abstract class AuthWebController extends BaseWebController
 
         $behaviors['user_login'] = [
             'class' => UserLoginFilter::class,
+            'loginUrl' => class_exists('jianyan\easywechat\Wechat') ? ['/wechat/auth'] : ['/site/login'],
         ];
         $behaviors['user_status'] = [
             'class' => UserStatusFilter::class,
             'notAllowedStatus' => [UserStatus::DISABLE],
             'errorMessage' => '用户被锁定，不能执行操作',
+            'redirectUrl' => ['/site/index'],
         ];
 
         return $behaviors;

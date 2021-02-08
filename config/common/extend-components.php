@@ -13,4 +13,7 @@ return [
     ComponentName::SETTINGS => [
         'class' => 'yii2mod\settings\components\Settings',
     ],
+    ComponentName::WECHAT => [
+        'class' => 'jianyan\easywechat\Wechat',
+    ],
 ];

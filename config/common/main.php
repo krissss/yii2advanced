@@ -1,12 +1,12 @@
 <?php
 
 use common\components\Logger;
-use common\components\Params;
 use kriss\messages\I18NHelper;
 use yii\helpers\ArrayHelper;
 
 $db = require __DIR__ . '/db.php';
 $redis = require __DIR__ . '/redis.php';
+$params = require __DIR__ . '/params.php';
 $assetManager = require __DIR__ . '/asset-manager.php';
 $extendComponents = require __DIR__ . '/extend-components.php';
 
@@ -21,7 +21,7 @@ return [
         '@bower' => '@project/node_modules',
         '@npm' => '@project/node_modules',
     ],
-    'params' => Params::loadFromEnv(),
+    'params' => $params,
     'components' => ArrayHelper::merge([
         'db' => $db,
         'sessionRedis' => array_merge($redis, [

@@ -4,7 +4,7 @@ namespace api\components;
 
 use api\filters\UserStatusFilter;
 use common\enums\UserStatus;
-use kriss\behaviors\rest\QueryParamAuth;
+use kriss\behaviors\rest\HeaderParamAuth;
 
 abstract class AuthApiController extends BaseApiController
 {
@@ -25,7 +25,7 @@ abstract class AuthApiController extends BaseApiController
 
         // 该 key 不能更改
         $behaviors['authenticator'] = [
-            'class' => QueryParamAuth::class,
+            'class' => HeaderParamAuth::class,
             'tokenParam' => self::TOKEN_PARAM,
             'only' => $this->authOnly,
             'except' => $this->authExcept,

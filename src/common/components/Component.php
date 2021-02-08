@@ -2,14 +2,13 @@
 
 namespace common\components;
 
-use kriss\storage\Storage;
 use Yii;
 use yii\base\InvalidConfigException;
-use yii2mod\settings\components\Settings;
 
 /**
- * @method static Storage storage()
- * @method static Settings settings()
+ * @method static \kriss\storage\Storage storage()
+ * @method static \yii2mod\settings\components\Settings settings()
+ * @method static \jianyan\easywechat\Wechat wechat()
  */
 class Component
 {

@@ -1,12 +1,8 @@
 <?php
 
 use common\components\Request;
-use common\models\Admin;
-use kriss\iframeLayout\component\IframeMode;
 
-$modules = require __DIR__ . '/modules.php';
-$definitions = require __DIR__ . '/definitions.php';
-$moduleName = 'admin';
+$moduleName = 'frontend';
 $cookieKey = get_env('COOKIE_KEY');
 
 $config = [
@@ -17,15 +13,11 @@ $config = [
     'bootstrap' => [
         'log',
         function () {
-            Yii::setAlias('@public', Yii::getAlias('@web/../'));
+            Yii::setAlias('@public', Yii::getAlias('@web'));
         }
     ],
     // 网站维护，打开以下注释
     //'catchAll' => ['site/offline'],
-    'modules' => $modules,
-    'container' => [
-        'definitions' => $definitions,
-    ],
     'components' => [
         'request' => [
             'class' => Request::class,
@@ -33,10 +25,10 @@ $config = [
             'cookieValidationKey' => "{$moduleName}-{$cookieKey}",
         ],
         'user' => [
-            'class' => 'kriss\modules\auth\components\User',
-            'authClass' => 'common\models\base\Auth',
-            'identityClass' => Admin::class,
-            'enableAutoLogin' => false,
+            'class' => 'yii\web\User',
+            'identityClass' => 'common\models\User',
+            'enableAutoLogin' => true,
+            'enableSession' => true,
             'identityCookie' => ['name' => "_identity-{$moduleName}", 'httpOnly' => true],
         ],
         'session' => [
@@ -47,18 +39,6 @@ $config = [
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
-        ],
-        'assetManager' => [
-            'bundles' => [
-                'dmstr\web\AdminLteAsset' => [
-                    'skin' => 'skin-blue',
-                ],
-            ],
-        ],
-        IframeMode::COMPONENT_NAME => [
-            'class' => IframeMode::class,
-            'enable' => true,
-            'defaultSwitch' => false,
         ],
     ],
 ];

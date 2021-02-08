@@ -18,3 +18,4 @@ Yii::setAlias('@common', $projectRoot . '/src/common');
 Yii::setAlias('@console', $projectRoot . '/src/console');
 Yii::setAlias('@admin', $projectRoot . '/src/admin');
 Yii::setAlias('@api', $projectRoot . '/src/api');
+Yii::setAlias('@frontend', $projectRoot . '/src/frontend');

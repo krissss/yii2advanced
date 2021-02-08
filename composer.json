@@ -74,8 +74,8 @@
     }
   },
   "scripts": {
+    "serve": "php yii serve",
     "post-create-project-cmd": "php init --env=dev --overwrite=all",
-    "env-g": "php environments/generate.php",
     "env-dev": "php init --env=dev --overwrite=all",
     "env-prod": "php init --env=prod --overwrite=all",
     "fix": "php-cs-fixer fix --config .php_cs && php-cs-fixer fix --config .php_cs_header",

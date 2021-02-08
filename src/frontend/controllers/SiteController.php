@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use common\actions\VueAction;
 use frontend\components\BaseWebController;
 use kriss\actions\rest\ErrorAction;
 use kriss\actions\rest\OfflineAction;
@@ -16,6 +17,11 @@ class SiteController extends BaseWebController
             ],
             'offline' => [
                 'class' => OfflineAction::class,
+            ],
+            'example-vue' => [
+                'class' => VueAction::class,
+                'entry' => 'example',
+                'title' => '测试'
             ],
         ];
     }

@@ -16,4 +16,7 @@ return [
     ComponentName::WECHAT => [
         'class' => 'jianyan\easywechat\Wechat',
     ],
+    ComponentName::ENCORE_ASSET_LOADER => [
+        'class' => \common\components\EncoreAssetLoader::class,
+    ],
 ];

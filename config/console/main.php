@@ -14,9 +14,14 @@ return [
         'migrate' => [
             'class' => 'yii\console\controllers\MigrateController',
             'migrationPath' => [
-                '@app/migrations',
+                '@app/migrations', // 此目录一定放在第一个
                 '@vendor/yii2mod/yii2-settings/migrations',
             ]
+        ],
+        'serve' => [
+            'class' => 'yii\console\controllers\ServeController',
+            'port' => 8089,
+            'docroot' => '@project/public',
         ],
     ],
     'components' => [

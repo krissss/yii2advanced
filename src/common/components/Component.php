@@ -9,6 +9,7 @@ use yii\base\InvalidConfigException;
  * @method static \kriss\storage\Storage storage()
  * @method static \yii2mod\settings\components\Settings settings()
  * @method static \jianyan\easywechat\Wechat wechat()
+ * @method static EncoreAssetLoader encoreAssetLoader()
  */
 class Component
 {

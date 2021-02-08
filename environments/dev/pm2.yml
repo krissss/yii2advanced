@@ -1,0 +1,24 @@
+# pm2 start pm2.yml
+
+apps:
+  - name: 'yii-queue'
+    interpreter: 'php'
+    script: 'yii'
+    args: 'queue/listen'
+    instances: 5
+    watch: false
+    log_date_format: 'YYYY-MM-DD HH:mm:ss'
+    error_file: './runtime/pm2-error.log'
+    out_file: './runtime/pm2-out.log'
+    combine_logs: true
+  # cron example
+  #- name: 'cron-test'
+  #  interpreter: 'php'
+  #  script: 'yii'
+  #  args: 'cron-test/index'
+  #  instances: 1
+  #  watch: false
+  #  log_date_format: 'YYYY-MM-DD HH:mm:ss'
+  #  error_file: './runtime/pm2-cron-test-error.log'
+  #  out_file: './runtime/pm2-cron-test-error.log'
+  #  combine_logs: true

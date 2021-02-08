@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9412c1b7bc7a8bfc244f4b2278a71f73",
+    "content-hash": "48dcd225ce54329fdba306f409a6d3b9",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -1227,49 +1227,6 @@
                 }
             ],
             "time": "2020-09-28T15:15:52+00:00"
-        },
-        {
-            "name": "kriss/env-generator",
-            "version": "v1.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/krissss/env-generator.git",
-                "reference": "a95ca85913244ef65bb77ed6dac4d69e5a8d2304"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/krissss/env-generator/zipball/a95ca85913244ef65bb77ed6dac4d69e5a8d2304",
-                "reference": "a95ca85913244ef65bb77ed6dac4d69e5a8d2304",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "kriss\\envGenerator\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "kriss",
-                    "email": "462679766@qq.com"
-                }
-            ],
-            "description": "php env generator",
-            "support": {
-                "issues": "https://github.com/krissss/env-generator/issues",
-                "source": "https://github.com/krissss/env-generator/tree/master"
-            },
-            "time": "2019-02-12T07:08:20+00:00"
         },
         {
             "name": "kriss/foxy-yii2-convert",

@@ -1,5 +1,3 @@
-# 由 EnvGenerator 生成，可以修改参数值，不要直接修改参数属性
-# 开发环境
 version: '2'
 
 services:

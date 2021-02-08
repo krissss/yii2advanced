@@ -13,5 +13,6 @@ Thumbs.db
 
 /.env
 /docker-compose.yml
+/pm2.yml
 
 .php_cs.cache

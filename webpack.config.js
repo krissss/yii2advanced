@@ -1,7 +1,7 @@
-var Encore = require('@symfony/webpack-encore');
-var dotenv = require('dotenv').config();
-var webpack = require('webpack');
-var entries = require('./resources/js/config').entries
+const Encore = require('@symfony/webpack-encore');
+const WebpackDotenvPlugin = require('dotenv-webpack');
+require('dotenv').config();
+const entries = require('./resources/js/config').entries
 
 // Manually configure the runtime environment if not already configured yet by the "encore" command.
 // It's useful when you use tools that rely on webpack.config.js file.
@@ -15,9 +15,9 @@ entries.forEach(({name, src}) => {
 
 Encore
   // directory where compiled assets will be stored
-  .setOutputPath('public/assets/build/')
+  .setOutputPath(process.env.WEBPACK_ASSET_BUILD_PATH)
   // public path used by the web server to access the output path
-  .setPublicPath((process.env.PUBLIC_URL || '/') + 'assets/build')
+  .setPublicPath(process.env.WEBPACK_ASSET_PUBLIC_PATH)
   // only needed for CDN's or sub-directory deploy
   //.setManifestKeyPrefix('build/')
 
@@ -86,8 +86,9 @@ Encore
 //.addEntry('admin', './assets/js/admin.js')
 
   // 增加 .env 到 process.env
-  .addPlugin(new webpack.DefinePlugin({
-    'process.env': dotenv.parsed
+  // https://github.com/mrsteele/dotenv-webpack
+  .addPlugin(new WebpackDotenvPlugin({
+    systemvars: true
   }))
 ;
 

@@ -3,7 +3,7 @@ import loading from "./loading";
 import message from "./message";
 
 const instance = axios.create({
-  baseURL: (process.env.ENCORE_HTTP_URL || '/') + 'http',
+  baseURL: (process.env.WEBPACK_HTTP_BASE_URL || '/'),
   timeout: 5000,
   withCredentials: false
 });

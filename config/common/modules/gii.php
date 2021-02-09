@@ -1,7 +1,4 @@
 <?php
-/**
- * @var array $config
- */
 
 $config['bootstrap'][] = 'gii';
 $config['modules']['gii'] = [

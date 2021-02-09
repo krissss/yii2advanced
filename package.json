@@ -9,7 +9,6 @@
     "@composer-asset/yiisoft--yii2": "file:./vendor/foxy/composer-asset/yiisoft/yii2",
     "@composer-asset/yiisoft--yii2-bootstrap": "file:./vendor/foxy/composer-asset/yiisoft/yii2-bootstrap",
     "axios": "^0.21.1",
-    "moveto": "^1.8.2",
     "wechat-jssdk": "^5.0.6"
   },
   "devDependencies": {

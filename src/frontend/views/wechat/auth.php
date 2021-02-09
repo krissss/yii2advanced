@@ -1,8 +1,8 @@
 <?php
 /**
- * @var $this View
- * @var $token string
- * @var $backUrl string
+ * @var yii\web\View $this
+ * @var string $token
+ * @var string $backUrl
  */
 
 use yii\web\View;

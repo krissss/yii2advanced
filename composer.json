@@ -56,9 +56,8 @@
     ]
   },
   "suggest": {
-    "friendsofphp/php-cs-fixer": "For Fix: composer global require --dev friendsofphp/php-cs-fixer",
-    "phpstan/phpstan": "For Code Analyse: composer global require --dev phpstan/phpstan",
-    "jianyan74/yii2-easy-wechat": "For Wechat: compoer require jianyan74/yii2-easy-wechat"
+    "friendsofphp/php-cs-fixer": "For Fix: composer require --dev friendsofphp/php-cs-fixer",
+    "phpstan/phpstan": "For Code Analyse: composer require --dev phpstan/phpstan"
   },
   "config": {
     "process-timeout": 1800,

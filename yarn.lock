@@ -3747,11 +3747,6 @@ mongoose@5.11.7:
     sift "7.0.1"
     sliced "1.0.1"
 
-moveto@^1.8.2:
-  version "1.8.2"
-  resolved "https://registry.yarnpkg.com/moveto/-/moveto-1.8.2.tgz#f38789f59dd9af6129ab117b95c37d20ee65c391"
-  integrity sha512-+8WPr6XOL6AyGJrs/MGyV9ZExt+ifBdWK4TTZq+GSqD9bepYTUuhgUHZVoz8WRqXGaemh0LgpdWdl9OZX5BdHQ==
-
 mpath@0.8.1:
   version "0.8.1"
   resolved "https://registry.yarnpkg.com/mpath/-/mpath-0.8.1.tgz#f42bf00e162dfc8b4abcefaf114260233e6d3001"

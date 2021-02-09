@@ -32,7 +32,7 @@ yarn serve
 
 ```bash
 # 安装依赖
-composer install
+composer install --no-dev
 yarn
 # 初始化环境（prod）
 php init

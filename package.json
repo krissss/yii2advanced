@@ -1,36 +1,36 @@
 {
-  "private": true,
-  "license": "UNLICENSED",
-  "dependencies": {
-    "@composer-asset/almasaeed2010--adminlte": "file:./vendor/foxy/composer-asset/almasaeed2010/adminlte",
-    "@composer-asset/fortawesome--font-awesome": "file:./vendor/foxy/composer-asset/fortawesome/font-awesome",
-    "@composer-asset/kartik-v--php-date-formatter": "file:./vendor/foxy/composer-asset/kartik-v/php-date-formatter",
-    "@composer-asset/select2--select2": "file:./vendor/foxy/composer-asset/select2/select2",
-    "@composer-asset/yiisoft--yii2": "file:./vendor/foxy/composer-asset/yiisoft/yii2",
-    "@composer-asset/yiisoft--yii2-bootstrap": "file:./vendor/foxy/composer-asset/yiisoft/yii2-bootstrap",
-    "axios": "^0.21.1",
-    "wechat-jssdk": "^5.0.6"
-  },
-  "devDependencies": {
-    "@symfony/webpack-encore": "^1.0.4",
-    "core-js": "^3.8.3",
-    "dotenv": "^8.2.0",
-    "dotenv-webpack": "^6.0.0",
-    "postcss-loader": "^4.0.0",
-    "postcss-px-to-viewport": "^1.1.1",
-    "sass": "^1.32.6",
-    "sass-loader": "^10.1.1",
-    "vue": "^2.6.12",
-    "vue-loader": "^15.9.6",
-    "vue-template-compiler": "^2.6.12"
-  },
-  "scripts": {
-    "dev": "encore dev",
-    "serve": "encore dev-server --hot --port 8088",
-    "watch": "encore dev --watch",
-    "build": "encore production --progress"
-  },
-  "browserslist": [
-    "defaults"
-  ]
+    "private": true,
+    "license": "UNLICENSED",
+    "dependencies": {
+        "@composer-asset/almasaeed2010--adminlte": "file:./vendor/foxy/composer-asset/almasaeed2010/adminlte",
+        "@composer-asset/fortawesome--font-awesome": "file:./vendor/foxy/composer-asset/fortawesome/font-awesome",
+        "@composer-asset/kartik-v--php-date-formatter": "file:./vendor/foxy/composer-asset/kartik-v/php-date-formatter",
+        "@composer-asset/select2--select2": "file:./vendor/foxy/composer-asset/select2/select2",
+        "@composer-asset/yiisoft--yii2": "file:./vendor/foxy/composer-asset/yiisoft/yii2",
+        "@composer-asset/yiisoft--yii2-bootstrap": "file:./vendor/foxy/composer-asset/yiisoft/yii2-bootstrap",
+        "axios": "^0.21.1",
+        "wechat-jssdk": "^5.0.6"
+    },
+    "devDependencies": {
+        "@symfony/webpack-encore": "^1.0.4",
+        "core-js": "^3.8.3",
+        "dotenv": "^8.2.0",
+        "dotenv-webpack": "^6.0.0",
+        "postcss-loader": "^4.0.0",
+        "postcss-px-to-viewport": "^1.1.1",
+        "sass": "^1.32.6",
+        "sass-loader": "^10.1.1",
+        "vue": "^2.6.12",
+        "vue-loader": "^15.9.6",
+        "vue-template-compiler": "^2.6.12"
+    },
+    "scripts": {
+        "dev": "encore dev",
+        "serve": "encore dev-server --hot --port 8088",
+        "watch": "encore dev --watch",
+        "build": "encore production --progress"
+    },
+    "browserslist": [
+        "defaults"
+    ]
 }
